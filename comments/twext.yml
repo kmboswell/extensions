@@ -1,6 +1,6 @@
-name: "comments"
-version: "0.3.0"
-description: "a commeting extension for scratchVM mods"
+name: "Comments"
+version: "0.3.1"
+description: "A commenting extension for Scratch mods"
 author: "sandisk/mc20000 jamie@sdisk.us"
 license: "Apache-2.0"
 

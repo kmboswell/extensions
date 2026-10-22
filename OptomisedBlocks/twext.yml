@@ -1,8 +1,8 @@
-name: "optomised-blocks"
-version: "0.1.0"
+name: "Optimised Blocks"
+version: "0.1.1"
 description: "Compiled functions, all at once, and end-of-frame blocks"
-author: ""
-license: "MIT"
+author: "sandisk/mc20000 jamie@sdisk.us"
+license: "Apache-2.0"
 
 entryPoint: "src/index.js"
 outputPath: "dist/extension.js"

@@ -1,8 +1,8 @@
-name: "sense-color"
-version: "0.1.0"
+name: "Sense Color"
+version: "0.1.1"
 description: "Reports the average color under a sprite, with a cached backdrop"
-author: ""
-license: "MIT"
+author: "sandisk/mc20000 jamie@sdisk.us"
+license: "Apache-2.0"
 
 entryPoint: "src/index.js"
 outputPath: "dist/extension.js"
