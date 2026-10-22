@@ -1,8 +1,8 @@
-name: "advanced-timers"
-version: "0.1.0"
-description: "High resolution timers based on performance.now()"
-author: ""
-license: "MIT"
+name: "Advanced Timers"
+version: "0.1.1"
+description: "Higher resolution timers"
+author: "sandisk/mc20000 jamie@sdisk.us"
+license: "Apache-2.0"
 
 entryPoint: "src/index.js"
 outputPath: "dist/extension.js"
@@ -14,6 +14,7 @@ extension:
   color1: "#3B82F6"
   color2: "#2563EB"
   color3: "#1D4ED8"
+  isUnsandboxed: true
   menus:
     units:
       acceptReporters: true

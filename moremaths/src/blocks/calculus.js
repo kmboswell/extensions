@@ -13,7 +13,10 @@ export function polynomialDegree(args, util) {
 export function polynomialDerivativeAt(args, util) {
   const coefficients = this.listNumbersOf(args.COEFFICIENTS, util);
   if (!coefficients || coefficients.length < 2) return 0;
-  return this.polynomialValueOf(this.polynomialDerivativeOf(coefficients), args.X);
+  return this.polynomialValueOf(
+    this.polynomialDerivativeOf(coefficients),
+    args.X,
+  );
 }
 
 export function polynomialIntegral(args, util) {

@@ -1,6 +1,6 @@
-name: "moremaths"
-version: "0.1.0"
-description: "advanced maths blocks for TurboWarp and MistWarp"
+name: "More Maths"
+version: "0.1.1"
+description: "More advanced maths blocks"
 author: "sandisk/mc20000 jamie@sdisk.us"
 license: "Apache-2.0"
 
@@ -14,6 +14,7 @@ extension:
   color1: "#0aa2c0"
   color2: "#0886a0"
   color3: "#076a7e"
+  isUnsandboxed: true
   menus:
     constant:
       acceptReporters: true

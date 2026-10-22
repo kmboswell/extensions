@@ -60,13 +60,14 @@ export function productOfQuadraticRoots(args) {
 
 export function arithmeticNthTerm(args) {
   return (
-    this.num(args.FIRST) + (this.num(args.STEP) * (this.num(args.INDEX) - 1))
+    this.num(args.FIRST) + this.num(args.STEP) * (this.num(args.INDEX) - 1)
   );
 }
 
 export function geometricNthTerm(args) {
   return (
-    this.num(args.FIRST) * Math.pow(this.num(args.RATIO), this.num(args.INDEX) - 1)
+    this.num(args.FIRST) *
+    Math.pow(this.num(args.RATIO), this.num(args.INDEX) - 1)
   );
 }
 
@@ -128,7 +129,7 @@ export function harmonicNumber(args) {
     0.5772156649015329 +
     inverse / 2 -
     inverse2 / 12 +
-    inverse2 * inverse2 / 120 -
-    inverse2 * inverse2 * inverse2 / 252
+    (inverse2 * inverse2) / 120 -
+    (inverse2 * inverse2 * inverse2) / 252
   );
 }

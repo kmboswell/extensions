@@ -13,7 +13,12 @@ export function digitProduct(args) {
 export function reverseDigits(args) {
   const value = this.num(args.N);
   if (!Number.isFinite(value)) return 0;
-  const reversed = Number(String(Math.abs(Math.trunc(value))).split("").reverse().join(""));
+  const reversed = Number(
+    String(Math.abs(Math.trunc(value)))
+      .split("")
+      .reverse()
+      .join(""),
+  );
   return value < 0 ? -reversed : reversed;
 }
 

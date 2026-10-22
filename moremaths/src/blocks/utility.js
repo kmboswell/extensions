@@ -20,7 +20,10 @@ export function remapNumber(args) {
   const fromHigh = this.num(args.FROM_HIGH);
   if (fromHigh === fromLow) return this.num(args.TO_LOW);
   const position = (this.num(args.VALUE) - fromLow) / (fromHigh - fromLow);
-  return this.num(args.TO_LOW) + position * (this.num(args.TO_HIGH) - this.num(args.TO_LOW));
+  return (
+    this.num(args.TO_LOW) +
+    position * (this.num(args.TO_HIGH) - this.num(args.TO_LOW))
+  );
 }
 
 export function wrapNumber(args) {

@@ -79,13 +79,19 @@ export function gravitationalForce(args) {
   const second = this.num(args.MASS2);
   const distance = Math.abs(this.num(args.DISTANCE));
   if (distance === 0) return Infinity;
-  return (PHYSICS_CONSTANTS.gravitationalConstant * first * second) / (distance * distance);
+  return (
+    (PHYSICS_CONSTANTS.gravitationalConstant * first * second) /
+    (distance * distance)
+  );
 }
 
 export function gravitationalField(args) {
   const distance = Math.abs(this.num(args.DISTANCE));
   if (distance === 0) return Infinity;
-  return PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.MASS) / (distance * distance);
+  return (
+    (PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.MASS)) /
+    (distance * distance)
+  );
 }
 
 export function surfaceGravityOf(args) {
@@ -133,11 +139,18 @@ export function forceFromPressure(args) {
 }
 
 export function buoyantForce(args) {
-  return this.num(args.VOLUME) * this.num(args.FLUID_DENSITY) * PHYSICS_CONSTANTS.standardGravity;
+  return (
+    this.num(args.VOLUME) *
+    this.num(args.FLUID_DENSITY) *
+    PHYSICS_CONSTANTS.standardGravity
+  );
 }
 
 export function apparentWeightInFluid(args) {
-  return this.num(args.MASS) * PHYSICS_CONSTANTS.standardGravity - this.buoyantForce(args);
+  return (
+    this.num(args.MASS) * PHYSICS_CONSTANTS.standardGravity -
+    this.buoyantForce(args)
+  );
 }
 
 export function archimedesDisplacedMass(args) {
@@ -220,14 +233,19 @@ export function speedInMedium(args) {
 }
 
 export function beatsPerSecond(args) {
-  return Math.abs(this.num(args.FIRST_FREQUENCY) - this.num(args.SECOND_FREQUENCY));
+  return Math.abs(
+    this.num(args.FIRST_FREQUENCY) - this.num(args.SECOND_FREQUENCY),
+  );
 }
 
 export function dopplerShift(args) {
   const speed = this.num(args.SPEED);
   const frequency = this.num(args.FREQUENCY);
   const sign = this.num(args.APPROACHING) !== 0 ? -1 : 1;
-  return (frequency * PHYSICS_CONSTANTS.speedOfSoundInAir) / (PHYSICS_CONSTANTS.speedOfSoundInAir + sign * speed);
+  return (
+    (frequency * PHYSICS_CONSTANTS.speedOfSoundInAir) /
+    (PHYSICS_CONSTANTS.speedOfSoundInAir + sign * speed)
+  );
 }
 
 export function snellRefraction(args) {
@@ -236,7 +254,7 @@ export function snellRefraction(args) {
   const angle = this.degreesToRadians(this.num(args.ANGLE1));
   const ratio = (first * Math.sin(angle)) / second;
   if (Math.abs(ratio) > 1) return NaN;
-  return 180 / Math.PI * Math.asin(ratio);
+  return (180 / Math.PI) * Math.asin(ratio);
 }
 
 export function criticalAngle(args) {
@@ -244,7 +262,7 @@ export function criticalAngle(args) {
   const second = this.num(args.INDEX2);
   const ratio = second / first;
   if (Math.abs(ratio) > 1) return NaN;
-  return 180 / Math.PI * Math.asin(ratio);
+  return (180 / Math.PI) * Math.asin(ratio);
 }
 
 export function indexOfRefraction(args) {
@@ -262,7 +280,10 @@ export function lensImageDistance(args) {
 export function lensMagnification(args) {
   const focal = this.num(args.FOCAL_LENGTH);
   const object = this.num(args.OBJECT_DISTANCE);
-  const image = this.lensImageDistance({ FOCAL_LENGTH: focal, OBJECT_DISTANCE: object });
+  const image = this.lensImageDistance({
+    FOCAL_LENGTH: focal,
+    OBJECT_DISTANCE: object,
+  });
   if (!Number.isFinite(image)) return NaN;
   return -image / object;
 }
@@ -278,7 +299,9 @@ export function frequencyFromPhotonEnergy(args) {
 export function photonWavelength(args) {
   const energy = this.num(args.ENERGY);
   if (!(energy > 0)) return NaN;
-  return (PHYSICS_CONSTANTS.planckConstant * PHYSICS_CONSTANTS.speedOfLight) / energy;
+  return (
+    (PHYSICS_CONSTANTS.planckConstant * PHYSICS_CONSTANTS.speedOfLight) / energy
+  );
 }
 
 export function deBroglieWavelength(args) {
@@ -355,7 +378,8 @@ export function massFromEnergy(args) {
 export function energyMomentumRelation(args) {
   const energy = this.num(args.ENERGY);
   const momentum = this.num(args.MOMENTUM);
-  const difference = energy * energy - momentum * momentum * PHYSICS_CONSTANTS.speedOfLight ** 2;
+  const difference =
+    energy * energy - momentum * momentum * PHYSICS_CONSTANTS.speedOfLight ** 2;
   if (difference < 0) return NaN;
   return Math.sqrt(difference) / PHYSICS_CONSTANTS.speedOfLight ** 2;
 }
@@ -365,23 +389,38 @@ export function coulombForce(args) {
   const second = this.num(args.CHARGE2);
   const distance = Math.abs(this.num(args.DISTANCE));
   if (distance === 0) return Infinity;
-  return (first * second) / (4 * Math.PI * PHYSICS_CONSTANTS.vacuumPermittivity * distance * distance);
+  return (
+    (first * second) /
+    (4 * Math.PI * PHYSICS_CONSTANTS.vacuumPermittivity * distance * distance)
+  );
 }
 
 export function electricFieldOfCharge(args) {
   const distance = Math.abs(this.num(args.DISTANCE));
   if (distance === 0) return Infinity;
-  return this.num(args.CHARGE) / (4 * Math.PI * PHYSICS_CONSTANTS.vacuumPermittivity * distance * distance);
+  return (
+    this.num(args.CHARGE) /
+    (4 * Math.PI * PHYSICS_CONSTANTS.vacuumPermittivity * distance * distance)
+  );
 }
 
 export function electricPotentialOfCharge(args) {
   const distance = Math.abs(this.num(args.DISTANCE));
   if (distance === 0) return Infinity;
-  return this.num(args.CHARGE) / (4 * Math.PI * PHYSICS_CONSTANTS.vacuumPermittivity * distance);
+  return (
+    this.num(args.CHARGE) /
+    (4 * Math.PI * PHYSICS_CONSTANTS.vacuumPermittivity * distance)
+  );
 }
 
 export function electricPotentialEnergy(args) {
-  return this.num(args.CHARGE1) * this.electricPotentialOfCharge({ CHARGE: this.num(args.CHARGE2), DISTANCE: args.DISTANCE });
+  return (
+    this.num(args.CHARGE1) *
+    this.electricPotentialOfCharge({
+      CHARGE: this.num(args.CHARGE2),
+      DISTANCE: args.DISTANCE,
+    })
+  );
 }
 
 export function currentFromPower(args) {
@@ -420,7 +459,12 @@ export function capacitorEnergy(args) {
 
 export function magneticForce(args) {
   const angle = this.degreesToRadians(this.num(args.ANGLE));
-  return this.num(args.CHARGE) * this.num(args.VELOCITY) * this.num(args.FIELD) * Math.sin(angle);
+  return (
+    this.num(args.CHARGE) *
+    this.num(args.VELOCITY) *
+    this.num(args.FIELD) *
+    Math.sin(angle)
+  );
 }
 
 export function cyclotronFrequency(args) {
@@ -430,7 +474,11 @@ export function cyclotronFrequency(args) {
 }
 
 export function thermalEnergyChange(args) {
-  return this.num(args.MASS) * this.num(args.SPECIFIC_HEAT) * this.num(args.TEMPERATURE_CHANGE);
+  return (
+    this.num(args.MASS) *
+    this.num(args.SPECIFIC_HEAT) *
+    this.num(args.TEMPERATURE_CHANGE)
+  );
 }
 
 export function heatTransferred(args) {
@@ -445,17 +493,29 @@ export function specificHeatFromEnergy(args) {
 export function idealGasPressure(args) {
   const amount = this.num(args.AMOUNT);
   const volume = this.num(args.VOLUME);
-  return volume === 0 ? NaN : (amount * PHYSICS_CONSTANTS.molarGasConstant * this.num(args.TEMPERATURE)) / volume;
+  return volume === 0
+    ? NaN
+    : (amount *
+        PHYSICS_CONSTANTS.molarGasConstant *
+        this.num(args.TEMPERATURE)) /
+        volume;
 }
 
 export function idealGasVolume(args) {
   const pressure = this.num(args.PRESSURE);
-  return pressure === 0 ? NaN : (this.num(args.AMOUNT) * PHYSICS_CONSTANTS.molarGasConstant * this.num(args.TEMPERATURE)) / pressure;
+  return pressure === 0
+    ? NaN
+    : (this.num(args.AMOUNT) *
+        PHYSICS_CONSTANTS.molarGasConstant *
+        this.num(args.TEMPERATURE)) /
+        pressure;
 }
 
 export function idealGasTemperature(args) {
   const divisor = this.num(args.AMOUNT) * PHYSICS_CONSTANTS.molarGasConstant;
-  return divisor === 0 ? NaN : (this.num(args.PRESSURE) * this.num(args.VOLUME)) / divisor;
+  return divisor === 0
+    ? NaN
+    : (this.num(args.PRESSURE) * this.num(args.VOLUME)) / divisor;
 }
 
 export function vanDerWaalsPressure(args) {
@@ -463,7 +523,9 @@ export function vanDerWaalsPressure(args) {
   const volume = this.num(args.VOLUME);
   const excluded = volume - amount * this.num(args.B);
   if (excluded === 0 || volume === 0) return NaN;
-  const ideal = (amount * PHYSICS_CONSTANTS.molarGasConstant * this.num(args.TEMPERATURE)) / excluded;
+  const ideal =
+    (amount * PHYSICS_CONSTANTS.molarGasConstant * this.num(args.TEMPERATURE)) /
+    excluded;
   const correction = (this.num(args.A) * amount * amount) / (volume * volume);
   return ideal - correction;
 }

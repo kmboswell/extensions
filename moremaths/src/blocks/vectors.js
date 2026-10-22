@@ -31,7 +31,8 @@ export function angleBetweenVectors(args) {
   const dot =
     this.num(args.X1) * this.num(args.X2) +
     this.num(args.Y1) * this.num(args.Y2);
-  const lengths = Math.hypot(this.num(args.X1), this.num(args.Y1)) *
+  const lengths =
+    Math.hypot(this.num(args.X1), this.num(args.Y1)) *
     Math.hypot(this.num(args.X2), this.num(args.Y2));
   if (lengths === 0) return NaN;
   const cosine = this.clampNum(dot / lengths, -1, 1);

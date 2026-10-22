@@ -9,9 +9,7 @@ export function logGammaFunction(args) {
 export function betaFunction(args) {
   const a = this.num(args.A);
   const b = this.num(args.B);
-  return (
-    (this.gammaOf(a) * this.gammaOf(b)) / this.gammaOf(a + b)
-  );
+  return (this.gammaOf(a) * this.gammaOf(b)) / this.gammaOf(a + b);
 }
 
 export function errorFunction(args) {
@@ -24,8 +22,7 @@ export function inverseErrorFunction(args) {
   let estimate = this.clampNum(target, -0.9999999, 0.9999999);
   for (let i = 0; i < 80; i++) {
     const error = this.erfOf(estimate) - target;
-    const slope =
-      (2 / Math.sqrt(Math.PI)) * Math.exp(-estimate * estimate);
+    const slope = (2 / Math.sqrt(Math.PI)) * Math.exp(-estimate * estimate);
     if (slope === 0) break;
     const next = estimate - error / slope;
     if (!Number.isFinite(next)) break;

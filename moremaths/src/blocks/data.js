@@ -30,7 +30,9 @@ export function histogramCountsList(args, util) {
 
 export function confidenceIntervalList(args, util) {
   const values = this.listNumbersOf(args.LIST, util);
-  return values === null ? [NaN, NaN] : this.confidenceIntervalOf(values, args.LEVEL);
+  return values === null
+    ? [NaN, NaN]
+    : this.confidenceIntervalOf(values, args.LEVEL);
 }
 
 export function polynomialFitList(args, util) {
@@ -82,7 +84,8 @@ export function sampleSizeForMargin(args) {
   const sigma = this.num(args.SIGMA);
   const margin = Math.abs(this.num(args.MARGIN));
   const certainty = this.num(args.LEVEL);
-  if (!(sigma > 0) || !(margin > 0) || !(certainty > 0 && certainty < 1)) return NaN;
+  if (!(sigma > 0) || !(margin > 0) || !(certainty > 0 && certainty < 1))
+    return NaN;
   const z = this.normalQuantileOf(0.5 + certainty / 2, 0, 1);
   return Math.ceil(((z * sigma) / margin) ** 2);
 }

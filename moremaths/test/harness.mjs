@@ -32,6 +32,9 @@ const Scratch = {
   },
   vm: null,
   extensions: {
+    // The harness stands in for an unsandboxed extension: it hands the
+    // blocks a util object and a vm, which only exist outside the sandbox.
+    unsandboxed: true,
     register(instance) {
       registered = instance;
     },
@@ -53,8 +56,18 @@ for (const [name, def] of Object.entries(menus)) {
 }
 
 const TEST_LIST = [1, 2, 2, 3, 4, 8, 13];
-listVariables.set("testList", { id: "testList", type: "list", name: "testList", value: TEST_LIST });
-listVariables.set("emptyList", { id: "emptyList", type: "list", name: "emptyList", value: [] });
+listVariables.set("testList", {
+  id: "testList",
+  type: "list",
+  name: "testList",
+  value: TEST_LIST,
+});
+listVariables.set("emptyList", {
+  id: "emptyList",
+  type: "list",
+  name: "emptyList",
+  value: [],
+});
 const util = {
   target: {
     lookupVariableById(id) {
@@ -75,8 +88,8 @@ function listRef(name = "testList") {
 }
 
 const ADVERSARIAL = [
-  0, 1, -1, 2, 0.5, -0.5, 1e9, -1e9, 1e18, -1e18, 1e-18, 123.456, -123.456,
-  10, 100, 1000, 1e6, 3.14159, 2.71828, 0.1, 255, 1024, 1e15,
+  0, 1, -1, 2, 0.5, -0.5, 1e9, -1e9, 1e18, -1e18, 1e-18, 123.456, -123.456, 10,
+  100, 1000, 1e6, 3.14159, 2.71828, 0.1, 255, 1024, 1e15,
 ];
 
 export function blockSpecs() {
@@ -112,7 +125,16 @@ export function defaultArgs(entry, overrides = {}) {
   return args;
 }
 
-export { registered, manifest, menuItems, util, listRef, TEST_LIST, ADVERSARIAL, Scratch };
+export {
+  registered,
+  manifest,
+  menuItems,
+  util,
+  listRef,
+  TEST_LIST,
+  ADVERSARIAL,
+  Scratch,
+};
 
 export function isSane(value) {
   if (value === undefined) return "undefined";

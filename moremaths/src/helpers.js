@@ -218,7 +218,11 @@ export function stirlingFirstOf(nValue, kValue) {
 }
 
 export function powerMod(base, exponent, modulus) {
-  if (typeof base === "bigint" || typeof exponent === "bigint" || typeof modulus === "bigint") {
+  if (
+    typeof base === "bigint" ||
+    typeof exponent === "bigint" ||
+    typeof modulus === "bigint"
+  ) {
     let result = 1n;
     let factor = base % modulus;
     let power = exponent;
@@ -607,7 +611,10 @@ export function standardDeviationOf(values, sample) {
 
 export function trimmedMeanOf(values, trimFraction) {
   const sorted = this.sortedCopy(values);
-  const cut = Math.min(Math.round(sorted.length * this.clampNum(trimFraction, 0, 0.5)), Math.floor(sorted.length / 2));
+  const cut = Math.min(
+    Math.round(sorted.length * this.clampNum(trimFraction, 0, 0.5)),
+    Math.floor(sorted.length / 2),
+  );
   const kept = sorted.slice(cut, sorted.length - cut);
   return this.meanOf(kept);
 }
@@ -818,7 +825,8 @@ export function polygonAreaOf(values) {
   for (let i = 0; i < points; i++) {
     const next = (i + 1) % points;
     total +=
-      values[i * 2] * values[next * 2 + 1] - values[next * 2] * values[i * 2 + 1];
+      values[i * 2] * values[next * 2 + 1] -
+      values[next * 2] * values[i * 2 + 1];
   }
   return Math.abs(total) / 2;
 }
@@ -860,7 +868,8 @@ export function polynomialIntegralOf(coefficients, from, to) {
   let total = 0;
   for (let i = 0; i < coefficients.length; i++) {
     const power = degree - i + 1;
-    total += (coefficients[i] / power) * (Math.pow(b, power) - Math.pow(a, power));
+    total +=
+      (coefficients[i] / power) * (Math.pow(b, power) - Math.pow(a, power));
   }
   return total;
 }
@@ -907,7 +916,8 @@ export function calcListMenuItems(editingTargetId) {
         .getMainWorkspace()
         .getVariableMap()
         .getVariablesOfType("list");
-      for (const model of models) items.push({ text: model.name, value: model.name });
+      for (const model of models)
+        items.push({ text: model.name, value: model.name });
     }
   }
   if (items.length === 0) items.push({ text: "(no lists yet)", value: "" });
@@ -919,7 +929,11 @@ export function lookupList(reference, util) {
   if (key === "") return null;
   const targets = [];
   if (util && util.target) targets.push(util.target);
-  if (util && util.runtime && typeof util.runtime.getTargetForStage === "function") {
+  if (
+    util &&
+    util.runtime &&
+    typeof util.runtime.getTargetForStage === "function"
+  ) {
     targets.push(util.runtime.getTargetForStage());
   }
   for (const target of targets) {
@@ -988,7 +1002,10 @@ export function regularizedIncompleteGamma(value, shape) {
       sum += term;
       if (Math.abs(term) < Math.abs(sum) * 1e-17) break;
     }
-    return Math.min(1, sum * Math.exp(a * Math.log(x) - x - this.logGammaOf(a)));
+    return Math.min(
+      1,
+      sum * Math.exp(a * Math.log(x) - x - this.logGammaOf(a)),
+    );
   }
   const tiny = 1e-300;
   let b = x + 1 - a;
@@ -1007,7 +1024,10 @@ export function regularizedIncompleteGamma(value, shape) {
     h *= delta;
     if (Math.abs(delta - 1) < 1e-17) break;
   }
-  return Math.max(0, 1 - Math.exp(a * Math.log(x) - x - this.logGammaOf(a)) * h);
+  return Math.max(
+    0,
+    1 - Math.exp(a * Math.log(x) - x - this.logGammaOf(a)) * h,
+  );
 }
 
 export function betaContinuedFraction(a, b, x) {
@@ -1026,7 +1046,8 @@ export function betaContinuedFraction(a, b, x) {
     if (Math.abs(c) < tiny) c = tiny;
     d = 1 / d;
     h *= d * c;
-    coefficient = (-(a + m) * (a + b + m) * x) / ((a + doubled) * (a + doubled + 1));
+    coefficient =
+      (-(a + m) * (a + b + m) * x) / ((a + doubled) * (a + doubled + 1));
     d = 1 + coefficient * d;
     if (Math.abs(d) < tiny) d = tiny;
     c = 1 + coefficient / c;
@@ -1043,7 +1064,8 @@ export function regularizedIncompleteBeta(value, a, b) {
   const x = Scratch.Cast.toNumber(value);
   const alpha = Scratch.Cast.toNumber(a);
   const beta = Scratch.Cast.toNumber(b);
-  if (!Number.isFinite(x) || !Number.isFinite(alpha) || !Number.isFinite(beta)) return NaN;
+  if (!Number.isFinite(x) || !Number.isFinite(alpha) || !Number.isFinite(beta))
+    return NaN;
   if (alpha <= 0 || beta <= 0) return NaN;
   if (x <= 0) return 0;
   if (x >= 1) return 1;
@@ -1081,7 +1103,8 @@ export function inverseRegularizedIncompleteGamma(probability, shape) {
   if (p >= 1) return Infinity;
   let low = 0;
   let high = Math.max(2 * shape + 1, 4);
-  while (this.regularizedIncompleteGamma(high, shape) < p && high < 1e15) high *= 2;
+  while (this.regularizedIncompleteGamma(high, shape) < p && high < 1e15)
+    high *= 2;
   for (let i = 0; i < 200; i++) {
     const middle = (low + high) / 2;
     if (this.regularizedIncompleteGamma(middle, shape) < p) low = middle;
@@ -1123,7 +1146,12 @@ export function gammaPdfOf(value, shape, scale) {
   const theta = Scratch.Cast.toNumber(scale);
   if (!(x >= 0) || !(k > 0) || !(theta > 0)) return 0;
   if (x === 0) return k === 1 ? 1 / theta : k < 1 ? Infinity : 0;
-  return Math.exp((k - 1) * Math.log(x) - x / theta - k * Math.log(theta) - this.logGammaOf(k));
+  return Math.exp(
+    (k - 1) * Math.log(x) -
+      x / theta -
+      k * Math.log(theta) -
+      this.logGammaOf(k),
+  );
 }
 
 export function gammaCdfOf(value, shape, scale) {
@@ -1257,7 +1285,9 @@ export function cauchyQuantileOf(probability, location, scale) {
   const p = Scratch.Cast.toNumber(probability);
   const gamma = Scratch.Cast.toNumber(scale);
   if (!(p > 0 && p < 1) || !(gamma > 0)) return NaN;
-  return Scratch.Cast.toNumber(location) + gamma * Math.tan(Math.PI * (p - 0.5));
+  return (
+    Scratch.Cast.toNumber(location) + gamma * Math.tan(Math.PI * (p - 0.5))
+  );
 }
 
 export function laplacePdfOf(value, location, scale) {
@@ -1292,7 +1322,8 @@ export function studentTPdfOf(value, degreesOfFreedom) {
   const nu = Scratch.Cast.toNumber(degreesOfFreedom);
   if (!(nu > 0)) return 0;
   return Math.exp(
-    (this.logGammaOf((nu + 1) / 2) - this.logGammaOf(nu / 2)) -
+    this.logGammaOf((nu + 1) / 2) -
+      this.logGammaOf(nu / 2) -
       0.5 * Math.log(nu * Math.PI) -
       ((nu + 1) / 2) * Math.log(1 + (t * t) / nu),
   );
@@ -1303,7 +1334,8 @@ export function studentTCdfOf(value, degreesOfFreedom) {
   const nu = Scratch.Cast.toNumber(degreesOfFreedom);
   if (!(nu > 0)) return NaN;
   if (t === 0) return 0.5;
-  const tail = 0.5 * this.regularizedIncompleteBeta(nu / (nu + t * t), nu / 2, 0.5);
+  const tail =
+    0.5 * this.regularizedIncompleteBeta(nu / (nu + t * t), nu / 2, 0.5);
   return t > 0 ? 1 - tail : tail;
 }
 
@@ -1330,7 +1362,10 @@ export function chiSquarePdfOf(value, degreesOfFreedom) {
   if (x < 0) return 0;
   if (x === 0) return k === 2 ? 0.5 : k < 2 ? Infinity : 0;
   return Math.exp(
-    (k / 2 - 1) * Math.log(x) - x / 2 - (k / 2) * Math.LN2 - this.logGammaOf(k / 2),
+    (k / 2 - 1) * Math.log(x) -
+      x / 2 -
+      (k / 2) * Math.LN2 -
+      this.logGammaOf(k / 2),
   );
 }
 
@@ -1342,13 +1377,21 @@ export function chiSquareCdfOf(value, degreesOfFreedom) {
   return this.regularizedIncompleteGamma(x / 2, k / 2);
 }
 
-export function fDistributionCdfOf(value, numeratorDegrees, denominatorDegrees) {
+export function fDistributionCdfOf(
+  value,
+  numeratorDegrees,
+  denominatorDegrees,
+) {
   const x = Scratch.Cast.toNumber(value);
   const d1 = Scratch.Cast.toNumber(numeratorDegrees);
   const d2 = Scratch.Cast.toNumber(denominatorDegrees);
   if (!(d1 > 0) || !(d2 > 0)) return NaN;
   if (x <= 0) return 0;
-  return this.regularizedIncompleteBeta((d1 * x) / (d1 * x + d2), d1 / 2, d2 / 2);
+  return this.regularizedIncompleteBeta(
+    (d1 * x) / (d1 * x + d2),
+    d1 / 2,
+    d2 / 2,
+  );
 }
 
 export function poissonPmfOf(value, rate) {
@@ -1366,7 +1409,10 @@ export function poissonCdfOf(value, rate) {
   if (!Number.isFinite(lambda) || lambda < 0) return NaN;
   if (!Number.isFinite(k)) return NaN;
   if (k < 0) return 0;
-  return Math.max(0, Math.min(1, 1 - this.regularizedIncompleteGamma(lambda, k + 1)));
+  return Math.max(
+    0,
+    Math.min(1, 1 - this.regularizedIncompleteGamma(lambda, k + 1)),
+  );
 }
 
 export function binomialPmfOf(value, trials, probability) {
@@ -1450,9 +1496,17 @@ export function hypergeometricPmfOf(value, drawn, successes, population) {
   const marked = Math.trunc(Scratch.Cast.toNumber(successes));
   const total = Math.trunc(Scratch.Cast.toNumber(population));
   if (!Number.isFinite(total) || total < 1) return NaN;
-  if (!Number.isFinite(n) || n < 0 || !Number.isFinite(marked) || marked < 0) return NaN;
+  if (!Number.isFinite(n) || n < 0 || !Number.isFinite(marked) || marked < 0)
+    return NaN;
   if (marked > total || n > total) return 0;
-  if (!Number.isFinite(k) || k < 0 || k > n || k > marked || n - k > total - marked) return 0;
+  if (
+    !Number.isFinite(k) ||
+    k < 0 ||
+    k > n ||
+    k > marked ||
+    n - k > total - marked
+  )
+    return 0;
   return Math.exp(
     this.logGammaOf(marked + 1) -
       this.logGammaOf(k + 1) -
@@ -1472,7 +1526,8 @@ export function hypergeometricCdfOf(value, drawn, successes, population) {
   const marked = Math.trunc(Scratch.Cast.toNumber(successes));
   const total = Math.trunc(Scratch.Cast.toNumber(population));
   if (!Number.isFinite(total) || total < 1) return NaN;
-  if (!Number.isFinite(n) || n < 0 || !Number.isFinite(marked) || marked < 0) return NaN;
+  if (!Number.isFinite(n) || n < 0 || !Number.isFinite(marked) || marked < 0)
+    return NaN;
   if (!Number.isFinite(k)) return NaN;
   if (k < 0) return 0;
   const limit = Math.min(marked, n);
@@ -1484,11 +1539,13 @@ export function hypergeometricCdfOf(value, drawn, successes, population) {
   }
   if (upperTerms <= lowerTerms) {
     let upper = 0;
-    for (let i = limit; i > k; i--) upper += this.hypergeometricPmfOf(i, n, marked, total);
+    for (let i = limit; i > k; i--)
+      upper += this.hypergeometricPmfOf(i, n, marked, total);
     return Math.min(1, Math.max(0, 1 - upper));
   }
   let lower = 0;
-  for (let i = 0; i <= k; i++) lower += this.hypergeometricPmfOf(i, n, marked, total);
+  for (let i = 0; i <= k; i++)
+    lower += this.hypergeometricPmfOf(i, n, marked, total);
   if (!Number.isFinite(lower)) return NaN;
   return Math.min(1, Math.max(0, lower));
 }
@@ -1539,7 +1596,9 @@ export function randomBinomialSample(trials, probability) {
     }
     return successes;
   }
-  const value = Math.round(n * p + Math.sqrt(n * p * (1 - p)) * this.randomNormalSample(0, 1));
+  const value = Math.round(
+    n * p + Math.sqrt(n * p * (1 - p)) * this.randomNormalSample(0, 1),
+  );
   return Math.min(n, Math.max(0, value));
 }
 
@@ -1556,7 +1615,10 @@ export function randomPoissonSample(rate) {
     } while (product > limit && count < 1000000);
     return count - 1;
   }
-  return Math.max(0, Math.round(lambda + Math.sqrt(lambda) * this.randomNormalSample(0, 1)));
+  return Math.max(
+    0,
+    Math.round(lambda + Math.sqrt(lambda) * this.randomNormalSample(0, 1)),
+  );
 }
 
 export function randomGeometricSample(probability) {
@@ -1581,7 +1643,10 @@ export function randomHypergeometricSample(drawn, successes, population) {
   const total = Math.trunc(Scratch.Cast.toNumber(population));
   if (!Number.isFinite(total) || total < 1) return 0;
   if (!Number.isFinite(marked) || marked < 0) return 0;
-  const size = Math.min(Math.max(Math.trunc(Number.isFinite(n) ? n : 0), 0), total);
+  const size = Math.min(
+    Math.max(Math.trunc(Number.isFinite(n) ? n : 0), 0),
+    total,
+  );
   let left = total;
   let wins = marked;
   let hits = 0;
@@ -1610,7 +1675,10 @@ export function randomGammaSample(shape, scale) {
   const k = Scratch.Cast.toNumber(shape);
   const theta = Scratch.Cast.toNumber(scale);
   if (!(k > 0) || !(theta > 0)) return 0;
-  if (k < 1) return this.randomGammaSample(1 + k, theta) * Math.pow(Math.random(), 1 / k);
+  if (k < 1)
+    return (
+      this.randomGammaSample(1 + k, theta) * Math.pow(Math.random(), 1 / k)
+    );
   const d = k - 1 / 3;
   const c = 1 / Math.sqrt(9 * d);
   for (let attempt = 0; attempt < 10000; attempt++) {
@@ -1655,7 +1723,9 @@ export function randomLaplaceSample(location, scale) {
   const centre = Scratch.Cast.toNumber(location);
   const b = Scratch.Cast.toNumber(scale);
   const u = Math.random() - 0.5;
-  return u < 0 ? centre + b * Math.log(1 + 2 * u) : centre - b * Math.log(1 - 2 * u);
+  return u < 0
+    ? centre + b * Math.log(1 + 2 * u)
+    : centre - b * Math.log(1 - 2 * u);
 }
 
 export function randomChiSquareSample(degreesOfFreedom) {
@@ -1667,7 +1737,10 @@ export function randomChiSquareSample(degreesOfFreedom) {
 export function randomStudentTSample(degreesOfFreedom) {
   const nu = Math.trunc(Scratch.Cast.toNumber(degreesOfFreedom));
   if (!(nu >= 1) || nu > 10000) return 0;
-  return this.randomNormalSample(0, 1) / Math.sqrt(this.randomChiSquareSample(nu) / nu);
+  return (
+    this.randomNormalSample(0, 1) /
+    Math.sqrt(this.randomChiSquareSample(nu) / nu)
+  );
 }
 
 export function shuffledValues(values) {
@@ -1692,7 +1765,8 @@ export function arithmeticSequenceOf(count, first, difference) {
   const start = Scratch.Cast.toNumber(first);
   const step = Scratch.Cast.toNumber(difference);
   const result = [];
-  if (!(terms > 0) || !Number.isFinite(start) || !Number.isFinite(step)) return result;
+  if (!(terms > 0) || !Number.isFinite(start) || !Number.isFinite(step))
+    return result;
   for (let i = 0; i < terms; i++) result.push(start + step * i);
   return result;
 }
@@ -1702,7 +1776,8 @@ export function geometricSequenceOf(count, first, ratio) {
   const start = Scratch.Cast.toNumber(first);
   const factor = Scratch.Cast.toNumber(ratio);
   const result = [];
-  if (!(terms > 0) || !Number.isFinite(start) || !Number.isFinite(factor)) return result;
+  if (!(terms > 0) || !Number.isFinite(start) || !Number.isFinite(factor))
+    return result;
   let current = start;
   for (let i = 0; i < terms; i++) {
     result.push(current);
@@ -1730,7 +1805,8 @@ export function fibonacciSequenceOf(count) {
 
 export function differencesOf(values) {
   const result = [];
-  for (let i = 1; i < values.length; i++) result.push(values[i] - values[i - 1]);
+  for (let i = 1; i < values.length; i++)
+    result.push(values[i] - values[i - 1]);
   return result;
 }
 
@@ -1814,7 +1890,9 @@ export function histogramCountsOf(values, bins) {
 
 export function rootMeanSquareOf(values) {
   if (values.length === 0) return NaN;
-  return Math.sqrt(values.reduce((sum, value) => sum + value * value, 0) / values.length);
+  return Math.sqrt(
+    values.reduce((sum, value) => sum + value * value, 0) / values.length,
+  );
 }
 
 export function skewnessOf(values) {
@@ -1890,7 +1968,8 @@ export function solveLinearSystem(matrix, right) {
       if (r === column) continue;
       const factor = rows[r][column];
       if (factor === 0) continue;
-      for (let c = column; c <= size; c++) rows[r][c] -= factor * rows[column][c];
+      for (let c = column; c <= size; c++)
+        rows[r][c] -= factor * rows[column][c];
     }
   }
   return rows.map((row) => row[size]);
@@ -1925,7 +2004,11 @@ export function continuedFractionOf(value, terms) {
   const limit = Math.max(1, Math.trunc(Scratch.Cast.toNumber(terms)));
   const result = [];
   let remaining = x;
-  for (let i = 0; i < limit && remaining > 0 && Number.isFinite(remaining); i++) {
+  for (
+    let i = 0;
+    i < limit && remaining > 0 && Number.isFinite(remaining);
+    i++
+  ) {
     const whole = Math.floor(remaining);
     result.push(whole);
     remaining = 1 / (remaining - whole);
@@ -2031,7 +2114,11 @@ export function numberToWordsOf(value) {
     remaining = Math.floor(remaining / 1000);
     if (chunk > 0) {
       const words = this.threeDigitWords(chunk);
-      groups.push(words === "" ? "" : `${words}${SCALE_WORDS[scale] ? ` ${SCALE_WORDS[scale]}` : ""}`);
+      groups.push(
+        words === ""
+          ? ""
+          : `${words}${SCALE_WORDS[scale] ? ` ${SCALE_WORDS[scale]}` : ""}`,
+      );
     }
     scale += 1;
     if (scale >= SCALE_WORDS.length) break;
@@ -2051,7 +2138,6 @@ export function unitEntryOf(key) {
   return entry === undefined ? null : entry;
 }
 
-
 export function convertBetween(value, fromKey, toKey) {
   const amount = Scratch.Cast.toNumber(value);
   const from = this.unitEntryOf(fromKey);
@@ -2065,15 +2151,16 @@ export function convertBetween(value, fromKey, toKey) {
   if (from[0] === "fuel") {
     let perLitre;
     if (fromKey === "milesPerGallonUS") perLitre = amount * 0.4251437074976;
-    else if (fromKey === "litresPer100Kilometres") perLitre = amount === 0 ? Infinity : 100 / amount;
+    else if (fromKey === "litresPer100Kilometres")
+      perLitre = amount === 0 ? Infinity : 100 / amount;
     else perLitre = amount;
     if (toKey === "milesPerGallonUS") return perLitre / 0.4251437074976;
-    if (toKey === "litresPer100Kilometres") return perLitre === 0 ? Infinity : 100 / perLitre;
+    if (toKey === "litresPer100Kilometres")
+      return perLitre === 0 ? Infinity : 100 / perLitre;
     return perLitre;
   }
   return (amount * from[1]) / to[1];
 }
-
 
 export function baseSymbolFor(dimension) {
   const table = {
@@ -2102,7 +2189,6 @@ export function baseSymbolFor(dimension) {
   return table[dimension] === undefined ? "" : table[dimension];
 }
 
-
 export function baseUnitKeyFor(dimension) {
   const table = {
     mass: "kilogram",
@@ -2129,4 +2215,3 @@ export function baseUnitKeyFor(dimension) {
   };
   return table[dimension] === undefined ? "" : table[dimension];
 }
-

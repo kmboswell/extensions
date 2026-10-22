@@ -6,7 +6,7 @@
   "author": "mc20000-01",
   "type": "module",
   "devDependencies": {
-    "@twext/twext": "^1.1.0",
+    "@twextjs/twext": "^2.2.0",
     "scratch-vm": "^5.0.300"
   },
   "scripts": {
