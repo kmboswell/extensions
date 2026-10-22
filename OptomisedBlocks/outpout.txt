@@ -1,0 +1,31 @@
+exts/OptomisedBlocks on  main [!?] via  v24.21.0 took 33s 
+❯ npm install -g @twextjs/twext@2.2.0 --force
+npm warn using --force Recommended protections disabled.
+
+changed 19 packages in 1s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+exts/OptomisedBlocks on  main [!?] via  v24.21.0 
+❯ twext -v
+Twext 1.2.1
+
+exts/OptomisedBlocks on  main [!?] via  v24.21.0 
+❯ micro outpout.txt
+
+exts/OptomisedBlocks on  main [!?] via  v24.21.0 took 25s 
+❯ # 1. Remove the old system-wide binary that's overriding NVM
+sudo rm -f /usr/bin/twext
+
+# 2. Verify that twext now points to your NVM directory
+which twext
+/home/sandisk/.nvm/versions/node/v24.21.0/bin/twext
+
+exts/OptomisedBlocks on  main [!?] via  v24.21.0 
+❯ # 3. Check the version again
+twext -v
+bash: /usr/bin/twext: No such file or directory
+
+exts/OptomisedBlocks on  main [!?] via  v24.21.0 
+❯ 

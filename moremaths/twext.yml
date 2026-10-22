@@ -1,0 +1,6702 @@
+name: "moremaths"
+version: "0.1.0"
+description: "advanced maths blocks for TurboWarp and MistWarp"
+author: "sandisk/mc20000 jamie@sdisk.us"
+license: "Apache-2.0"
+
+entryPoint: "src/index.js"
+outputPath: "../dist/moremaths.js"
+
+extension:
+  id: "moremaths"
+  name: "More Maths"
+  className: "MoreMaths"
+  color1: "#0aa2c0"
+  color2: "#0886a0"
+  color3: "#076a7e"
+  menus:
+    constant:
+      acceptReporters: true
+      items:
+        - text: "pi (3.14159...)"
+          value: "pi"
+        - text: "e (2.71828...)"
+          value: "e"
+        - text: "tau (2π)"
+          value: "tau"
+        - text: "phi (golden ratio)"
+          value: "phi"
+        - text: "square root of 2"
+          value: "sqrt2"
+        - text: "square root of 3"
+          value: "sqrt3"
+        - text: "square root of 5"
+          value: "sqrt5"
+        - text: "square root of 2π"
+          value: "sqrt2pi"
+        - text: "Gelfond's constant (e^π)"
+          value: "gelfond"
+        - text: "Euler-Mascheroni constant (γ)"
+          value: "eulerGamma"
+        - text: "Catalan's constant"
+          value: "catalan"
+        - text: "Apéry's constant (ζ(3))"
+          value: "apery"
+        - text: "ζ(2) = π²/6"
+          value: "zeta2"
+        - text: "ln 2"
+          value: "ln2"
+        - text: "ln 10"
+          value: "ln10"
+        - text: "plastic constant"
+          value: "plastic"
+        - text: "golden angle (degrees)"
+          value: "goldenAngle"
+    unit:
+      acceptReporters: true
+      items:
+        - text: "degrees"
+          value: "degrees"
+        - text: "radians"
+          value: "radians"
+        - text: "turns"
+          value: "turns"
+        - text: "gradians"
+          value: "gradians"
+    list:
+      acceptReporters: true
+      items: "calcListMenuItems"
+    massUnit:
+      acceptReporters: true
+      items:
+        - text: "kilogram (kg)"
+          value: "kilogram"
+        - text: "gram (g)"
+          value: "gram"
+        - text: "milligram (mg)"
+          value: "milligram"
+        - text: "microgram (µg)"
+          value: "microgram"
+        - text: "nanogram (ng)"
+          value: "nanogram"
+        - text: "metric tonne (t)"
+          value: "metricTonne"
+        - text: "pound (lb)"
+          value: "pound"
+        - text: "ounce (oz)"
+          value: "ounce"
+        - text: "stone (st)"
+          value: "stone"
+        - text: "short ton (ton)"
+          value: "shortTon"
+        - text: "long ton (long ton)"
+          value: "longTon"
+        - text: "hundredweight (cwt)"
+          value: "hundredweight"
+        - text: "carat (ct)"
+          value: "carat"
+        - text: "grain (gr)"
+          value: "grain"
+        - text: "dram (dr)"
+          value: "dram"
+        - text: "slug (slug)"
+          value: "slug"
+        - text: "atomic mass unit (u)"
+          value: "atomicMassUnit"
+        - text: "Earth mass (M⊕)"
+          value: "earthMass"
+        - text: "Jupiter mass (M♃)"
+          value: "jupiterMass"
+        - text: "solar mass (M☉)"
+          value: "solarMass"
+    lengthUnit:
+      acceptReporters: true
+      items:
+        - text: "metre (m)"
+          value: "metre"
+        - text: "kilometre (km)"
+          value: "kilometre"
+        - text: "centimetre (cm)"
+          value: "centimetre"
+        - text: "millimetre (mm)"
+          value: "millimetre"
+        - text: "micrometre (µm)"
+          value: "micrometre"
+        - text: "nanometre (nm)"
+          value: "nanometre"
+        - text: "picometre (pm)"
+          value: "picometre"
+        - text: "inch (in)"
+          value: "inch"
+        - text: "foot (ft)"
+          value: "foot"
+        - text: "yard (yd)"
+          value: "yard"
+        - text: "mile (mi)"
+          value: "mile"
+        - text: "nautical mile (nmi)"
+          value: "nauticalMile"
+        - text: "furlong (fur)"
+          value: "furlong"
+        - text: "chain (ch)"
+          value: "chain"
+        - text: "rod (rd)"
+          value: "rod"
+        - text: "hand (hand)"
+          value: "hand"
+        - text: "fathom (fathom)"
+          value: "fathom"
+        - text: "mil (mil)"
+          value: "mil"
+        - text: "light year (ly)"
+          value: "lightYear"
+        - text: "astronomical unit (au)"
+          value: "astronomicalUnit"
+        - text: "parsec (pc)"
+          value: "parsec"
+        - text: "ångström (Å)"
+          value: "angstrom"
+        - text: "fermi (fm)"
+          value: "fermi"
+        - text: "Planck length (ℓP)"
+          value: "planckLength"
+    areaUnit:
+      acceptReporters: true
+      items:
+        - text: "square metre (m²)"
+          value: "squareMetre"
+        - text: "square kilometre (km²)"
+          value: "squareKilometre"
+        - text: "square centimetre (cm²)"
+          value: "squareCentimetre"
+        - text: "square millimetre (mm²)"
+          value: "squareMillimetre"
+        - text: "hectare (ha)"
+          value: "hectare"
+        - text: "acre (acre)"
+          value: "acre"
+        - text: "square mile (mi²)"
+          value: "squareMile"
+        - text: "square foot (ft²)"
+          value: "squareFoot"
+        - text: "square inch (in²)"
+          value: "squareInch"
+        - text: "square yard (yd²)"
+          value: "squareYard"
+        - text: "barn (b)"
+          value: "barn"
+    volumeUnit:
+      acceptReporters: true
+      items:
+        - text: "cubic metre (m³)"
+          value: "cubicMetre"
+        - text: "litre (L)"
+          value: "litre"
+        - text: "millilitre (mL)"
+          value: "millilitre"
+        - text: "cubic centimetre (cm³)"
+          value: "cubicCentimetre"
+        - text: "cubic kilometre (km³)"
+          value: "cubicKilometre"
+        - text: "cubic foot (ft³)"
+          value: "cubicFoot"
+        - text: "cubic inch (in³)"
+          value: "cubicInch"
+        - text: "US gallon (gal (US))"
+          value: "gallonUS"
+        - text: "imperial gallon (gal (imp))"
+          value: "gallonImperial"
+        - text: "quart (qt)"
+          value: "quart"
+        - text: "pint (pt)"
+          value: "pint"
+        - text: "cup (cup)"
+          value: "cup"
+        - text: "fluid ounce (fl oz)"
+          value: "fluidOunce"
+        - text: "tablespoon (tbsp)"
+          value: "tablespoon"
+        - text: "teaspoon (tsp)"
+          value: "teaspoon"
+        - text: "oil barrel (bbl)"
+          value: "barrel"
+        - text: "bushel (bu)"
+          value: "bushel"
+    timeUnit:
+      acceptReporters: true
+      items:
+        - text: "second (s)"
+          value: "second"
+        - text: "millisecond (ms)"
+          value: "millisecond"
+        - text: "microsecond (µs)"
+          value: "microsecond"
+        - text: "nanosecond (ns)"
+          value: "nanosecond"
+        - text: "minute (min)"
+          value: "minute"
+        - text: "hour (h)"
+          value: "hour"
+        - text: "day (d)"
+          value: "day"
+        - text: "week (wk)"
+          value: "week"
+        - text: "fortnight (fortnight)"
+          value: "fortnight"
+        - text: "month (mo)"
+          value: "month"
+        - text: "year (yr)"
+          value: "year"
+        - text: "decade (decade)"
+          value: "decade"
+        - text: "century (century)"
+          value: "century"
+        - text: "millennium (millennium)"
+          value: "millennium"
+        - text: "shake (shake)"
+          value: "shake"
+    speedUnit:
+      acceptReporters: true
+      items:
+        - text: "metre per second (m/s)"
+          value: "metrePerSecond"
+        - text: "kilometre per hour (km/h)"
+          value: "kilometrePerHour"
+        - text: "mile per hour (mph)"
+          value: "milePerHour"
+        - text: "foot per second (ft/s)"
+          value: "footPerSecond"
+        - text: "kilometre per second (km/s)"
+          value: "kilometrePerSecond"
+        - text: "mile per second (mi/s)"
+          value: "milePerSecond"
+        - text: "knot (kn)"
+          value: "knot"
+        - text: "Mach (at sea level) (Mach)"
+          value: "mach"
+        - text: "speed of light (c)"
+          value: "speedOfLight"
+    accelerationUnit:
+      acceptReporters: true
+      items:
+        - text: "metre per second squared (m/s²)"
+          value: "metrePerSecondSquared"
+        - text: "standard gravity (g₀)"
+          value: "standardGravity"
+        - text: "gal (Gal)"
+          value: "galileo"
+        - text: "foot per second squared (ft/s²)"
+          value: "footPerSecondSquared"
+    temperatureUnit:
+      acceptReporters: true
+      items:
+        - text: "kelvin (K)"
+          value: "kelvin"
+        - text: "degree Celsius (°C)"
+          value: "celsius"
+        - text: "degree Fahrenheit (°F)"
+          value: "fahrenheit"
+        - text: "degree Rankine (°R)"
+          value: "rankine"
+    pressureUnit:
+      acceptReporters: true
+      items:
+        - text: "pascal (Pa)"
+          value: "pascal"
+        - text: "kilopascal (kPa)"
+          value: "kilopascal"
+        - text: "megapascal (MPa)"
+          value: "megapascal"
+        - text: "hectopascal (hPa)"
+          value: "hectopascal"
+        - text: "bar (bar)"
+          value: "bar"
+        - text: "millibar (mbar)"
+          value: "millibar"
+        - text: "atmosphere (atm)"
+          value: "atmosphere"
+        - text: "torr (Torr)"
+          value: "torr"
+        - text: "millimetre of mercury (mmHg)"
+          value: "millimetreOfMercury"
+        - text: "inch of mercury (inHg)"
+          value: "inchOfMercury"
+        - text: "pound per square inch (psi)"
+          value: "psi"
+        - text: "kilopound per square inch (ksi)"
+          value: "kilopoundPerSquareInch"
+        - text: "dyne per square centimetre (dyn/cm²)"
+          value: "dynePerSquareCentimetre"
+    energyUnit:
+      acceptReporters: true
+      items:
+        - text: "joule (J)"
+          value: "joule"
+        - text: "kilojoule (kJ)"
+          value: "kilojoule"
+        - text: "megajoule (MJ)"
+          value: "megajoule"
+        - text: "gigajoule (GJ)"
+          value: "gigajoule"
+        - text: "watt hour (Wh)"
+          value: "wattHour"
+        - text: "kilowatt hour (kWh)"
+          value: "kilowattHour"
+        - text: "calorie (cal)"
+          value: "calorie"
+        - text: "kilocalorie (kcal)"
+          value: "kilocalorie"
+        - text: "British thermal unit (BTU)"
+          value: "btu"
+        - text: "erg (erg)"
+          value: "erg"
+        - text: "foot pound (ft·lb)"
+          value: "footPound"
+        - text: "electron volt (eV)"
+          value: "electronVolt"
+        - text: "kiloelectron volt (keV)"
+          value: "kiloelectronVolt"
+        - text: "megaelectron volt (MeV)"
+          value: "megaelectronVolt"
+        - text: "gigaelectron volt (GeV)"
+          value: "gigaelectronVolt"
+        - text: "kilotonne of TNT (kt)"
+          value: "kilotonTnt"
+        - text: "megatonne of TNT (Mt)"
+          value: "megatonTnt"
+    powerUnit:
+      acceptReporters: true
+      items:
+        - text: "watt (W)"
+          value: "watt"
+        - text: "kilowatt (kW)"
+          value: "kilowatt"
+        - text: "megawatt (MW)"
+          value: "megawatt"
+        - text: "gigawatt (GW)"
+          value: "gigawatt"
+        - text: "mechanical horsepower (hp)"
+          value: "horsepower"
+        - text: "metric horsepower (PS)"
+          value: "metricHorsepower"
+        - text: "BTU per hour (BTU/h)"
+          value: "btuPerHour"
+        - text: "ton of refrigeration (TR)"
+          value: "tonOfRefrigeration"
+        - text: "calorie per second (cal/s)"
+          value: "caloriePerSecond"
+    forceUnit:
+      acceptReporters: true
+      items:
+        - text: "newton (N)"
+          value: "newton"
+        - text: "kilonewton (kN)"
+          value: "kilonewton"
+        - text: "dyne (dyn)"
+          value: "dyne"
+        - text: "pound force (lbf)"
+          value: "poundForce"
+        - text: "kilogram force (kgf)"
+          value: "kilogramForce"
+        - text: "kip (kip)"
+          value: "kip"
+        - text: "poundal (pdl)"
+          value: "poundal"
+    dataUnit:
+      acceptReporters: true
+      items:
+        - text: "bit (bit)"
+          value: "bit"
+        - text: "nibble (nibble)"
+          value: "nibble"
+        - text: "byte (B)"
+          value: "byte"
+        - text: "kilobit (kbit)"
+          value: "kilobit"
+        - text: "kibibit (Kibit)"
+          value: "kibibit"
+        - text: "kilobyte (kB)"
+          value: "kilobyte"
+        - text: "kibibyte (KiB)"
+          value: "kibibyte"
+        - text: "megabit (Mbit)"
+          value: "megabit"
+        - text: "megabyte (MB)"
+          value: "megabyte"
+        - text: "mebibyte (MiB)"
+          value: "mebibyte"
+        - text: "gigabit (Gbit)"
+          value: "gigabit"
+        - text: "gigabyte (GB)"
+          value: "gigabyte"
+        - text: "gibibyte (GiB)"
+          value: "gibibyte"
+        - text: "terabit (Tbit)"
+          value: "terabit"
+        - text: "terabyte (TB)"
+          value: "terabyte"
+        - text: "tebibyte (TiB)"
+          value: "tebibyte"
+        - text: "petabyte (PB)"
+          value: "petabyte"
+    frequencyUnit:
+      acceptReporters: true
+      items:
+        - text: "hertz (Hz)"
+          value: "hertz"
+        - text: "kilohertz (kHz)"
+          value: "kilohertz"
+        - text: "megahertz (MHz)"
+          value: "megahertz"
+        - text: "gigahertz (GHz)"
+          value: "gigahertz"
+        - text: "revolutions per minute (rpm)"
+          value: "revolutionsPerMinute"
+        - text: "radian per second (rad/s)"
+          value: "radiansPerSecond"
+    densityUnit:
+      acceptReporters: true
+      items:
+        - text: "kilogram per cubic metre (kg/m³)"
+          value: "kilogramPerCubicMetre"
+        - text: "gram per cubic centimetre (g/cm³)"
+          value: "gramPerCubicCentimetre"
+        - text: "kilogram per litre (kg/L)"
+          value: "kilogramPerLitre"
+        - text: "gram per litre (g/L)"
+          value: "gramPerLitre"
+        - text: "milligram per litre (mg/L)"
+          value: "milligramPerLitre"
+        - text: "pound per cubic foot (lb/ft³)"
+          value: "poundPerCubicFoot"
+        - text: "pound per cubic inch (lb/in³)"
+          value: "poundPerCubicInch"
+        - text: "ounce per cubic inch (oz/in³)"
+          value: "ouncePerCubicInch"
+    angleUnit:
+      acceptReporters: true
+      items:
+        - text: "degree (°)"
+          value: "degrees"
+        - text: "radian (rad)"
+          value: "radians"
+        - text: "milliradian (mrad)"
+          value: "milliradians"
+        - text: "turn (turn)"
+          value: "turns"
+        - text: "gradian (grad)"
+          value: "gradians"
+        - text: "arcminute (′)"
+          value: "arcminutes"
+        - text: "arcsecond (″)"
+          value: "arcseconds"
+    fuelUnit:
+      acceptReporters: true
+      items:
+        - text: "US miles per gallon (mpg (US))"
+          value: "milesPerGallonUS"
+        - text: "kilometres per litre (km/L)"
+          value: "kilometresPerLitre"
+        - text: "litres per 100 kilometres (L/100km)"
+          value: "litresPer100Kilometres"
+    flowUnit:
+      acceptReporters: true
+      items:
+        - text: "cubic metre per second (m³/s)"
+          value: "cubicMetrePerSecond"
+        - text: "cubic metre per hour (m³/h)"
+          value: "cubicMetrePerHour"
+        - text: "litre per second (L/s)"
+          value: "litrePerSecond"
+        - text: "litre per minute (L/min)"
+          value: "litrePerMinute"
+        - text: "US gallon per minute (gal/min)"
+          value: "gallonPerMinute"
+        - text: "cubic foot per minute (ft³/min)"
+          value: "cubicFootPerMinute"
+    torqueUnit:
+      acceptReporters: true
+      items:
+        - text: "newton metre (N·m)"
+          value: "newtonMetre"
+        - text: "kilonewton metre (kN·m)"
+          value: "kilonewtonMetre"
+        - text: "pound foot (ft·lb)"
+          value: "poundFoot"
+        - text: "kilopond metre (kp·m)"
+          value: "kilopondMetre"
+    activityUnit:
+      acceptReporters: true
+      items:
+        - text: "becquerel (Bq)"
+          value: "becquerel"
+        - text: "kilobecquerel (kBq)"
+          value: "kilobecquerel"
+        - text: "megabecquerel (MBq)"
+          value: "megabecquerel"
+        - text: "gigabecquerel (GBq)"
+          value: "gigabecquerel"
+        - text: "curie (Ci)"
+          value: "curie"
+        - text: "rutherford (Rd)"
+          value: "rutherford"
+    doseUnit:
+      acceptReporters: true
+      items:
+        - text: "sievert (Sv)"
+          value: "sievert"
+        - text: "millisievert (mSv)"
+          value: "millisievert"
+        - text: "microsievert (µSv)"
+          value: "microsievert"
+        - text: "gray (Gy)"
+          value: "gray"
+        - text: "milligray (mGy)"
+          value: "milligray"
+        - text: "rad (rad)"
+          value: "rad"
+        - text: "rem (rem)"
+          value: "rem"
+    anyUnit:
+      acceptReporters: true
+      items:
+        - text: "kilogram (kg) [mass]"
+          value: "kilogram"
+        - text: "gram (g) [mass]"
+          value: "gram"
+        - text: "milligram (mg) [mass]"
+          value: "milligram"
+        - text: "microgram (µg) [mass]"
+          value: "microgram"
+        - text: "nanogram (ng) [mass]"
+          value: "nanogram"
+        - text: "metric tonne (t) [mass]"
+          value: "metricTonne"
+        - text: "pound (lb) [mass]"
+          value: "pound"
+        - text: "ounce (oz) [mass]"
+          value: "ounce"
+        - text: "stone (st) [mass]"
+          value: "stone"
+        - text: "short ton (ton) [mass]"
+          value: "shortTon"
+        - text: "long ton (long ton) [mass]"
+          value: "longTon"
+        - text: "hundredweight (cwt) [mass]"
+          value: "hundredweight"
+        - text: "carat (ct) [mass]"
+          value: "carat"
+        - text: "grain (gr) [mass]"
+          value: "grain"
+        - text: "dram (dr) [mass]"
+          value: "dram"
+        - text: "slug (slug) [mass]"
+          value: "slug"
+        - text: "atomic mass unit (u) [mass]"
+          value: "atomicMassUnit"
+        - text: "Earth mass (M⊕) [mass]"
+          value: "earthMass"
+        - text: "Jupiter mass (M♃) [mass]"
+          value: "jupiterMass"
+        - text: "solar mass (M☉) [mass]"
+          value: "solarMass"
+        - text: "metre (m) [length]"
+          value: "metre"
+        - text: "kilometre (km) [length]"
+          value: "kilometre"
+        - text: "centimetre (cm) [length]"
+          value: "centimetre"
+        - text: "millimetre (mm) [length]"
+          value: "millimetre"
+        - text: "micrometre (µm) [length]"
+          value: "micrometre"
+        - text: "nanometre (nm) [length]"
+          value: "nanometre"
+        - text: "picometre (pm) [length]"
+          value: "picometre"
+        - text: "inch (in) [length]"
+          value: "inch"
+        - text: "foot (ft) [length]"
+          value: "foot"
+        - text: "yard (yd) [length]"
+          value: "yard"
+        - text: "mile (mi) [length]"
+          value: "mile"
+        - text: "nautical mile (nmi) [length]"
+          value: "nauticalMile"
+        - text: "furlong (fur) [length]"
+          value: "furlong"
+        - text: "chain (ch) [length]"
+          value: "chain"
+        - text: "rod (rd) [length]"
+          value: "rod"
+        - text: "hand (hand) [length]"
+          value: "hand"
+        - text: "fathom (fathom) [length]"
+          value: "fathom"
+        - text: "mil (mil) [length]"
+          value: "mil"
+        - text: "light year (ly) [length]"
+          value: "lightYear"
+        - text: "astronomical unit (au) [length]"
+          value: "astronomicalUnit"
+        - text: "parsec (pc) [length]"
+          value: "parsec"
+        - text: "ångström (Å) [length]"
+          value: "angstrom"
+        - text: "fermi (fm) [length]"
+          value: "fermi"
+        - text: "Planck length (ℓP) [length]"
+          value: "planckLength"
+        - text: "square metre (m²) [area]"
+          value: "squareMetre"
+        - text: "square kilometre (km²) [area]"
+          value: "squareKilometre"
+        - text: "square centimetre (cm²) [area]"
+          value: "squareCentimetre"
+        - text: "square millimetre (mm²) [area]"
+          value: "squareMillimetre"
+        - text: "hectare (ha) [area]"
+          value: "hectare"
+        - text: "acre (acre) [area]"
+          value: "acre"
+        - text: "square mile (mi²) [area]"
+          value: "squareMile"
+        - text: "square foot (ft²) [area]"
+          value: "squareFoot"
+        - text: "square inch (in²) [area]"
+          value: "squareInch"
+        - text: "square yard (yd²) [area]"
+          value: "squareYard"
+        - text: "barn (b) [area]"
+          value: "barn"
+        - text: "cubic metre (m³) [volume]"
+          value: "cubicMetre"
+        - text: "litre (L) [volume]"
+          value: "litre"
+        - text: "millilitre (mL) [volume]"
+          value: "millilitre"
+        - text: "cubic centimetre (cm³) [volume]"
+          value: "cubicCentimetre"
+        - text: "cubic kilometre (km³) [volume]"
+          value: "cubicKilometre"
+        - text: "cubic foot (ft³) [volume]"
+          value: "cubicFoot"
+        - text: "cubic inch (in³) [volume]"
+          value: "cubicInch"
+        - text: "US gallon (gal (US)) [volume]"
+          value: "gallonUS"
+        - text: "imperial gallon (gal (imp)) [volume]"
+          value: "gallonImperial"
+        - text: "quart (qt) [volume]"
+          value: "quart"
+        - text: "pint (pt) [volume]"
+          value: "pint"
+        - text: "cup (cup) [volume]"
+          value: "cup"
+        - text: "fluid ounce (fl oz) [volume]"
+          value: "fluidOunce"
+        - text: "tablespoon (tbsp) [volume]"
+          value: "tablespoon"
+        - text: "teaspoon (tsp) [volume]"
+          value: "teaspoon"
+        - text: "oil barrel (bbl) [volume]"
+          value: "barrel"
+        - text: "bushel (bu) [volume]"
+          value: "bushel"
+        - text: "second (s) [time]"
+          value: "second"
+        - text: "millisecond (ms) [time]"
+          value: "millisecond"
+        - text: "microsecond (µs) [time]"
+          value: "microsecond"
+        - text: "nanosecond (ns) [time]"
+          value: "nanosecond"
+        - text: "minute (min) [time]"
+          value: "minute"
+        - text: "hour (h) [time]"
+          value: "hour"
+        - text: "day (d) [time]"
+          value: "day"
+        - text: "week (wk) [time]"
+          value: "week"
+        - text: "fortnight (fortnight) [time]"
+          value: "fortnight"
+        - text: "month (mo) [time]"
+          value: "month"
+        - text: "year (yr) [time]"
+          value: "year"
+        - text: "decade (decade) [time]"
+          value: "decade"
+        - text: "century (century) [time]"
+          value: "century"
+        - text: "millennium (millennium) [time]"
+          value: "millennium"
+        - text: "shake (shake) [time]"
+          value: "shake"
+        - text: "metre per second (m/s) [speed]"
+          value: "metrePerSecond"
+        - text: "kilometre per hour (km/h) [speed]"
+          value: "kilometrePerHour"
+        - text: "mile per hour (mph) [speed]"
+          value: "milePerHour"
+        - text: "foot per second (ft/s) [speed]"
+          value: "footPerSecond"
+        - text: "kilometre per second (km/s) [speed]"
+          value: "kilometrePerSecond"
+        - text: "mile per second (mi/s) [speed]"
+          value: "milePerSecond"
+        - text: "knot (kn) [speed]"
+          value: "knot"
+        - text: "Mach (at sea level) (Mach) [speed]"
+          value: "mach"
+        - text: "speed of light (c) [speed]"
+          value: "speedOfLight"
+        - text: "metre per second squared (m/s²) [acceleration]"
+          value: "metrePerSecondSquared"
+        - text: "standard gravity (g₀) [acceleration]"
+          value: "standardGravity"
+        - text: "gal (Gal) [acceleration]"
+          value: "galileo"
+        - text: "foot per second squared (ft/s²) [acceleration]"
+          value: "footPerSecondSquared"
+        - text: "kelvin (K) [temperature]"
+          value: "kelvin"
+        - text: "degree Celsius (°C) [temperature]"
+          value: "celsius"
+        - text: "degree Fahrenheit (°F) [temperature]"
+          value: "fahrenheit"
+        - text: "degree Rankine (°R) [temperature]"
+          value: "rankine"
+        - text: "pascal (Pa) [pressure]"
+          value: "pascal"
+        - text: "kilopascal (kPa) [pressure]"
+          value: "kilopascal"
+        - text: "megapascal (MPa) [pressure]"
+          value: "megapascal"
+        - text: "hectopascal (hPa) [pressure]"
+          value: "hectopascal"
+        - text: "bar (bar) [pressure]"
+          value: "bar"
+        - text: "millibar (mbar) [pressure]"
+          value: "millibar"
+        - text: "atmosphere (atm) [pressure]"
+          value: "atmosphere"
+        - text: "torr (Torr) [pressure]"
+          value: "torr"
+        - text: "millimetre of mercury (mmHg) [pressure]"
+          value: "millimetreOfMercury"
+        - text: "inch of mercury (inHg) [pressure]"
+          value: "inchOfMercury"
+        - text: "pound per square inch (psi) [pressure]"
+          value: "psi"
+        - text: "kilopound per square inch (ksi) [pressure]"
+          value: "kilopoundPerSquareInch"
+        - text: "dyne per square centimetre (dyn/cm²) [pressure]"
+          value: "dynePerSquareCentimetre"
+        - text: "joule (J) [energy]"
+          value: "joule"
+        - text: "kilojoule (kJ) [energy]"
+          value: "kilojoule"
+        - text: "megajoule (MJ) [energy]"
+          value: "megajoule"
+        - text: "gigajoule (GJ) [energy]"
+          value: "gigajoule"
+        - text: "watt hour (Wh) [energy]"
+          value: "wattHour"
+        - text: "kilowatt hour (kWh) [energy]"
+          value: "kilowattHour"
+        - text: "calorie (cal) [energy]"
+          value: "calorie"
+        - text: "kilocalorie (kcal) [energy]"
+          value: "kilocalorie"
+        - text: "British thermal unit (BTU) [energy]"
+          value: "btu"
+        - text: "erg (erg) [energy]"
+          value: "erg"
+        - text: "foot pound (ft·lb) [energy]"
+          value: "footPound"
+        - text: "electron volt (eV) [energy]"
+          value: "electronVolt"
+        - text: "kiloelectron volt (keV) [energy]"
+          value: "kiloelectronVolt"
+        - text: "megaelectron volt (MeV) [energy]"
+          value: "megaelectronVolt"
+        - text: "gigaelectron volt (GeV) [energy]"
+          value: "gigaelectronVolt"
+        - text: "kilotonne of TNT (kt) [energy]"
+          value: "kilotonTnt"
+        - text: "megatonne of TNT (Mt) [energy]"
+          value: "megatonTnt"
+        - text: "watt (W) [power]"
+          value: "watt"
+        - text: "kilowatt (kW) [power]"
+          value: "kilowatt"
+        - text: "megawatt (MW) [power]"
+          value: "megawatt"
+        - text: "gigawatt (GW) [power]"
+          value: "gigawatt"
+        - text: "mechanical horsepower (hp) [power]"
+          value: "horsepower"
+        - text: "metric horsepower (PS) [power]"
+          value: "metricHorsepower"
+        - text: "BTU per hour (BTU/h) [power]"
+          value: "btuPerHour"
+        - text: "ton of refrigeration (TR) [power]"
+          value: "tonOfRefrigeration"
+        - text: "calorie per second (cal/s) [power]"
+          value: "caloriePerSecond"
+        - text: "newton (N) [force]"
+          value: "newton"
+        - text: "kilonewton (kN) [force]"
+          value: "kilonewton"
+        - text: "dyne (dyn) [force]"
+          value: "dyne"
+        - text: "pound force (lbf) [force]"
+          value: "poundForce"
+        - text: "kilogram force (kgf) [force]"
+          value: "kilogramForce"
+        - text: "kip (kip) [force]"
+          value: "kip"
+        - text: "poundal (pdl) [force]"
+          value: "poundal"
+        - text: "bit (bit) [data size]"
+          value: "bit"
+        - text: "nibble (nibble) [data size]"
+          value: "nibble"
+        - text: "byte (B) [data size]"
+          value: "byte"
+        - text: "kilobit (kbit) [data size]"
+          value: "kilobit"
+        - text: "kibibit (Kibit) [data size]"
+          value: "kibibit"
+        - text: "kilobyte (kB) [data size]"
+          value: "kilobyte"
+        - text: "kibibyte (KiB) [data size]"
+          value: "kibibyte"
+        - text: "megabit (Mbit) [data size]"
+          value: "megabit"
+        - text: "megabyte (MB) [data size]"
+          value: "megabyte"
+        - text: "mebibyte (MiB) [data size]"
+          value: "mebibyte"
+        - text: "gigabit (Gbit) [data size]"
+          value: "gigabit"
+        - text: "gigabyte (GB) [data size]"
+          value: "gigabyte"
+        - text: "gibibyte (GiB) [data size]"
+          value: "gibibyte"
+        - text: "terabit (Tbit) [data size]"
+          value: "terabit"
+        - text: "terabyte (TB) [data size]"
+          value: "terabyte"
+        - text: "tebibyte (TiB) [data size]"
+          value: "tebibyte"
+        - text: "petabyte (PB) [data size]"
+          value: "petabyte"
+        - text: "hertz (Hz) [frequency]"
+          value: "hertz"
+        - text: "kilohertz (kHz) [frequency]"
+          value: "kilohertz"
+        - text: "megahertz (MHz) [frequency]"
+          value: "megahertz"
+        - text: "gigahertz (GHz) [frequency]"
+          value: "gigahertz"
+        - text: "revolutions per minute (rpm) [frequency]"
+          value: "revolutionsPerMinute"
+        - text: "radian per second (rad/s) [frequency]"
+          value: "radiansPerSecond"
+        - text: "kilogram per cubic metre (kg/m³) [density]"
+          value: "kilogramPerCubicMetre"
+        - text: "gram per cubic centimetre (g/cm³) [density]"
+          value: "gramPerCubicCentimetre"
+        - text: "kilogram per litre (kg/L) [density]"
+          value: "kilogramPerLitre"
+        - text: "gram per litre (g/L) [density]"
+          value: "gramPerLitre"
+        - text: "milligram per litre (mg/L) [density]"
+          value: "milligramPerLitre"
+        - text: "pound per cubic foot (lb/ft³) [density]"
+          value: "poundPerCubicFoot"
+        - text: "pound per cubic inch (lb/in³) [density]"
+          value: "poundPerCubicInch"
+        - text: "ounce per cubic inch (oz/in³) [density]"
+          value: "ouncePerCubicInch"
+        - text: "degree (°) [angle]"
+          value: "degrees"
+        - text: "radian (rad) [angle]"
+          value: "radians"
+        - text: "milliradian (mrad) [angle]"
+          value: "milliradians"
+        - text: "turn (turn) [angle]"
+          value: "turns"
+        - text: "gradian (grad) [angle]"
+          value: "gradians"
+        - text: "arcminute (′) [angle]"
+          value: "arcminutes"
+        - text: "arcsecond (″) [angle]"
+          value: "arcseconds"
+        - text: "US miles per gallon (mpg (US)) [fuel economy]"
+          value: "milesPerGallonUS"
+        - text: "kilometres per litre (km/L) [fuel economy]"
+          value: "kilometresPerLitre"
+        - text: "litres per 100 kilometres (L/100km) [fuel economy]"
+          value: "litresPer100Kilometres"
+        - text: "cubic metre per second (m³/s) [flow]"
+          value: "cubicMetrePerSecond"
+        - text: "cubic metre per hour (m³/h) [flow]"
+          value: "cubicMetrePerHour"
+        - text: "litre per second (L/s) [flow]"
+          value: "litrePerSecond"
+        - text: "litre per minute (L/min) [flow]"
+          value: "litrePerMinute"
+        - text: "US gallon per minute (gal/min) [flow]"
+          value: "gallonPerMinute"
+        - text: "cubic foot per minute (ft³/min) [flow]"
+          value: "cubicFootPerMinute"
+        - text: "newton metre (N·m) [torque]"
+          value: "newtonMetre"
+        - text: "kilonewton metre (kN·m) [torque]"
+          value: "kilonewtonMetre"
+        - text: "pound foot (ft·lb) [torque]"
+          value: "poundFoot"
+        - text: "kilopond metre (kp·m) [torque]"
+          value: "kilopondMetre"
+        - text: "becquerel (Bq) [radioactivity]"
+          value: "becquerel"
+        - text: "kilobecquerel (kBq) [radioactivity]"
+          value: "kilobecquerel"
+        - text: "megabecquerel (MBq) [radioactivity]"
+          value: "megabecquerel"
+        - text: "gigabecquerel (GBq) [radioactivity]"
+          value: "gigabecquerel"
+        - text: "curie (Ci) [radioactivity]"
+          value: "curie"
+        - text: "rutherford (Rd) [radioactivity]"
+          value: "rutherford"
+        - text: "sievert (Sv) [radiation dose]"
+          value: "sievert"
+        - text: "millisievert (mSv) [radiation dose]"
+          value: "millisievert"
+        - text: "microsievert (µSv) [radiation dose]"
+          value: "microsievert"
+        - text: "gray (Gy) [radiation dose]"
+          value: "gray"
+        - text: "milligray (mGy) [radiation dose]"
+          value: "milligray"
+        - text: "rad (rad) [radiation dose]"
+          value: "rad"
+        - text: "rem (rem) [radiation dose]"
+          value: "rem"
+    unitDimension:
+      acceptReporters: true
+      items:
+        - text: "mass"
+          value: "mass"
+        - text: "length"
+          value: "length"
+        - text: "area"
+          value: "area"
+        - text: "volume"
+          value: "volume"
+        - text: "time"
+          value: "time"
+        - text: "speed"
+          value: "speed"
+        - text: "acceleration"
+          value: "acceleration"
+        - text: "temperature"
+          value: "temperature"
+        - text: "pressure"
+          value: "pressure"
+        - text: "energy"
+          value: "energy"
+        - text: "power"
+          value: "power"
+        - text: "force"
+          value: "force"
+        - text: "data size"
+          value: "data"
+        - text: "frequency"
+          value: "frequency"
+        - text: "density"
+          value: "density"
+        - text: "angle"
+          value: "angle"
+        - text: "fuel economy"
+          value: "fuel"
+        - text: "flow"
+          value: "flow"
+        - text: "torque"
+          value: "torque"
+        - text: "radioactivity"
+          value: "activity"
+        - text: "radiation dose"
+          value: "dose"
+    physicalConstant:
+      acceptReporters: true
+      items:
+        - text: "speed of light in vacuum (c)"
+          value: "speedOfLight"
+        - text: "speed of sound in air at 20 °C (343 m/s)"
+          value: "speedOfSoundInAir"
+        - text: "speed of sound in water at 20 °C (1481 m/s)"
+          value: "speedOfSoundInWater"
+        - text: "Planck constant (h)"
+          value: "planckConstant"
+        - text: "reduced Planck constant (ħ)"
+          value: "reducedPlanckConstant"
+        - text: "Planck length (ℓₚ)"
+          value: "planckLength"
+        - text: "Planck time (tₚ)"
+          value: "planckTime"
+        - text: "Planck mass (mₚ)"
+          value: "planckMass"
+        - text: "Planck temperature (Tₚ)"
+          value: "planckTemperature"
+        - text: "Newtonian constant of gravitation (G)"
+          value: "gravitationalConstant"
+        - text: "standard acceleration of gravity (g₀)"
+          value: "standardGravity"
+        - text: "Boltzmann constant (k)"
+          value: "boltzmannConstant"
+        - text: "Avogadro constant (Nₐ)"
+          value: "avogadroConstant"
+        - text: "molar gas constant (R)"
+          value: "molarGasConstant"
+        - text: "Faraday constant (F)"
+          value: "faradayConstant"
+        - text: "elementary charge (e)"
+          value: "elementaryCharge"
+        - text: "electron rest mass (mₑ)"
+          value: "electronMass"
+        - text: "proton rest mass (mₚ)"
+          value: "protonMass"
+        - text: "neutron rest mass (mₙ)"
+          value: "neutronMass"
+        - text: "atomic mass constant (u)"
+          value: "atomicMassConstant"
+        - text: "Bohr radius (a₀)"
+          value: "bohrRadius"
+        - text: "Rydberg constant for hydrogen (R∞)"
+          value: "rydbergConstant"
+        - text: "fine-structure constant (α)"
+          value: "fineStructureConstant"
+        - text: "Stefan–Boltzmann constant (σ)"
+          value: "stefanBoltzmannConstant"
+        - text: "vacuum electric permittivity (ε₀)"
+          value: "vacuumPermittivity"
+        - text: "vacuum magnetic permeability (μ₀)"
+          value: "vacuumPermeability"
+        - text: "impedance of free space (Z₀)"
+          value: "impedanceOfFreeSpace"
+        - text: "standard atmosphere pressure (1 atm)"
+          value: "atmospherePressure"
+        - text: "freezing point of water (0 °C)"
+          value: "waterFreezingPoint"
+        - text: "boiling point of water (100 °C)"
+          value: "waterBoilingPoint"
+        - text: "carbon-14 half-life (5730 yr)"
+          value: "carbon14HalfLife"
+        - text: "solar luminosity (L☉)"
+          value: "solarLuminosity"
+        - text: "solar mass (M☉)"
+          value: "solarMass"
+        - text: "solar radius (R☉)"
+          value: "solarRadius"
+        - text: "Earth mass (M⊕)"
+          value: "earthMass"
+        - text: "mean Earth radius (R⊕)"
+          value: "earthRadius"
+        - text: "mean Earth–Moon distance"
+          value: "moonDistance"
+        - text: "Earth–Moon mass ratio"
+          value: "earthMoonMassRatio"
+        - text: "astronomical unit (AU)"
+          value: "astronomicalUnit"
+        - text: "parsec (pc)"
+          value: "parsec"
+        - text: "light-year (ly)"
+          value: "lightYear"
+
+blocks:
+  - blockType: label
+    text: "Constants"
+  - opcode: constantPi
+    blockType: reporter
+    text: "pi (π)"
+    disableMonitor: true
+  - opcode: constantE
+    blockType: reporter
+    text: "e (euler's number)"
+    disableMonitor: true
+  - opcode: constantTau
+    blockType: reporter
+    text: "tau (τ = 2π)"
+    disableMonitor: true
+  - opcode: constantPhi
+    blockType: reporter
+    text: "phi (φ, golden ratio)"
+    disableMonitor: true
+  - opcode: constantSqrt2
+    blockType: reporter
+    text: "square root of 2 (√2)"
+    disableMonitor: true
+  - opcode: mathConstant
+    blockType: reporter
+    text: "math constant [CONSTANT]"
+    arguments:
+      CONSTANT:
+        type: string
+        menu: constant
+  - blockType: label
+    text: "Rounding & Signs"
+  - opcode: roundNumber
+    blockType: reporter
+    text: "round [NUM] to the nearest whole number"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1.5
+  - opcode: floorNumber
+    blockType: reporter
+    text: "floor [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1.7
+  - opcode: ceilingNumber
+    blockType: reporter
+    text: "ceiling [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1.2
+  - opcode: truncateNumber
+    blockType: reporter
+    text: "truncate [NUM] (drop the decimals)"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1.7
+  - opcode: roundToPlaces
+    blockType: reporter
+    text: "round [NUM] to [PLACES] decimal places"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 3.14159
+      PLACES:
+        type: number
+        defaultValue: 2
+  - opcode: roundHalfDown
+    blockType: reporter
+    text: "round [NUM] to [PLACES] places, .5 rounds down"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 2.5
+      PLACES:
+        type: number
+        defaultValue: 0
+  - opcode: roundHalfEven
+    blockType: reporter
+    text: "round [NUM] to [PLACES] places, .5 rounds to even"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 2.5
+      PLACES:
+        type: number
+        defaultValue: 0
+  - opcode: roundToSignificant
+    blockType: reporter
+    text: "round [NUM] to [FIGURES] significant figures"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1234.5678
+      FIGURES:
+        type: number
+        defaultValue: 3
+  - opcode: roundToMultiple
+    blockType: reporter
+    text: "round [NUM] to the nearest multiple of [STEP]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 17
+      STEP:
+        type: number
+        defaultValue: 5
+  - opcode: floorToMultiple
+    blockType: reporter
+    text: "round [NUM] down to a multiple of [STEP]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 17
+      STEP:
+        type: number
+        defaultValue: 5
+  - opcode: ceilingToMultiple
+    blockType: reporter
+    text: "round [NUM] up to a multiple of [STEP]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 17
+      STEP:
+        type: number
+        defaultValue: 5
+  - opcode: absoluteValue
+    blockType: reporter
+    text: "absolute value of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: -5
+  - opcode: signOfNumber
+    blockType: reporter
+    text: "sign of [NUM] (-1, 0 or 1)"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: -5
+  - opcode: fractionalPart
+    blockType: reporter
+    text: "fractional part of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 2.75
+  - opcode: decimalPlacesOf
+    blockType: reporter
+    text: "number of decimal places in [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 2.75
+  - opcode: absoluteDifference
+    blockType: reporter
+    text: "absolute difference of [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 10
+  - blockType: label
+    text: "Trigonometry"
+  - opcode: sine
+    blockType: reporter
+    text: "sin of [ANGLE]°"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 30
+  - opcode: cosine
+    blockType: reporter
+    text: "cos of [ANGLE]°"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 60
+  - opcode: tangent
+    blockType: reporter
+    text: "tan of [ANGLE]°"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 45
+  - opcode: secant
+    blockType: reporter
+    text: "sec of [ANGLE]°"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 60
+  - opcode: cosecant
+    blockType: reporter
+    text: "csc of [ANGLE]°"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 30
+  - opcode: cotangent
+    blockType: reporter
+    text: "cot of [ANGLE]°"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 45
+  - opcode: arcSine
+    blockType: reporter
+    text: "arcsin of [VALUE] in degrees"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 0.5
+  - opcode: arcCosine
+    blockType: reporter
+    text: "arccos of [VALUE] in degrees"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 0.5
+  - opcode: arcTangent
+    blockType: reporter
+    text: "arctan of [VALUE] in degrees"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: arcCotangent
+    blockType: reporter
+    text: "arccot of [VALUE] in degrees"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: arcTangent2
+    blockType: reporter
+    text: "arctan2 (y [Y] , x [X]) in degrees"
+    arguments:
+      Y:
+        type: number
+        defaultValue: 1
+      X:
+        type: number
+        defaultValue: 1
+  - opcode: hyperbolicSine
+    blockType: reporter
+    text: "hyperbolic sine (sinh) of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: hyperbolicCosine
+    blockType: reporter
+    text: "hyperbolic cosine (cosh) of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: hyperbolicTangent
+    blockType: reporter
+    text: "hyperbolic tangent (tanh) of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: hyperbolicSecant
+    blockType: reporter
+    text: "hyperbolic secant (sech) of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: hyperbolicCosecant
+    blockType: reporter
+    text: "hyperbolic cosecant (csch) of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: hyperbolicCotangent
+    blockType: reporter
+    text: "hyperbolic cotangent (coth) of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: arcHyperbolicSine
+    blockType: reporter
+    text: "inverse hyperbolic sine of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: arcHyperbolicCosine
+    blockType: reporter
+    text: "inverse hyperbolic cosine of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 2
+  - opcode: arcHyperbolicTangent
+    blockType: reporter
+    text: "inverse hyperbolic tangent of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 0.5
+  - opcode: arcHyperbolicSecant
+    blockType: reporter
+    text: "inverse hyperbolic secant of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 0.5
+  - opcode: arcHyperbolicCosecant
+    blockType: reporter
+    text: "inverse hyperbolic cosecant of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: arcHyperbolicCotangent
+    blockType: reporter
+    text: "inverse hyperbolic cotangent of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 2
+  - opcode: degreesToRadiansBlock
+    blockType: reporter
+    text: "degrees [ANGLE] to radians"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 180
+  - opcode: radiansToDegreesBlock
+    blockType: reporter
+    text: "radians [RADIANS] to degrees"
+    arguments:
+      RADIANS:
+        type: number
+        defaultValue: 3.14159
+  - opcode: angleUnitToDegrees
+    blockType: reporter
+    text: "convert [ANGLE] [UNIT] to degrees"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 1
+      UNIT:
+        type: string
+        menu: unit
+  - opcode: angleUnitToRadians
+    blockType: reporter
+    text: "convert [ANGLE] degrees to [UNIT]"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 180
+      UNIT:
+        type: string
+        menu: unit
+  - opcode: wrapAngle
+    blockType: reporter
+    text: "wrap angle [ANGLE] into -180 to 180"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 450
+  - blockType: label
+    text: "Logarithms, Roots & Powers"
+  - opcode: naturalLog
+    blockType: reporter
+    text: "ln of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 10
+  - opcode: logBase10
+    blockType: reporter
+    text: "log base 10 of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1000
+  - opcode: logBase2
+    blockType: reporter
+    text: "log base 2 of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 1024
+  - opcode: logOfBase
+    blockType: reporter
+    text: "log of [NUM] base [BASE]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 81
+      BASE:
+        type: number
+        defaultValue: 3
+  - opcode: eToThe
+    blockType: reporter
+    text: "e to the power [POWER]"
+    arguments:
+      POWER:
+        type: number
+        defaultValue: 2
+  - opcode: tenToThe
+    blockType: reporter
+    text: "10 to the power [POWER]"
+    arguments:
+      POWER:
+        type: number
+        defaultValue: 3
+  - opcode: baseToThe
+    blockType: reporter
+    text: "[BASE] to the power [POWER]"
+    arguments:
+      BASE:
+        type: number
+        defaultValue: 2
+      POWER:
+        type: number
+        defaultValue: 10
+  - opcode: squareRoot
+    blockType: reporter
+    text: "square root of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 144
+  - opcode: cubeRoot
+    blockType: reporter
+    text: "cube root of [NUM]"
+    arguments:
+      NUM:
+        type: number
+        defaultValue: 27
+  - opcode: nthRoot
+    blockType: reporter
+    text: "[INDEX]th root of [NUM]"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 3
+      NUM:
+        type: number
+        defaultValue: 64
+  - opcode: hypotenuse
+    blockType: reporter
+    text: "hypotenuse of [A], [B] and [C]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+      C:
+        type: number
+        defaultValue: 6
+  - opcode: sigmoid
+    blockType: reporter
+    text: "logistic sigmoid of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+  - opcode: logit
+    blockType: reporter
+    text: "logit (inverse sigmoid) of [PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.73
+  - blockType: label
+    text: "Equations & Series"
+  - opcode: solveLinearEquation
+    blockType: reporter
+    text: "solve [A]x + [B] = [C] for x"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+      C:
+        type: number
+        defaultValue: 11
+  - opcode: quadraticDiscriminant
+    blockType: reporter
+    text: "discriminant of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: quadraticRoot1
+    blockType: reporter
+    text: "1st root of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: quadraticRoot2
+    blockType: reporter
+    text: "2nd root of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: quadraticVertexX
+    blockType: reporter
+    text: "x of the vertex of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: quadraticVertexY
+    blockType: reporter
+    text: "y of the vertex of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: sumOfQuadraticRoots
+    blockType: reporter
+    text: "sum of the roots of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: productOfQuadraticRoots
+    blockType: reporter
+    text: "product of the roots of ([A]x²+[B]x+[C])"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: -3
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: arithmeticNthTerm
+    blockType: reporter
+    text: "term [INDEX] of the series starting [FIRST] step [STEP]"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+      FIRST:
+        type: number
+        defaultValue: 2
+      STEP:
+        type: number
+        defaultValue: 3
+  - opcode: geometricNthTerm
+    blockType: reporter
+    text: "term [INDEX] of the series starting [FIRST] ratio [RATIO]"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 5
+      FIRST:
+        type: number
+        defaultValue: 2
+      RATIO:
+        type: number
+        defaultValue: 3
+  - opcode: arithmeticSeriesSum
+    blockType: reporter
+    text: "sum of [INDEX] terms starting [FIRST] step [STEP]"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+      FIRST:
+        type: number
+        defaultValue: 2
+      STEP:
+        type: number
+        defaultValue: 3
+  - opcode: geometricSeriesSum
+    blockType: reporter
+    text: "sum of [INDEX] terms starting [FIRST] ratio [RATIO]"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 5
+      FIRST:
+        type: number
+        defaultValue: 2
+      RATIO:
+        type: number
+        defaultValue: 3
+  - opcode: infiniteGeometricSum
+    blockType: reporter
+    text: "sum of the infinite series starting [FIRST] ratio [RATIO]"
+    arguments:
+      FIRST:
+        type: number
+        defaultValue: 2
+      RATIO:
+        type: number
+        defaultValue: 0.5
+  - opcode: triangularNumber
+    blockType: reporter
+    text: "[INDEX]th triangular number"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+  - opcode: squarePyramidalNumber
+    blockType: reporter
+    text: "[INDEX]th square pyramidal number"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+  - opcode: sumOfFirstOdds
+    blockType: reporter
+    text: "sum of the first [INDEX] odd numbers"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+  - opcode: sumOfFirstEvens
+    blockType: reporter
+    text: "sum of the first [INDEX] even numbers"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+  - opcode: harmonicNumber
+    blockType: reporter
+    text: "[INDEX]th harmonic number"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+  - blockType: label
+    text: "Combinations & Sequences"
+  - opcode: factorial
+    blockType: reporter
+    text: "[N] factorial (n!)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+  - opcode: doubleFactorial
+    blockType: reporter
+    text: "[N] double factorial (n!!)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 7
+  - opcode: derangements
+    blockType: reporter
+    text: "derangements of [N] (!n)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 4
+  - opcode: permutations
+    blockType: reporter
+    text: "permutations of [N] taken [K] (nPr)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+      K:
+        type: number
+        defaultValue: 2
+  - opcode: combinations
+    blockType: reporter
+    text: "combinations of [N] taken [K] (nCr)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+      K:
+        type: number
+        defaultValue: 2
+  - opcode: combinationsWithRepetition
+    blockType: reporter
+    text: "combinations of [N] taken [K] with repetition"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+      K:
+        type: number
+        defaultValue: 2
+  - opcode: multinomial
+    blockType: reporter
+    text: "multinomial of [N] split into [A], [B], [C]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 4
+      C:
+        type: number
+        defaultValue: 3
+  - opcode: stirlingSecondKind
+    blockType: reporter
+    text: "Stirling number of the 2nd kind S([N], [K])"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+      K:
+        type: number
+        defaultValue: 2
+  - opcode: stirlingFirstKind
+    blockType: reporter
+    text: "signed Stirling number of the 1st kind c([N], [K])"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+      K:
+        type: number
+        defaultValue: 2
+  - opcode: catalanNumber
+    blockType: reporter
+    text: "[N]th Catalan number"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+  - opcode: bellNumber
+    blockType: reporter
+    text: "[N]th Bell number"
+    arguments:
+      N:
+        type: number
+        defaultValue: 5
+  - opcode: fibonacci
+    blockType: reporter
+    text: "[N]th Fibonacci number"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+  - opcode: lucas
+    blockType: reporter
+    text: "[N]th Lucas number"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+  - opcode: tribonacci
+    blockType: reporter
+    text: "[N]th tribonacci number"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+  - opcode: combinationChance
+    blockType: reporter
+    text: "chance of drawing [DRAW] of the [WINS] winning items from [TOTAL]"
+    arguments:
+      DRAW:
+        type: number
+        defaultValue: 2
+      WINS:
+        type: number
+        defaultValue: 3
+      TOTAL:
+        type: number
+        defaultValue: 10
+  - blockType: label
+    text: "Number Theory"
+  - opcode: greatestCommonDivisor
+    blockType: reporter
+    text: "greatest common divisor of [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 12
+      B:
+        type: number
+        defaultValue: 18
+  - opcode: leastCommonMultiple
+    blockType: reporter
+    text: "least common multiple of [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 4
+      B:
+        type: number
+        defaultValue: 6
+  - opcode: isPrime
+    blockType: boolean
+    text: "is [N] prime?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 97
+  - opcode: nthPrime
+    blockType: reporter
+    text: "[INDEX]th prime number (up to 664579)"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 10
+  - opcode: primeCountUpTo
+    blockType: reporter
+    text: "number of primes up to [N] (N up to 1 billion)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 100
+  - opcode: nextPrime
+    blockType: reporter
+    text: "next prime after [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 100
+  - opcode: previousPrime
+    blockType: reporter
+    text: "prime before [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 100
+  - opcode: primeFactors
+    blockType: reporter
+    text: "prime factors of [N] (as text)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 60
+    disableMonitor: true
+  - opcode: primeFactorCount
+    blockType: reporter
+    text: "number of distinct prime factors of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 60
+  - opcode: smallestPrimeFactor
+    blockType: reporter
+    text: "smallest prime factor of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 91
+  - opcode: largestPrimeFactor
+    blockType: reporter
+    text: "largest prime factor of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 60
+  - opcode: allDivisors
+    blockType: reporter
+    text: "all divisors of [N] (as text)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12
+    disableMonitor: true
+  - opcode: divisorCount
+    blockType: reporter
+    text: "number of divisors of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12
+  - opcode: divisorSum
+    blockType: reporter
+    text: "sum of all divisors of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12
+  - opcode: properDivisorSum
+    blockType: reporter
+    text: "sum of the proper divisors of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12
+  - opcode: isPerfectNumber
+    blockType: boolean
+    text: "is [N] a perfect number?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 28
+  - opcode: isSemiprime
+    blockType: boolean
+    text: "is [N] a semiprime?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 15
+  - opcode: eulerTotient
+    blockType: reporter
+    text: "Euler's totient of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+  - opcode: mobius
+    blockType: reporter
+    text: "Möbius function of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 30
+  - opcode: primorial
+    blockType: reporter
+    text: "primorial of [N] (product of every prime up to [N])"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+    disableMonitor: true
+  - opcode: collatzSteps
+    blockType: reporter
+    text: "steps for [N] to reach 1 (Collatz)"
+    arguments:
+      N:
+        type: number
+        defaultValue: 27
+    disableMonitor: true
+  - opcode: digitalRoot
+    blockType: reporter
+    text: "digital root of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 9875
+  - opcode: isArmstrongNumber
+    blockType: boolean
+    text: "is [N] an Armstrong number?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 153
+  - opcode: isPalindromeNumber
+    blockType: boolean
+    text: "is [N] a palindrome number?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12321
+  - opcode: factorialDigitCount
+    blockType: reporter
+    text: "number of digits in [N]!"
+    arguments:
+      N:
+        type: number
+        defaultValue: 100
+  - opcode: factorialTrailingZeros
+    blockType: reporter
+    text: "trailing zeros in [N]!"
+    arguments:
+      N:
+        type: number
+        defaultValue: 100
+  - blockType: label
+    text: "Digits & Bases"
+  - opcode: digitSum
+    blockType: reporter
+    text: "sum of the digits of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 1234
+  - opcode: digitProduct
+    blockType: reporter
+    text: "product of the digits of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 1234
+  - opcode: reverseDigits
+    blockType: reporter
+    text: "reverse the digits of [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 1234
+  - opcode: digitCount
+    blockType: reporter
+    text: "number of digits in [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12345
+  - opcode: digitAt
+    blockType: reporter
+    text: "digit [INDEX] of [N] (counting from the left)"
+    arguments:
+      INDEX:
+        type: number
+        defaultValue: 2
+      N:
+        type: number
+        defaultValue: 12345
+  - opcode: numberToBase
+    blockType: reporter
+    text: "[N] written in base [BASE]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 255
+      BASE:
+        type: number
+        defaultValue: 16
+  - opcode: baseToNumber
+    blockType: reporter
+    text: "[TEXT] read as base [BASE]"
+    arguments:
+      TEXT:
+        type: string
+        defaultValue: "ff"
+      BASE:
+        type: number
+        defaultValue: 16
+  - opcode: toBinary
+    blockType: reporter
+    text: "[N] in binary"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+  - opcode: toOctal
+    blockType: reporter
+    text: "[N] in octal"
+    arguments:
+      N:
+        type: number
+        defaultValue: 10
+  - opcode: toHexadecimal
+    blockType: reporter
+    text: "[N] in hexadecimal"
+    arguments:
+      N:
+        type: number
+        defaultValue: 255
+  - opcode: toRomanNumerals
+    blockType: reporter
+    text: "[N] in roman numerals"
+    arguments:
+      N:
+        type: number
+        defaultValue: 1994
+  - opcode: fromRomanNumerals
+    blockType: reporter
+    text: "roman numeral [TEXT] as a number"
+    arguments:
+      TEXT:
+        type: string
+        defaultValue: "MCMXCIV"
+  - opcode: setBitCount
+    blockType: reporter
+    text: "number of 1 bits in [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 255
+  - opcode: bitLength
+    blockType: reporter
+    text: "number of bits in [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 255
+  - opcode: padWithZeros
+    blockType: reporter
+    text: "[N] padded to [WIDTH] digits"
+    arguments:
+      N:
+        type: number
+        defaultValue: 42
+      WIDTH:
+        type: number
+        defaultValue: 6
+  - opcode: scientificNotation
+    blockType: reporter
+    text: "[N] in scientific notation"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12345
+  - opcode: powerOfTen
+    blockType: reporter
+    text: "power of ten in [N]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 12345
+  - blockType: label
+    text: "Logic & Comparisons"
+  - opcode: booleanAnd
+    blockType: boolean
+    text: "[A] and [B]"
+    arguments:
+      A:
+        type: boolean
+      B:
+        type: boolean
+  - opcode: booleanOr
+    blockType: boolean
+    text: "[A] or [B]"
+    arguments:
+      A:
+        type: boolean
+      B:
+        type: boolean
+  - opcode: booleanXor
+    blockType: boolean
+    text: "[A] xor [B]"
+    arguments:
+      A:
+        type: boolean
+      B:
+        type: boolean
+  - opcode: booleanNand
+    blockType: boolean
+    text: "[A] nand [B]"
+    arguments:
+      A:
+        type: boolean
+      B:
+        type: boolean
+  - opcode: booleanNor
+    blockType: boolean
+    text: "[A] nor [B]"
+    arguments:
+      A:
+        type: boolean
+      B:
+        type: boolean
+  - opcode: booleanNot
+    blockType: boolean
+    text: "not [VALUE]"
+    arguments:
+      VALUE:
+        type: boolean
+  - opcode: booleanToNumber
+    blockType: reporter
+    text: "[VALUE] as 1 (true) or 0 (false)"
+    arguments:
+      VALUE:
+        type: boolean
+  - opcode: numberToBoolean
+    blockType: boolean
+    text: "[VALUE] is not zero?"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 0
+  - opcode: ifThenElse
+    blockType: reporter
+    text: "if [CONDITION] then [IF_TRUE] else [IF_FALSE]"
+    arguments:
+      CONDITION:
+        type: boolean
+      IF_TRUE:
+        type: string
+        defaultValue: "yes"
+      IF_FALSE:
+        type: string
+        defaultValue: "no"
+  - opcode: strictlyEquals
+    blockType: boolean
+    text: "[A] is exactly the same text as [B]"
+    arguments:
+      A:
+        type: string
+        defaultValue: "1"
+      B:
+        type: string
+        defaultValue: "1.0"
+  - opcode: compareValues
+    blockType: reporter
+    text: "compare [A] to [B] (-1, 0 or 1)"
+    arguments:
+      A:
+        type: string
+        defaultValue: "3"
+      B:
+        type: string
+        defaultValue: "5"
+  - opcode: isBetween
+    blockType: boolean
+    text: "[VALUE] is between [LOW] and [HIGH]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 5
+      LOW:
+        type: number
+        defaultValue: 1
+      HIGH:
+        type: number
+        defaultValue: 10
+  - opcode: isDivisibleBy
+    blockType: boolean
+    text: "[A] is divisible by [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 12
+      B:
+        type: number
+        defaultValue: 4
+  - opcode: isEven
+    blockType: boolean
+    text: "is [N] even?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 4
+  - opcode: isOdd
+    blockType: boolean
+    text: "is [N] odd?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 7
+  - opcode: isInteger
+    blockType: boolean
+    text: "is [N] a whole number?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 4.5
+  - opcode: isNegative
+    blockType: boolean
+    text: "is [N] negative?"
+    arguments:
+      N:
+        type: number
+        defaultValue: -1
+  - opcode: isPositive
+    blockType: boolean
+    text: "is [N] positive?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 1
+  - opcode: isZero
+    blockType: boolean
+    text: "is [N] zero?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 0
+  - opcode: isNumeric
+    blockType: boolean
+    text: "is [VALUE] a number?"
+    arguments:
+      VALUE:
+        type: string
+        defaultValue: "3.5"
+  - opcode: isFiniteNumber
+    blockType: boolean
+    text: "is [N] finite?"
+    arguments:
+      N:
+        type: number
+        defaultValue: 4
+  - blockType: label
+    text: "Scaling & Interpolation"
+  - opcode: clampNumber
+    blockType: reporter
+    text: "clamp [VALUE] between [LOW] and [HIGH]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 15
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 10
+  - opcode: lerp
+    blockType: reporter
+    text: "lerp from [FROM] to [TO] by [AMOUNT]"
+    arguments:
+      FROM:
+        type: number
+        defaultValue: 0
+      TO:
+        type: number
+        defaultValue: 100
+      AMOUNT:
+        type: number
+        defaultValue: 0.5
+  - opcode: inverseLerp
+    blockType: reporter
+    text: "where is [VALUE] between [FROM] and [TO] (0 to 1)?"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 25
+      FROM:
+        type: number
+        defaultValue: 0
+      TO:
+        type: number
+        defaultValue: 100
+  - opcode: remapNumber
+    blockType: reporter
+    text: "remap [VALUE] from [FROM_LOW]-[FROM_HIGH] to [TO_LOW]-[TO_HIGH]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 5
+      FROM_LOW:
+        type: number
+        defaultValue: 0
+      FROM_HIGH:
+        type: number
+        defaultValue: 10
+      TO_LOW:
+        type: number
+        defaultValue: 0
+      TO_HIGH:
+        type: number
+        defaultValue: 100
+  - opcode: wrapNumber
+    blockType: reporter
+    text: "wrap [VALUE] into [LOW]-[HIGH]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 12
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 10
+  - opcode: smoothStep
+    blockType: reporter
+    text: "smooth step from [LOW] to [HIGH] at [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 5
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 10
+  - opcode: approachNumber
+    blockType: reporter
+    text: "move [VALUE] toward [TARGET] by [STEP]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 0
+      TARGET:
+        type: number
+        defaultValue: 100
+      STEP:
+        type: number
+        defaultValue: 7
+  - opcode: isCloseTo
+    blockType: boolean
+    text: "[A] is within [TOLERANCE] of [B]?"
+    arguments:
+      A:
+        type: number
+        defaultValue: 0.1
+      B:
+        type: number
+        defaultValue: 0.2
+      TOLERANCE:
+        type: number
+        defaultValue: 0.15
+  - opcode: averageOfTwo
+    blockType: reporter
+    text: "average of [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 5
+  - opcode: smallestOfThree
+    blockType: reporter
+    text: "smallest of [A], [B] and [C]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 1
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: largestOfThree
+    blockType: reporter
+    text: "largest of [A], [B] and [C]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 1
+      C:
+        type: number
+        defaultValue: 2
+  - opcode: percentOf
+    blockType: reporter
+    text: "[PERCENT]% of [NUM]"
+    arguments:
+      PERCENT:
+        type: number
+        defaultValue: 15
+      NUM:
+        type: number
+        defaultValue: 200
+  - opcode: percentChange
+    blockType: reporter
+    text: "percent change from [FROM] to [TO]"
+    arguments:
+      FROM:
+        type: number
+        defaultValue: 80
+      TO:
+        type: number
+        defaultValue: 100
+  - opcode: floorDivide
+    blockType: reporter
+    text: "[A] divided by [B] rounded down"
+    arguments:
+      A:
+        type: number
+        defaultValue: 7
+      B:
+        type: number
+        defaultValue: 2
+  - opcode: ceilingDivide
+    blockType: reporter
+    text: "[A] divided by [B] rounded up"
+    arguments:
+      A:
+        type: number
+        defaultValue: 7
+      B:
+        type: number
+        defaultValue: 2
+  - opcode: euclideanModulo
+    blockType: reporter
+    text: "[A] modulo [B] (never negative)"
+    arguments:
+      A:
+        type: number
+        defaultValue: -7
+      B:
+        type: number
+        defaultValue: 3
+  - blockType: label
+    text: "Statistics (reads a list)"
+  - opcode: listLength
+    blockType: reporter
+    text: "length of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listSum
+    blockType: reporter
+    text: "sum of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listMean
+    blockType: reporter
+    text: "mean of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listMedian
+    blockType: reporter
+    text: "median of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listMode
+    blockType: reporter
+    text: "mode of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listSmallest
+    blockType: reporter
+    text: "smallest item in list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listLargest
+    blockType: reporter
+    text: "largest item in list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listRange
+    blockType: reporter
+    text: "range of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listMidrange
+    blockType: reporter
+    text: "midrange of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listPopulationVariance
+    blockType: reporter
+    text: "population variance of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listSampleVariance
+    blockType: reporter
+    text: "sample variance of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listPopulationStdDev
+    blockType: reporter
+    text: "population standard deviation of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listSampleStdDev
+    blockType: reporter
+    text: "sample standard deviation of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listStandardError
+    blockType: reporter
+    text: "standard error of the mean of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listGeometricMean
+    blockType: reporter
+    text: "geometric mean of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listHarmonicMean
+    blockType: reporter
+    text: "harmonic mean of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listTrimmedMean
+    blockType: reporter
+    text: "mean of list [LIST] with [TRIM]% trimmed off each end"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      TRIM:
+        type: number
+        defaultValue: 10
+  - opcode: listPercentile
+    blockType: reporter
+    text: "[PERCENT]th percentile of list [LIST]"
+    arguments:
+      PERCENT:
+        type: number
+        defaultValue: 90
+      LIST:
+        type: string
+        menu: list
+  - opcode: listQuartile
+    blockType: reporter
+    text: "[QUARTILE]th quartile of list [LIST]"
+    arguments:
+      QUARTILE:
+        type: number
+        defaultValue: 1
+      LIST:
+        type: string
+        menu: list
+  - opcode: listInterquartileRange
+    blockType: reporter
+    text: "interquartile range of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listMedianAbsoluteDeviation
+    blockType: reporter
+    text: "median absolute deviation of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listZScore
+    blockType: reporter
+    text: "z-score of [VALUE] in list [LIST]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 10
+      LIST:
+        type: string
+        menu: list
+  - opcode: listWeightedMean
+    blockType: reporter
+    text: "weighted mean of list [LIST] with weights [WEIGHTS]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      WEIGHTS:
+        type: string
+        menu: list
+  - opcode: listCovariance
+    blockType: reporter
+    text: "covariance of list [XS] and list [YS] (sample: [SAMPLE])"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+      SAMPLE:
+        type: boolean
+  - opcode: listCorrelation
+    blockType: reporter
+    text: "Pearson correlation of list [XS] and list [YS]"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: listRegressionSlope
+    blockType: reporter
+    text: "regression slope of list [XS] and list [YS]"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: listRegressionIntercept
+    blockType: reporter
+    text: "regression intercept of list [XS] and list [YS]"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: listRegressionRSquared
+    blockType: reporter
+    text: "r² of the regression of list [XS] and list [YS]"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: listSortedText
+    blockType: reporter
+    text: "list [LIST] sorted (as text)"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: listCumulativeSum
+    blockType: reporter
+    text: "cumulative sums of list [LIST] (as text)"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: listCountOf
+    blockType: reporter
+    text: "number of [VALUE] in list [LIST]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 3
+      LIST:
+        type: string
+        menu: list
+  - opcode: listAllTrue
+    blockType: boolean
+    text: "is every item in list [LIST] true?"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listAnyTrue
+    blockType: boolean
+    text: "is any item in list [LIST] true?"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - blockType: label
+    text: "Geometry"
+  - opcode: distanceBetweenPoints
+    blockType: reporter
+    text: "distance between ([X1],[Y1]) and ([X2],[Y2])"
+    arguments:
+      X1:
+        type: number
+        defaultValue: 0
+      Y1:
+        type: number
+        defaultValue: 0
+      X2:
+        type: number
+        defaultValue: 3
+      Y2:
+        type: number
+        defaultValue: 4
+  - opcode: midpointX
+    blockType: reporter
+    text: "middle x between [X1] and [X2]"
+    arguments:
+      X1:
+        type: number
+        defaultValue: 0
+      X2:
+        type: number
+        defaultValue: 10
+  - opcode: midpointY
+    blockType: reporter
+    text: "middle y between [Y1] and [Y2]"
+    arguments:
+      Y1:
+        type: number
+        defaultValue: 0
+      Y2:
+        type: number
+        defaultValue: 10
+  - opcode: angleOfPoint
+    blockType: reporter
+    text: "angle in degrees from (0,0) to ([X],[Y])"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      Y:
+        type: number
+        defaultValue: 1
+  - opcode: polarToX
+    blockType: reporter
+    text: "x of the polar point ([RADIUS] at [ANGLE]°)"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 10
+      ANGLE:
+        type: number
+        defaultValue: 30
+  - opcode: polarToY
+    blockType: reporter
+    text: "y of the polar point ([RADIUS] at [ANGLE]°)"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 10
+      ANGLE:
+        type: number
+        defaultValue: 30
+  - opcode: areaOfTriangle
+    blockType: reporter
+    text: "area of a triangle with sides [A], [B] and [C]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 4
+      C:
+        type: number
+        defaultValue: 5
+  - opcode: areaOfCircle
+    blockType: reporter
+    text: "area of a circle with radius [RADIUS]"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 3
+  - opcode: areaOfRectangle
+    blockType: reporter
+    text: "area of a [WIDTH] x [HEIGHT] rectangle"
+    arguments:
+      WIDTH:
+        type: number
+        defaultValue: 4
+      HEIGHT:
+        type: number
+        defaultValue: 5
+  - opcode: areaOfEllipse
+    blockType: reporter
+    text: "area of an ellipse with semi axes [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 2
+  - opcode: areaOfRegularPolygon
+    blockType: reporter
+    text: "area of a regular polygon with [SIDES] sides of length [SIDE]"
+    arguments:
+      SIDES:
+        type: number
+        defaultValue: 6
+      SIDE:
+        type: number
+        defaultValue: 4
+  - opcode: perimeterOfRectangle
+    blockType: reporter
+    text: "perimeter of a [WIDTH] x [HEIGHT] rectangle"
+    arguments:
+      WIDTH:
+        type: number
+        defaultValue: 4
+      HEIGHT:
+        type: number
+        defaultValue: 5
+  - opcode: circleCircumference
+    blockType: reporter
+    text: "circumference of a circle with radius [RADIUS]"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 3
+  - opcode: arcLength
+    blockType: reporter
+    text: "arc length for radius [RADIUS] and angle [ANGLE]°"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 10
+      ANGLE:
+        type: number
+        defaultValue: 90
+  - opcode: chordLength
+    blockType: reporter
+    text: "chord length for radius [RADIUS] and angle [ANGLE]°"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 10
+      ANGLE:
+        type: number
+        defaultValue: 90
+  - opcode: sectorArea
+    blockType: reporter
+    text: "area of a [ANGLE]° sector of radius [RADIUS]"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 90
+      RADIUS:
+        type: number
+        defaultValue: 10
+  - opcode: lawOfCosines
+    blockType: reporter
+    text: "third side when sides [A] and [B] meet at [ANGLE]°"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 4
+      ANGLE:
+        type: number
+        defaultValue: 90
+  - opcode: lawOfSines
+    blockType: reporter
+    text: "3rd side when [SIDE] faces [SIDE_ANGLE]° and another angle is [OTHER_ANGLE]°"
+    arguments:
+      SIDE:
+        type: number
+        defaultValue: 3
+      SIDE_ANGLE:
+        type: number
+        defaultValue: 30
+      OTHER_ANGLE:
+        type: number
+        defaultValue: 45
+  - opcode: polygonArea
+    blockType: reporter
+    text: "area of the polygon in list [POINTS] (x1, y1, x2, y2, ...)"
+    arguments:
+      POINTS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: polygonPerimeter
+    blockType: reporter
+    text: "perimeter of the polygon in list [POINTS] (x1, y1, x2, y2, ...)"
+    arguments:
+      POINTS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - blockType: label
+    text: "Vectors & Matrices"
+  - opcode: magnitude2d
+    blockType: reporter
+    text: "length of the vector ([X],[Y])"
+    arguments:
+      X:
+        type: number
+        defaultValue: 3
+      Y:
+        type: number
+        defaultValue: 4
+  - opcode: magnitude3d
+    blockType: reporter
+    text: "length of the vector ([X],[Y],[Z])"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      Y:
+        type: number
+        defaultValue: 2
+      Z:
+        type: number
+        defaultValue: 2
+  - opcode: dotProduct
+    blockType: reporter
+    text: "dot product of ([X1],[Y1],[Z1]) and ([X2],[Y2],[Z2])"
+    arguments:
+      X1:
+        type: number
+        defaultValue: 1
+      Y1:
+        type: number
+        defaultValue: 2
+      Z1:
+        type: number
+        defaultValue: 3
+      X2:
+        type: number
+        defaultValue: 4
+      Y2:
+        type: number
+        defaultValue: 5
+      Z2:
+        type: number
+        defaultValue: 6
+  - opcode: crossProductMagnitude
+    blockType: reporter
+    text: "length of the cross product of ([X1],[Y1],[Z1]) and ([X2],[Y2],[Z2])"
+    arguments:
+      X1:
+        type: number
+        defaultValue: 1
+      Y1:
+        type: number
+        defaultValue: 0
+      Z1:
+        type: number
+        defaultValue: 0
+      X2:
+        type: number
+        defaultValue: 0
+      Y2:
+        type: number
+        defaultValue: 1
+      Z2:
+        type: number
+        defaultValue: 0
+  - opcode: angleBetweenVectors
+    blockType: reporter
+    text: "angle in degrees between ([X1],[Y1]) and ([X2],[Y2])"
+    arguments:
+      X1:
+        type: number
+        defaultValue: 1
+      Y1:
+        type: number
+        defaultValue: 0
+      X2:
+        type: number
+        defaultValue: 0
+      Y2:
+        type: number
+        defaultValue: 1
+  - opcode: determinant2x2
+    blockType: reporter
+    text: "determinant of the matrix [[A],[B] ; [C],[D]]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: 2
+      C:
+        type: number
+        defaultValue: 3
+      D:
+        type: number
+        defaultValue: 4
+  - opcode: determinant3x3
+    blockType: reporter
+    text: "determinant of the matrix [[A],[B],[C] ; [D],[E],[F] ; [G],[H],[I]]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: 2
+      C:
+        type: number
+        defaultValue: 3
+      D:
+        type: number
+        defaultValue: 4
+      E:
+        type: number
+        defaultValue: 5
+      F:
+        type: number
+        defaultValue: 6
+      G:
+        type: number
+        defaultValue: 7
+      H:
+        type: number
+        defaultValue: 8
+      I:
+        type: number
+        defaultValue: 9
+  - blockType: label
+    text: "Calculus (uses a list of coefficients)"
+  - opcode: polynomialAt
+    blockType: reporter
+    text: "value of polynomial [COEFFICIENTS] at [X]"
+    arguments:
+      COEFFICIENTS:
+        type: string
+        menu: list
+      X:
+        type: number
+        defaultValue: 2
+  - opcode: polynomialDegree
+    blockType: reporter
+    text: "degree of polynomial [COEFFICIENTS]"
+    arguments:
+      COEFFICIENTS:
+        type: string
+        menu: list
+  - opcode: polynomialDerivativeAt
+    blockType: reporter
+    text: "derivative of polynomial [COEFFICIENTS] at [X]"
+    arguments:
+      COEFFICIENTS:
+        type: string
+        menu: list
+      X:
+        type: number
+        defaultValue: 2
+  - opcode: polynomialIntegral
+    blockType: reporter
+    text: "integral of polynomial [COEFFICIENTS] from [FROM] to [TO]"
+    arguments:
+      COEFFICIENTS:
+        type: string
+        menu: list
+      FROM:
+        type: number
+        defaultValue: 0
+      TO:
+        type: number
+        defaultValue: 1
+  - opcode: polynomialLimit
+    blockType: reporter
+    text: "limit of polynomial [COEFFICIENTS] at [X]"
+    arguments:
+      COEFFICIENTS:
+        type: string
+        menu: list
+      X:
+        type: number
+        defaultValue: 0
+  - opcode: polynomialDerivativeTerms
+    blockType: reporter
+    text: "derivative coefficients of [COEFFICIENTS] (as text)"
+    arguments:
+      COEFFICIENTS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - blockType: label
+    text: "Special Functions"
+  - opcode: gammaFunction
+    blockType: reporter
+    text: "gamma of [X]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 5
+  - opcode: logGammaFunction
+    blockType: reporter
+    text: "ln gamma of [X]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 5
+  - opcode: betaFunction
+    blockType: reporter
+    text: "beta of [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: errorFunction
+    blockType: reporter
+    text: "error function (erf) of [X]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+  - opcode: inverseErrorFunction
+    blockType: reporter
+    text: "inverse error function of [Y]"
+    arguments:
+      Y:
+        type: number
+        defaultValue: 0.5
+  - opcode: stirlingApproximation
+    blockType: reporter
+    text: "Stirling approximation of [N]!"
+    arguments:
+      N:
+        type: number
+        defaultValue: 20
+  - blockType: label
+    text: "Probability & Random"
+  - opcode: randomNormal
+    blockType: reporter
+    text: "random normal number (mean [MEAN] , sd [DEVIATION])"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+    disableMonitor: true
+  - opcode: randomExponential
+    blockType: reporter
+    text: "random exponential number (lambda [RATE])"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 1
+    disableMonitor: true
+  - opcode: randomTriangular
+    blockType: reporter
+    text: "random triangular number ([LOW] to [HIGH] , mode [MODE])"
+    arguments:
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+      MODE:
+        type: number
+        defaultValue: 0.25
+    disableMonitor: true
+  - opcode: rollDiceSum
+    blockType: reporter
+    text: "sum of [COUNT] dice with [SIDES] sides"
+    arguments:
+      COUNT:
+        type: number
+        defaultValue: 2
+      SIDES:
+        type: number
+        defaultValue: 6
+  - opcode: randomWeightedFromList
+    blockType: reporter
+    text: "random item from list [LIST] weighted by [WEIGHTS]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      WEIGHTS:
+        type: string
+        menu: list
+    disableMonitor: true
+  - opcode: normalCdf
+    blockType: reporter
+    text: "normal CDF at [VALUE] (mean [MEAN] , sd [DEVIATION])"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: normalPdf
+    blockType: reporter
+    text: "normal PDF at [VALUE] (mean [MEAN] , sd [DEVIATION])"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - blockType: label
+    text: "Money"
+  - opcode: simpleInterest
+    blockType: reporter
+    text: "simple interest on [PRINCIPAL] at [RATE]% for [YEARS] years"
+    arguments:
+      PRINCIPAL:
+        type: number
+        defaultValue: 1000
+      RATE:
+        type: number
+        defaultValue: 5
+      YEARS:
+        type: number
+        defaultValue: 3
+  - opcode: compoundAmount
+    blockType: reporter
+    text: "[PRINCIPAL] at [RATE]% for [YEARS] years compounded [PERIODS] times a year"
+    arguments:
+      PRINCIPAL:
+        type: number
+        defaultValue: 1000
+      RATE:
+        type: number
+        defaultValue: 5
+      YEARS:
+        type: number
+        defaultValue: 10
+      PERIODS:
+        type: number
+        defaultValue: 12
+  - opcode: continuousCompoundAmount
+    blockType: reporter
+    text: "[PRINCIPAL] at [RATE]% for [YEARS] years compounded continuously"
+    arguments:
+      PRINCIPAL:
+        type: number
+        defaultValue: 1000
+      RATE:
+        type: number
+        defaultValue: 5
+      YEARS:
+        type: number
+        defaultValue: 10
+  - opcode: annualPercentageYield
+    blockType: reporter
+    text: "annual percentage yield of [RATE]% compounded [PERIODS] times a year"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 5
+      PERIODS:
+        type: number
+        defaultValue: 12
+  - opcode: ruleOf72
+    blockType: reporter
+    text: "years for [RATE]% to double (rule of 72)"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 6
+  - opcode: doublingTime
+    blockType: reporter
+    text: "exact years for [RATE]% to double"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 6
+  - opcode: monthlyLoanPayment
+    blockType: reporter
+    text: "monthly payment for [PRINCIPAL] at [RATE]% over [MONTHS] months"
+    arguments:
+      PRINCIPAL:
+        type: number
+        defaultValue: 10000
+      RATE:
+        type: number
+        defaultValue: 6
+      MONTHS:
+        type: number
+        defaultValue: 60
+  - opcode: presentValue
+    blockType: reporter
+    text: "present value of [AMOUNT] at [RATE]% for [YEARS] years"
+    arguments:
+      AMOUNT:
+        type: number
+        defaultValue: 1000
+      RATE:
+        type: number
+        defaultValue: 5
+      YEARS:
+        type: number
+        defaultValue: 10
+  - blockType: label
+    text: "Units & Conversion"
+  - opcode: convertMass
+    blockType: reporter
+    text: "convert mass [MASS] from [FROM massUnit gram] to [TO massUnit pound]"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: massUnit
+      TO:
+        type: string
+        menu: massUnit
+  - opcode: convertLength
+    blockType: reporter
+    text: "convert length [LENGTH] from [FROM lengthUnit metre] to [TO lengthUnit foot]"
+    arguments:
+      LENGTH:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: lengthUnit
+      TO:
+        type: string
+        menu: lengthUnit
+  - opcode: convertArea
+    blockType: reporter
+    text: "convert area [AREA] from [FROM areaUnit squareMetre] to [TO areaUnit squareFoot]"
+    arguments:
+      AREA:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: areaUnit
+      TO:
+        type: string
+        menu: areaUnit
+  - opcode: convertVolume
+    blockType: reporter
+    text: "convert volume [VOLUME] from [FROM volumeUnit litre] to [TO volumeUnit gallonUS]"
+    arguments:
+      VOLUME:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: volumeUnit
+      TO:
+        type: string
+        menu: volumeUnit
+  - opcode: convertTime
+    blockType: reporter
+    text: "convert duration [TIME] from [FROM timeUnit second] to [TO timeUnit minute]"
+    arguments:
+      TIME:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: timeUnit
+      TO:
+        type: string
+        menu: timeUnit
+  - opcode: convertSpeed
+    blockType: reporter
+    text: "convert speed [SPEED] from [FROM speedUnit metrePerSecond] to [TO speedUnit kilometrePerHour]"
+    arguments:
+      SPEED:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: speedUnit
+      TO:
+        type: string
+        menu: speedUnit
+  - opcode: convertAcceleration
+    blockType: reporter
+    text: "convert acceleration [ACCELERATION] from [FROM accelerationUnit metrePerSecondSquared] to [TO accelerationUnit standardGravity]"
+    arguments:
+      ACCELERATION:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: accelerationUnit
+      TO:
+        type: string
+        menu: accelerationUnit
+  - opcode: convertTemperature
+    blockType: reporter
+    text: "convert temperature [TEMPERATURE] from [FROM temperatureUnit celsius] to [TO temperatureUnit fahrenheit]"
+    arguments:
+      TEMPERATURE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: temperatureUnit
+      TO:
+        type: string
+        menu: temperatureUnit
+  - opcode: convertPressure
+    blockType: reporter
+    text: "convert pressure [PRESSURE] from [FROM pressureUnit pascal] to [TO pressureUnit atmosphere]"
+    arguments:
+      PRESSURE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: pressureUnit
+      TO:
+        type: string
+        menu: pressureUnit
+  - opcode: convertEnergy
+    blockType: reporter
+    text: "convert energy [ENERGY] from [FROM energyUnit joule] to [TO energyUnit kilocalorie]"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: energyUnit
+      TO:
+        type: string
+        menu: energyUnit
+  - opcode: convertPower
+    blockType: reporter
+    text: "convert power [POWER] from [FROM powerUnit watt] to [TO powerUnit kilowatt]"
+    arguments:
+      POWER:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: powerUnit
+      TO:
+        type: string
+        menu: powerUnit
+  - opcode: convertForce
+    blockType: reporter
+    text: "convert force [FORCE] from [FROM forceUnit newton] to [TO forceUnit poundForce]"
+    arguments:
+      FORCE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: forceUnit
+      TO:
+        type: string
+        menu: forceUnit
+  - opcode: convertDataSize
+    blockType: reporter
+    text: "convert file size [SIZE] from [FROM dataUnit megabyte] to [TO dataUnit gigabyte]"
+    arguments:
+      SIZE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: dataUnit
+      TO:
+        type: string
+        menu: dataUnit
+  - opcode: convertFrequency
+    blockType: reporter
+    text: "convert frequency [FREQUENCY] from [FROM frequencyUnit hertz] to [TO frequencyUnit kilohertz]"
+    arguments:
+      FREQUENCY:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: frequencyUnit
+      TO:
+        type: string
+        menu: frequencyUnit
+  - opcode: convertDensity
+    blockType: reporter
+    text: "convert density [DENSITY] from [FROM densityUnit kilogramPerCubicMetre] to [TO densityUnit gramPerLitre]"
+    arguments:
+      DENSITY:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: densityUnit
+      TO:
+        type: string
+        menu: densityUnit
+  - opcode: convertAngle
+    blockType: reporter
+    text: "convert angle [ANGLE] from [FROM angleUnit degrees] to [TO angleUnit radians]"
+    arguments:
+      ANGLE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: angleUnit
+      TO:
+        type: string
+        menu: angleUnit
+  - opcode: convertFuelEconomy
+    blockType: reporter
+    text: "convert fuel economy [VALUE] from [FROM fuelUnit milesPerGallonUS] to [TO fuelUnit litresPer100Kilometres]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: fuelUnit
+      TO:
+        type: string
+        menu: fuelUnit
+  - opcode: convertFlow
+    blockType: reporter
+    text: "convert flow rate [FLOW] from [FROM flowUnit cubicMetrePerSecond] to [TO flowUnit litrePerMinute]"
+    arguments:
+      FLOW:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: flowUnit
+      TO:
+        type: string
+        menu: flowUnit
+  - opcode: convertTorque
+    blockType: reporter
+    text: "convert torque [TORQUE] from [FROM torqueUnit newtonMetre] to [TO torqueUnit poundFoot]"
+    arguments:
+      TORQUE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: torqueUnit
+      TO:
+        type: string
+        menu: torqueUnit
+  - opcode: convertRadioactivity
+    blockType: reporter
+    text: "convert radioactivity [VALUE] from [FROM activityUnit becquerel] to [TO activityUnit curie]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: activityUnit
+      TO:
+        type: string
+        menu: activityUnit
+  - opcode: convertDose
+    blockType: reporter
+    text: "convert radiation dose [DOSE] from [FROM doseUnit gray] to [TO doseUnit sievert]"
+    arguments:
+      DOSE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: doseUnit
+      TO:
+        type: string
+        menu: doseUnit
+  - opcode: convertUnit
+    blockType: reporter
+    text: "convert [VALUE] from [FROM anyUnit kilogram] to [TO anyUnit pound]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1
+      FROM:
+        type: string
+        menu: anyUnit
+      TO:
+        type: string
+        menu: anyUnit
+  - blockType: label
+    text: "Mass"
+  - opcode: kilogramsToPounds
+    blockType: reporter
+    text: " [KG] kg in pounds"
+    arguments:
+      KG:
+        type: number
+        defaultValue: 1
+  - opcode: poundsToKilograms
+    blockType: reporter
+    text: "[LB] lb in kg"
+    arguments:
+      LB:
+        type: number
+        defaultValue: 1
+  - opcode: poundsToStone
+    blockType: reporter
+    text: "[LB] lb in stone"
+    arguments:
+      LB:
+        type: number
+        defaultValue: 1
+  - opcode: stoneToPounds
+    blockType: reporter
+    text: "[ST] st in lb"
+    arguments:
+      ST:
+        type: number
+        defaultValue: 1
+  - opcode: tonnesToPounds
+    blockType: reporter
+    text: "[TONNES] tonnes in lb"
+    arguments:
+      TONNES:
+        type: number
+        defaultValue: 1
+  - opcode: ouncesToGrams
+    blockType: reporter
+    text: "[OZ] oz in g"
+    arguments:
+      OZ:
+        type: number
+        defaultValue: 1
+  - opcode: gramsToOunces
+    blockType: reporter
+    text: "[G] g in oz"
+    arguments:
+      G:
+        type: number
+        defaultValue: 1
+  - blockType: label
+    text: "Length"
+  - opcode: kilometresToMiles
+    blockType: reporter
+    text: "[KM] km in miles"
+    arguments:
+      KM:
+        type: number
+        defaultValue: 1
+  - opcode: milesToKilometres
+    blockType: reporter
+    text: "[MI] mi in km"
+    arguments:
+      MI:
+        type: number
+        defaultValue: 1
+  - opcode: feetToMetres
+    blockType: reporter
+    text: "[FT] ft in m"
+    arguments:
+      FT:
+        type: number
+        defaultValue: 1
+  - opcode: metresToFeet
+    blockType: reporter
+    text: "[M] m in ft"
+    arguments:
+      M:
+        type: number
+        defaultValue: 1
+  - opcode: inchesToCentimetres
+    blockType: reporter
+    text: "[IN] in in cm"
+    arguments:
+      IN:
+        type: number
+        defaultValue: 1
+  - opcode: centimetresToInches
+    blockType: reporter
+    text: "[CM] cm in in"
+    arguments:
+      CM:
+        type: number
+        defaultValue: 1
+  - opcode: milesToFeet
+    blockType: reporter
+    text: "[MI] mi in ft"
+    arguments:
+      MI:
+        type: number
+        defaultValue: 1
+  - opcode: feetToMiles
+    blockType: reporter
+    text: "[FT] ft in mi"
+    arguments:
+      FT:
+        type: number
+        defaultValue: 1
+  - opcode: kilometresToMetres
+    blockType: reporter
+    text: "[KM] km in m"
+    arguments:
+      KM:
+        type: number
+        defaultValue: 1
+  - blockType: label
+    text: "Temperature"
+  - opcode: celsiusToFahrenheit
+    blockType: reporter
+    text: "[C] °C in °F"
+    arguments:
+      C:
+        type: number
+        defaultValue: 0
+  - opcode: fahrenheitToCelsius
+    blockType: reporter
+    text: "[F] °F in °C"
+    arguments:
+      F:
+        type: number
+        defaultValue: 32
+  - opcode: celsiusToKelvin
+    blockType: reporter
+    text: "[C] °C in K"
+    arguments:
+      C:
+        type: number
+        defaultValue: 0
+  - opcode: kelvinToCelsius
+    blockType: reporter
+    text: "[K] K in °C"
+    arguments:
+      K:
+        type: number
+        defaultValue: 273.15
+  - opcode: fahrenheitToKelvin
+    blockType: reporter
+    text: "[F] °F in K"
+    arguments:
+      F:
+        type: number
+        defaultValue: 32
+  - blockType: label
+    text: "Volume & Time"
+  - opcode: litresToGallons
+    blockType: reporter
+    text: "[L] L in US gallons"
+    arguments:
+      L:
+        type: number
+        defaultValue: 1
+  - opcode: gallonsToLitres
+    blockType: reporter
+    text: "[GAL] US gal in L"
+    arguments:
+      GAL:
+        type: number
+        defaultValue: 1
+  - opcode: secondsToMinutes
+    blockType: reporter
+    text: "[S] s in min"
+    arguments:
+      S:
+        type: number
+        defaultValue: 60
+  - opcode: minutesToHours
+    blockType: reporter
+    text: "[MIN] min in hours"
+    arguments:
+      MIN:
+        type: number
+        defaultValue: 60
+  - opcode: hoursToDays
+    blockType: reporter
+    text: "[H] h in days"
+    arguments:
+      H:
+        type: number
+        defaultValue: 24
+  - opcode: daysToYears
+    blockType: reporter
+    text: "[D] days in years"
+    arguments:
+      D:
+        type: number
+        defaultValue: 365
+  - opcode: yearsToDays
+    blockType: reporter
+    text: "[YR] years in days"
+    arguments:
+      YR:
+        type: number
+        defaultValue: 1
+  - opcode: kilometresPerHourToMilesPerHour
+    blockType: reporter
+    text: "[KPH] km/h in mph"
+    arguments:
+      KPH:
+        type: number
+        defaultValue: 100
+  - opcode: milesPerHourToKilometresPerHour
+    blockType: reporter
+    text: "[MPH] mph in km/h"
+    arguments:
+      MPH:
+        type: number
+        defaultValue: 60
+  - blockType: label
+    text: "Unit Information"
+  - opcode: unitDimension
+    blockType: reporter
+    text: "dimension of unit [UNIT]"
+    arguments:
+      UNIT:
+        type: string
+        menu: anyUnit
+  - opcode: unitSymbol
+    blockType: reporter
+    text: "symbol of unit [UNIT]"
+    arguments:
+      UNIT:
+        type: string
+        menu: anyUnit
+  - opcode: unitName
+    blockType: reporter
+    text: "name of unit [UNIT]"
+    arguments:
+      UNIT:
+        type: string
+        menu: anyUnit
+  - opcode: unitDetail
+    blockType: reporter
+    text: "describe unit [UNIT]"
+    arguments:
+      UNIT:
+        type: string
+        menu: anyUnit
+  - opcode: unitKeyForSymbol
+    blockType: reporter
+    text: "unit key for symbol [SYMBOL]"
+    arguments:
+      SYMBOL:
+        type: string
+  - opcode: unitsInDimension
+    blockType: reporter
+    text: "list all [DIMENSION unitDimension mass] units"
+    arguments:
+      DIMENSION:
+        type: string
+        menu: unitDimension
+  - opcode: unitDimensionsList
+    blockType: reporter
+    text: "list all unit dimensions"
+  - blockType: label
+    text: "Distributions"
+  - blockType: label
+    text: "Sampling"
+  - opcode: uniformSample
+    blockType: reporter
+    text: "[LOW] to [HIGH]"
+    arguments:
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+  - opcode: uniformIntegerSample
+    blockType: reporter
+    text: "random integer from [LOW] to [HIGH]"
+    arguments:
+      LOW:
+        type: number
+        defaultValue: 1
+      HIGH:
+        type: number
+        defaultValue: 6
+  - opcode: bernoulliSample
+    blockType: reporter
+    text: "bernoulli trial with probability [PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: binomialSample
+    blockType: reporter
+    text: "binomial sample of [TRIALS] trials with probability [PROBABILITY]"
+    arguments:
+      TRIALS:
+        type: number
+        defaultValue: 10
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: poissonSample
+    blockType: reporter
+    text: "poisson sample with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: geometricSample
+    blockType: reporter
+    text: "geometric sample with probability [PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: negativeBinomialSample
+    blockType: reporter
+    text: "negative binomial sample needing [SUCCESSES] successes with probability [PROBABILITY]"
+    arguments:
+      SUCCESSES:
+        type: number
+        defaultValue: 3
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: hypergeometricSample
+    blockType: reporter
+    text: "hypergeometric sample drawing [DRAWN] from [POPULATION] with [SUCCESSES] marked"
+    arguments:
+      DRAWN:
+        type: number
+        defaultValue: 10
+      SUCCESSES:
+        type: number
+        defaultValue: 4
+      POPULATION:
+        type: number
+        defaultValue: 20
+  - opcode: logNormalSample
+    blockType: reporter
+    text: "log-normal sample with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: gammaSample
+    blockType: reporter
+    text: "gamma sample with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: betaSample
+    blockType: reporter
+    text: "beta sample with alpha [A] and beta [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: weibullSample
+    blockType: reporter
+    text: "weibull sample with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: cauchySample
+    blockType: reporter
+    text: "cauchy sample at [LOCATION] with scale [SCALE]"
+    arguments:
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplaceSample
+    blockType: reporter
+    text: "laplace sample at [LOCATION] with scale [SCALE]"
+    arguments:
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: chiSquareSample
+    blockType: reporter
+    text: "chi-square sample with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 1
+  - opcode: studentTSample
+    blockType: reporter
+    text: "student-t sample with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 10
+  - opcode: standardNormalSample
+    blockType: reporter
+    text: "standard normal sample"
+  - opcode: shuffledList
+    blockType: reporter
+    text: "shuffled copy of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: randomSampleWithoutReplacement
+    blockType: reporter
+    text: "[COUNT] random items from list [LIST] without replacement"
+    arguments:
+      COUNT:
+        type: number
+        defaultValue: 3
+      LIST:
+        type: string
+        menu: list
+  - blockType: label
+    text: "Continuous Distributions"
+  - opcode: uniformPdf
+    blockType: reporter
+    text: "uniform pdf of [X] between [LOW] and [HIGH]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0.5
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+  - opcode: uniformCdf
+    blockType: reporter
+    text: "uniform cdf of [X] between [LOW] and [HIGH]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0.5
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+  - opcode: exponentialPdf
+    blockType: reporter
+    text: "exponential pdf of [X] with rate [RATE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      RATE:
+        type: number
+        defaultValue: 1
+  - opcode: exponentialCdf
+    blockType: reporter
+    text: "exponential cdf of [X] with rate [RATE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      RATE:
+        type: number
+        defaultValue: 1
+  - opcode: exponentialQuantile
+    blockType: reporter
+    text: "exponential quantile at probability [PROBABILITY] with rate [RATE]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      RATE:
+        type: number
+        defaultValue: 1
+  - opcode: logNormalPdf
+    blockType: reporter
+    text: "log-normal pdf of [X] with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: logNormalCdf
+    blockType: reporter
+    text: "log-normal cdf of [X] with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: logNormalQuantile
+    blockType: reporter
+    text: "log-normal quantile at probability [PROBABILITY] with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: gammaPdf
+    blockType: reporter
+    text: "gamma pdf of [X] with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: gammaCdf
+    blockType: reporter
+    text: "gamma cdf of [X] with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: gammaQuantile
+    blockType: reporter
+    text: "gamma quantile at probability [PROBABILITY] with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: betaPdf
+    blockType: reporter
+    text: "beta pdf of [X] with alpha [A] and beta [B]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0.5
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: betaCdf
+    blockType: reporter
+    text: "beta cdf of [X] with alpha [A] and beta [B]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0.5
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: betaQuantile
+    blockType: reporter
+    text: "beta quantile at probability [PROBABILITY] with alpha [A] and beta [B]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: weibullPdf
+    blockType: reporter
+    text: "weibull pdf of [X] with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: weibullCdf
+    blockType: reporter
+    text: "weibull cdf of [X] with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: cauchyPdf
+    blockType: reporter
+    text: "cauchy pdf of [X] at [LOCATION] with scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: cauchyCdf
+    blockType: reporter
+    text: "cauchy cdf of [X] at [LOCATION] with scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: cauchyQuantile
+    blockType: reporter
+    text: "cauchy quantile at probability [PROBABILITY], [LOCATION] and [SCALE]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplacePdf
+    blockType: reporter
+    text: "laplace pdf of [X] at [LOCATION] with scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplaceCdf
+    blockType: reporter
+    text: "laplace cdf of [X] at [LOCATION] with scale [SCALE]"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplaceQuantile
+    blockType: reporter
+    text: "laplace quantile at probability [PROBABILITY], [LOCATION] and [SCALE]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: studentTPdf
+    blockType: reporter
+    text: "student-t pdf of [X] with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 10
+  - opcode: studentTCdf
+    blockType: reporter
+    text: "student-t cdf of [X] with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      X:
+        type: number
+        defaultValue: 0
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 10
+  - opcode: studentTQuantile
+    blockType: reporter
+    text: "student-t quantile at probability [PROBABILITY] with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.975
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 10
+  - opcode: chiSquarePdf
+    blockType: reporter
+    text: "chi-square pdf of [X] with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 1
+  - opcode: chiSquareCdf
+    blockType: reporter
+    text: "chi-square cdf of [X] with [DEGREES_OF_FREEDOM] degrees of freedom"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      DEGREES_OF_FREEDOM:
+        type: number
+        defaultValue: 1
+  - opcode: fDistributionCdf
+    blockType: reporter
+    text: "F cdf of [X] with [NUMERATOR_DEGREES] and [DENOMINATOR_DEGREES] degrees of freedom"
+    arguments:
+      X:
+        type: number
+        defaultValue: 1
+      NUMERATOR_DEGREES:
+        type: number
+        defaultValue: 3
+      DENOMINATOR_DEGREES:
+        type: number
+        defaultValue: 10
+  - opcode: normalQuantile
+    blockType: reporter
+    text: "normal quantile at probability [PROBABILITY], mean [MEAN] and deviation [DEVIATION]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.975
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: normalZScore
+    blockType: reporter
+    text: "z-score of [VALUE] with mean [MEAN] and deviation [DEVIATION]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1.5
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - blockType: label
+    text: "Discrete Distributions"
+  - opcode: poissonPmf
+    blockType: reporter
+    text: "poisson probability of [K] events with rate [RATE]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: poissonCdf
+    blockType: reporter
+    text: "poisson probability of at most [K] events with rate [RATE]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: poissonQuantile
+    blockType: reporter
+    text: "poisson quantile at probability [PROBABILITY] with rate [RATE]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: binomialPmf
+    blockType: reporter
+    text: "binomial probability of exactly [K] successes in [TRIALS] trials with probability [PROBABILITY]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 5
+      TRIALS:
+        type: number
+        defaultValue: 10
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: binomialCdf
+    blockType: reporter
+    text: "binomial probability of at most [K] successes in [TRIALS] trials with probability [PROBABILITY]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 5
+      TRIALS:
+        type: number
+        defaultValue: 10
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: binomialQuantile
+    blockType: reporter
+    text: "binomial quantile at probability [PROBABILITY] in [TRIALS] trials with success probability [TRIAL_PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+      TRIALS:
+        type: number
+        defaultValue: 10
+      TRIAL_PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: geometricPmf
+    blockType: reporter
+    text: "geometric probability of [K] trials with probability [PROBABILITY]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: geometricCdf
+    blockType: reporter
+    text: "geometric probability of at most [K] trials with probability [PROBABILITY]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: negativeBinomialPmf
+    blockType: reporter
+    text: "negative binomial probability of [K] trials needed for [SUCCESSES] successes with probability [PROBABILITY]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      SUCCESSES:
+        type: number
+        defaultValue: 3
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: negativeBinomialCdf
+    blockType: reporter
+    text: "negative binomial probability of at most [K] trials needed for [SUCCESSES] successes with probability [PROBABILITY]"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      SUCCESSES:
+        type: number
+        defaultValue: 3
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: hypergeometricPmf
+    blockType: reporter
+    text: "hypergeometric probability of [K] marked items in a draw of [DRAWN] from [POPULATION] with [SUCCESSES] marked"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      DRAWN:
+        type: number
+        defaultValue: 10
+      SUCCESSES:
+        type: number
+        defaultValue: 4
+      POPULATION:
+        type: number
+        defaultValue: 20
+  - opcode: hypergeometricCdf
+    blockType: reporter
+    text: "hypergeometric probability of at most [K] marked items in a draw of [DRAWN] from [POPULATION] with [SUCCESSES] marked"
+    arguments:
+      K:
+        type: number
+        defaultValue: 2
+      DRAWN:
+        type: number
+        defaultValue: 10
+      SUCCESSES:
+        type: number
+        defaultValue: 4
+      POPULATION:
+        type: number
+        defaultValue: 20
+  - blockType: label
+    text: "Distribution Moments"
+  - opcode: uniformMean
+    blockType: reporter
+    text: "mean of uniform distribution with [LOW] and [HIGH]"
+    arguments:
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+  - opcode: uniformVariance
+    blockType: reporter
+    text: "variance of uniform distribution with [LOW] and [HIGH]"
+    arguments:
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+  - opcode: uniformStdDev
+    blockType: reporter
+    text: "standard deviation of uniform distribution with [LOW] and [HIGH]"
+    arguments:
+      LOW:
+        type: number
+        defaultValue: 0
+      HIGH:
+        type: number
+        defaultValue: 1
+  - opcode: exponentialMean
+    blockType: reporter
+    text: "mean of exponential distribution with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 1
+  - opcode: exponentialVariance
+    blockType: reporter
+    text: "variance of exponential distribution with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 1
+  - opcode: exponentialStdDev
+    blockType: reporter
+    text: "standard deviation of exponential distribution with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 1
+  - opcode: normalMean
+    blockType: reporter
+    text: "mean of normal distribution with mean [MEAN] and deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: normalVariance
+    blockType: reporter
+    text: "variance of normal distribution with mean [MEAN] and deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: normalStdDev
+    blockType: reporter
+    text: "standard deviation of normal distribution with mean [MEAN] and deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: logNormalMean
+    blockType: reporter
+    text: "mean of logNormal distribution with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: logNormalVariance
+    blockType: reporter
+    text: "variance of logNormal distribution with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: logNormalStdDev
+    blockType: reporter
+    text: "standard deviation of logNormal distribution with log mean [MEAN] and log deviation [DEVIATION]"
+    arguments:
+      MEAN:
+        type: number
+        defaultValue: 0
+      DEVIATION:
+        type: number
+        defaultValue: 1
+  - opcode: gammaMean
+    blockType: reporter
+    text: "mean of gamma distribution with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: gammaVariance
+    blockType: reporter
+    text: "variance of gamma distribution with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: gammaStdDev
+    blockType: reporter
+    text: "standard deviation of gamma distribution with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: betaMean
+    blockType: reporter
+    text: "mean of beta distribution with alpha [A] and beta [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: betaVariance
+    blockType: reporter
+    text: "variance of beta distribution with alpha [A] and beta [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: betaStdDev
+    blockType: reporter
+    text: "standard deviation of beta distribution with alpha [A] and beta [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 2
+      B:
+        type: number
+        defaultValue: 3
+  - opcode: weibullMean
+    blockType: reporter
+    text: "mean of weibull distribution with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: weibullVariance
+    blockType: reporter
+    text: "variance of weibull distribution with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: weibullStdDev
+    blockType: reporter
+    text: "standard deviation of weibull distribution with shape [SHAPE] and scale [SCALE]"
+    arguments:
+      SHAPE:
+        type: number
+        defaultValue: 2
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplaceMean
+    blockType: reporter
+    text: "mean of laplace distribution with location [LOCATION] and scale [SCALE]"
+    arguments:
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplaceVariance
+    blockType: reporter
+    text: "variance of laplace distribution with location [LOCATION] and scale [SCALE]"
+    arguments:
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: laplaceStdDev
+    blockType: reporter
+    text: "standard deviation of laplace distribution with location [LOCATION] and scale [SCALE]"
+    arguments:
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: cauchyMean
+    blockType: reporter
+    text: "mean of cauchy distribution with location [LOCATION] and scale [SCALE]"
+    arguments:
+      LOCATION:
+        type: number
+        defaultValue: 0
+      SCALE:
+        type: number
+        defaultValue: 1
+  - opcode: binomialMean
+    blockType: reporter
+    text: "mean of binomial distribution with [TRIALS] trials with probability [PROBABILITY]"
+    arguments:
+      TRIALS:
+        type: number
+        defaultValue: 10
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: binomialVariance
+    blockType: reporter
+    text: "variance of binomial distribution with [TRIALS] trials with probability [PROBABILITY]"
+    arguments:
+      TRIALS:
+        type: number
+        defaultValue: 10
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: binomialStdDev
+    blockType: reporter
+    text: "standard deviation of binomial distribution with [TRIALS] trials with probability [PROBABILITY]"
+    arguments:
+      TRIALS:
+        type: number
+        defaultValue: 10
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: poissonMean
+    blockType: reporter
+    text: "mean of poisson distribution with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: poissonVariance
+    blockType: reporter
+    text: "variance of poisson distribution with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: poissonStdDev
+    blockType: reporter
+    text: "standard deviation of poisson distribution with rate [RATE]"
+    arguments:
+      RATE:
+        type: number
+        defaultValue: 4
+  - opcode: geometricMean
+    blockType: reporter
+    text: "mean of geometric distribution with probability [PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: geometricVariance
+    blockType: reporter
+    text: "variance of geometric distribution with probability [PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: geometricStdDev
+    blockType: reporter
+    text: "standard deviation of geometric distribution with probability [PROBABILITY]"
+    arguments:
+      PROBABILITY:
+        type: number
+        defaultValue: 0.5
+  - opcode: cauchyStdDev
+    blockType: reporter
+    text: "standard deviation of cauchy distribution (undefined)"
+  - opcode: listShannonEntropy
+    blockType: reporter
+    text: "Shannon entropy in bits of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - blockType: label
+    text: "Physics"
+  - opcode: physicalConstant
+    blockType: reporter
+    text: "physical constant [CONSTANT physicalConstant speedOfLight (c)]"
+    arguments:
+      CONSTANT:
+        type: string
+        menu: physicalConstant
+  - opcode: physicsConstantList
+    blockType: reporter
+    text: "list all physical constants"
+  - opcode: kineticEnergy
+    blockType: reporter
+    text: "kinetic energy of [MASS] moving at [VELOCITY] m/s"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1
+      VELOCITY:
+        type: number
+        defaultValue: 10
+  - opcode: potentialEnergy
+    blockType: reporter
+    text: "gravitational potential energy of [MASS] at height [HEIGHT] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1
+      HEIGHT:
+        type: number
+        defaultValue: 10
+  - opcode: elasticEnergy
+    blockType: reporter
+    text: "elastic energy of spring [SPRING_CONSTANT] N/m stretched [EXTENSION] m"
+    arguments:
+      SPRING_CONSTANT:
+        type: number
+        defaultValue: 100
+      EXTENSION:
+        type: number
+        defaultValue: 0.5
+  - opcode: momentumOf
+    blockType: reporter
+    text: "momentum of [MASS] moving at [VELOCITY] m/s"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1
+      VELOCITY:
+        type: number
+        defaultValue: 10
+  - opcode: impulseOf
+    blockType: reporter
+    text: "impulse on [MASS] with velocity change [CHANGE_IN_VELOCITY] m/s"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 2
+      CHANGE_IN_VELOCITY:
+        type: number
+        defaultValue: 3
+  - opcode: massFromMomentum
+    blockType: reporter
+    text: "mass with momentum [MOMENTUM] moving at [VELOCITY] m/s"
+    arguments:
+      MOMENTUM:
+        type: number
+        defaultValue: 10
+      VELOCITY:
+        type: number
+        defaultValue: 5
+  - opcode: speedFromKineticEnergy
+    blockType: reporter
+    text: "speed of [MASS] kg carrying kinetic energy [ENERGY] J"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 2
+      ENERGY:
+        type: number
+        defaultValue: 100
+  - opcode: workDone
+    blockType: reporter
+    text: "work by [FORCE] N over [DISTANCE] m at [ANGLE] degrees"
+    arguments:
+      FORCE:
+        type: number
+        defaultValue: 10
+      DISTANCE:
+        type: number
+        defaultValue: 5
+      ANGLE:
+        type: number
+        defaultValue: 0
+  - opcode: powerFromWork
+    blockType: reporter
+    text: "power of [WORK] J done over [TIME] s"
+    arguments:
+      WORK:
+        type: number
+        defaultValue: 100
+      TIME:
+        type: number
+        defaultValue: 4
+  - opcode: forceFromAcceleration
+    blockType: reporter
+    text: "force accelerating [MASS] kg at [ACCELERATION] m/s²"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 3
+      ACCELERATION:
+        type: number
+        defaultValue: 9.81
+  - opcode: accelerationFromForce
+    blockType: reporter
+    text: "acceleration of [MASS] kg under [FORCE] N"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 3
+      FORCE:
+        type: number
+        defaultValue: 30
+  - opcode: weightOf
+    blockType: reporter
+    text: "weight of [MASS] kg at gravity [GRAVITY] m/s²"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 70
+      GRAVITY:
+        type: number
+        defaultValue: 9.80665
+  - opcode: massFromWeight
+    blockType: reporter
+    text: "mass with weight [WEIGHT] N at gravity [GRAVITY] m/s²"
+    arguments:
+      WEIGHT:
+        type: number
+        defaultValue: 686
+      GRAVITY:
+        type: number
+        defaultValue: 9.80665
+  - opcode: gravitationalForce
+    blockType: reporter
+    text: "gravitational force between [MASS1] kg and [MASS2] kg [DISTANCE] m apart"
+    arguments:
+      MASS1:
+        type: number
+        defaultValue: 1e+20
+      MASS2:
+        type: number
+        defaultValue: 1e+20
+      DISTANCE:
+        type: number
+        defaultValue: 10000000000.0
+  - opcode: gravitationalField
+    blockType: reporter
+    text: "gravitational field of [MASS] kg at [DISTANCE] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 5.9722e+24
+      DISTANCE:
+        type: number
+        defaultValue: 6371000.0
+  - opcode: surfaceGravityOf
+    blockType: reporter
+    text: "surface gravity of body [MASS] kg with radius [RADIUS] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 5.9722e+24
+      RADIUS:
+        type: number
+        defaultValue: 6371000.0
+  - opcode: hookeLawForce
+    blockType: reporter
+    text: "spring force for constant [SPRING_CONSTANT] N/m at [EXTENSION] m"
+    arguments:
+      SPRING_CONSTANT:
+        type: number
+        defaultValue: 100
+      EXTENSION:
+        type: number
+        defaultValue: 0.2
+  - opcode: centripetalForce
+    blockType: reporter
+    text: "centripetal force on [MASS] kg at [VELOCITY] m/s in radius [RADIUS] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1
+      VELOCITY:
+        type: number
+        defaultValue: 10
+      RADIUS:
+        type: number
+        defaultValue: 5
+  - opcode: centripetalAcceleration
+    blockType: reporter
+    text: "centripetal acceleration at [VELOCITY] m/s in radius [RADIUS] m"
+    arguments:
+      VELOCITY:
+        type: number
+        defaultValue: 10
+      RADIUS:
+        type: number
+        defaultValue: 5
+  - opcode: densityOf
+    blockType: reporter
+    text: "density of [MASS] kg in [VOLUME] m³"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1000
+      VOLUME:
+        type: number
+        defaultValue: 1
+  - opcode: massFromDensity
+    blockType: reporter
+    text: "mass of [VOLUME] m³ at density [DENSITY] kg/m³"
+    arguments:
+      DENSITY:
+        type: number
+        defaultValue: 1000
+      VOLUME:
+        type: number
+        defaultValue: 2
+  - opcode: pressureFromForce
+    blockType: reporter
+    text: "pressure of [FORCE] N over [AREA] m²"
+    arguments:
+      FORCE:
+        type: number
+        defaultValue: 100
+      AREA:
+        type: number
+        defaultValue: 0.5
+  - opcode: forceFromPressure
+    blockType: reporter
+    text: "force of [PRESSURE] Pa over [AREA] m²"
+    arguments:
+      PRESSURE:
+        type: number
+        defaultValue: 200
+      AREA:
+        type: number
+        defaultValue: 0.5
+  - opcode: buoyantForce
+    blockType: reporter
+    text: "buoyant force on [VOLUME] m³ in fluid of density [FLUID_DENSITY] kg/m³"
+    arguments:
+      VOLUME:
+        type: number
+        defaultValue: 0.01
+      FLUID_DENSITY:
+        type: number
+        defaultValue: 1000
+  - opcode: archimedesDisplacedMass
+    blockType: reporter
+    text: "mass of [VOLUME] m³ of fluid with density [FLUID_DENSITY] kg/m³"
+    arguments:
+      VOLUME:
+        type: number
+        defaultValue: 0.01
+      FLUID_DENSITY:
+        type: number
+        defaultValue: 1000
+  - opcode: apparentWeightInFluid
+    blockType: reporter
+    text: "apparent weight of [MASS] kg displacing [VOLUME] m³ in fluid of density [FLUID_DENSITY] kg/m³"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 5
+      VOLUME:
+        type: number
+        defaultValue: 0.005
+      FLUID_DENSITY:
+        type: number
+        defaultValue: 1000
+  - opcode: angularVelocityFromPeriod
+    blockType: reporter
+    text: "angular velocity for period [PERIOD] s"
+    arguments:
+      PERIOD:
+        type: number
+        defaultValue: 2
+  - opcode: periodFromAngularVelocity
+    blockType: reporter
+    text: "period for angular velocity [ANGULAR_VELOCITY] rad/s"
+    arguments:
+      ANGULAR_VELOCITY:
+        type: number
+        defaultValue: 3.14159
+  - opcode: rpmToRadiansPerSecond
+    blockType: reporter
+    text: "[RPM] rpm in rad/s"
+    arguments:
+      RPM:
+        type: number
+        defaultValue: 60
+  - opcode: radiansPerSecondToRpm
+    blockType: reporter
+    text: "[RADIANS_PER_SECOND] rad/s in rpm"
+    arguments:
+      RADIANS_PER_SECOND:
+        type: number
+        defaultValue: 6.28319
+  - opcode: momentOfInertiaPoint
+    blockType: reporter
+    text: "moment of inertia of [MASS] kg at radius [RADIUS] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 2
+      RADIUS:
+        type: number
+        defaultValue: 3
+  - opcode: momentOfInertiaRod
+    blockType: reporter
+    text: "moment of inertia of rod [MASS] kg and length [LENGTH] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 2
+      LENGTH:
+        type: number
+        defaultValue: 3
+  - opcode: momentOfInertiaSphere
+    blockType: reporter
+    text: "moment of inertia of solid sphere [MASS] kg with radius [RADIUS] m"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 5
+      RADIUS:
+        type: number
+        defaultValue: 2
+  - opcode: rotationalKineticEnergy
+    blockType: reporter
+    text: "rotational energy of inertia [INERTIA] at [ANGULAR_VELOCITY] rad/s"
+    arguments:
+      INERTIA:
+        type: number
+        defaultValue: 2
+      ANGULAR_VELOCITY:
+        type: number
+        defaultValue: 10
+  - opcode: torqueFromForce
+    blockType: reporter
+    text: "torque of [FORCE] N at lever arm [LEVER_ARM] m and angle [ANGLE] degrees"
+    arguments:
+      FORCE:
+        type: number
+        defaultValue: 10
+      LEVER_ARM:
+        type: number
+        defaultValue: 0.5
+      ANGLE:
+        type: number
+        defaultValue: 90
+  - opcode: leverArmFromTorque
+    blockType: reporter
+    text: "lever arm giving [TORQUE] N·m with [FORCE] N"
+    arguments:
+      TORQUE:
+        type: number
+        defaultValue: 5
+      FORCE:
+        type: number
+        defaultValue: 10
+  - opcode: momentOfForce
+    blockType: reporter
+    text: "moment of [FORCE] N at lever arm [LEVER_ARM] m"
+    arguments:
+      FORCE:
+        type: number
+        defaultValue: 10
+      LEVER_ARM:
+        type: number
+        defaultValue: 0.5
+  - opcode: waveSpeed
+    blockType: reporter
+    text: "wave speed for frequency [FREQUENCY] Hz and wavelength [WAVELENGTH] m"
+    arguments:
+      FREQUENCY:
+        type: number
+        defaultValue: 440
+      WAVELENGTH:
+        type: number
+        defaultValue: 0.78
+  - opcode: frequencyFromWave
+    blockType: reporter
+    text: "frequency of wave with speed [SPEED] m/s and wavelength [WAVELENGTH] m"
+    arguments:
+      SPEED:
+        type: number
+        defaultValue: 343
+      WAVELENGTH:
+        type: number
+        defaultValue: 0.78
+  - opcode: wavelengthFromWave
+    blockType: reporter
+    text: "wavelength of wave with speed [SPEED] m/s and frequency [FREQUENCY] Hz"
+    arguments:
+      SPEED:
+        type: number
+        defaultValue: 343
+      FREQUENCY:
+        type: number
+        defaultValue: 440
+  - opcode: wavePeriod
+    blockType: reporter
+    text: "period of wave with frequency [FREQUENCY] Hz"
+    arguments:
+      FREQUENCY:
+        type: number
+        defaultValue: 440
+  - opcode: speedInMedium
+    blockType: reporter
+    text: "speed of sound in medium of density [DENSITY] and bulk modulus [BULK_MODULUS]"
+    arguments:
+      DENSITY:
+        type: number
+        defaultValue: 1000
+      BULK_MODULUS:
+        type: number
+        defaultValue: 2200000000.0
+  - opcode: beatsPerSecond
+    blockType: reporter
+    text: "beats per second of [FIRST_FREQUENCY] Hz and [SECOND_FREQUENCY] Hz"
+    arguments:
+      FIRST_FREQUENCY:
+        type: number
+        defaultValue: 440
+      SECOND_FREQUENCY:
+        type: number
+        defaultValue: 443
+  - opcode: dopplerShift
+    blockType: reporter
+    text: "observed frequency [FREQUENCY] Hz from source at [SPEED] m/s (1 = approaching)"
+    arguments:
+      SPEED:
+        type: number
+        defaultValue: 10
+      FREQUENCY:
+        type: number
+        defaultValue: 440
+      APPROACHING:
+        type: number
+        defaultValue: 1
+  - opcode: snellRefraction
+    blockType: reporter
+    text: "refracted angle for index [INDEX1], angle [ANGLE1] degrees into index [INDEX2]"
+    arguments:
+      INDEX1:
+        type: number
+        defaultValue: 1
+      ANGLE1:
+        type: number
+        defaultValue: 45
+      INDEX2:
+        type: number
+        defaultValue: 1.5
+  - opcode: criticalAngle
+    blockType: reporter
+    text: "critical angle from index [INDEX1] into [INDEX2]"
+    arguments:
+      INDEX1:
+        type: number
+        defaultValue: 1.5
+      INDEX2:
+        type: number
+        defaultValue: 1
+  - opcode: indexOfRefraction
+    blockType: reporter
+    text: "refractive index of material with light speed [SPEED] m/s"
+    arguments:
+      SPEED:
+        type: number
+        defaultValue: 200000000.0
+  - opcode: lensImageDistance
+    blockType: reporter
+    text: "image distance for focal length [FOCAL_LENGTH] m and object distance [OBJECT_DISTANCE] m"
+    arguments:
+      FOCAL_LENGTH:
+        type: number
+        defaultValue: 0.1
+      OBJECT_DISTANCE:
+        type: number
+        defaultValue: 0.3
+  - opcode: lensMagnification
+    blockType: reporter
+    text: "magnification for focal length [FOCAL_LENGTH] m and object distance [OBJECT_DISTANCE] m"
+    arguments:
+      FOCAL_LENGTH:
+        type: number
+        defaultValue: 0.1
+      OBJECT_DISTANCE:
+        type: number
+        defaultValue: 0.3
+  - opcode: photonEnergy
+    blockType: reporter
+    text: "energy of photon with frequency [FREQUENCY] Hz"
+    arguments:
+      FREQUENCY:
+        type: number
+        defaultValue: 500000000000000.0
+  - opcode: frequencyFromPhotonEnergy
+    blockType: reporter
+    text: "frequency of photon with energy [ENERGY] J"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 3e-19
+  - opcode: photonWavelength
+    blockType: reporter
+    text: "wavelength of photon with energy [ENERGY] J"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 3e-19
+  - opcode: deBroglieWavelength
+    blockType: reporter
+    text: "de Broglie wavelength for momentum [MOMENTUM] kg·m/s"
+    arguments:
+      MOMENTUM:
+        type: number
+        defaultValue: 1e-24
+  - opcode: bohrEnergyLevel
+    blockType: reporter
+    text: "hydrogen energy level [LEVEL]"
+    arguments:
+      LEVEL:
+        type: number
+        defaultValue: 2
+  - opcode: hydrogenWavelength
+    blockType: reporter
+    text: "hydrogen wavelength from level [LEVEL] to level [TO_LEVEL]"
+    arguments:
+      LEVEL:
+        type: number
+        defaultValue: 2
+      TO_LEVEL:
+        type: number
+        defaultValue: 1
+  - opcode: lorentzFactor
+    blockType: reporter
+    text: "Lorentz factor at speed [VELOCITY] m/s"
+    arguments:
+      VELOCITY:
+        type: number
+        defaultValue: 290000000.0
+  - opcode: relativisticMass
+    blockType: reporter
+    text: "relativistic mass of [REST_MASS] kg moving at [VELOCITY] m/s"
+    arguments:
+      REST_MASS:
+        type: number
+        defaultValue: 1
+      VELOCITY:
+        type: number
+        defaultValue: 290000000.0
+  - opcode: relativisticMomentum
+    blockType: reporter
+    text: "relativistic momentum of [REST_MASS] kg at [VELOCITY] m/s"
+    arguments:
+      REST_MASS:
+        type: number
+        defaultValue: 1
+      VELOCITY:
+        type: number
+        defaultValue: 290000000.0
+  - opcode: relativisticEnergy
+    blockType: reporter
+    text: "relativistic kinetic energy of [REST_MASS] kg at [VELOCITY] m/s"
+    arguments:
+      REST_MASS:
+        type: number
+        defaultValue: 1
+      VELOCITY:
+        type: number
+        defaultValue: 290000000.0
+  - opcode: timeDilation
+    blockType: reporter
+    text: "dilated [PROPER_TIME] s seen at speed [VELOCITY] m/s"
+    arguments:
+      VELOCITY:
+        type: number
+        defaultValue: 290000000.0
+      PROPER_TIME:
+        type: number
+        defaultValue: 1
+  - opcode: lengthContraction
+    blockType: reporter
+    text: "contracted length of [PROPER_LENGTH] m at speed [VELOCITY] m/s"
+    arguments:
+      VELOCITY:
+        type: number
+        defaultValue: 290000000.0
+      PROPER_LENGTH:
+        type: number
+        defaultValue: 1
+  - opcode: energyFromMass
+    blockType: reporter
+    text: "energy of mass [MASS] kg"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1e-09
+  - opcode: massFromEnergy
+    blockType: reporter
+    text: "mass of energy [ENERGY] J"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 1
+  - opcode: energyMomentumRelation
+    blockType: reporter
+    text: "rest mass from energy [ENERGY] J and momentum [MOMENTUM] kg·m/s"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 1.5e-10
+      MOMENTUM:
+        type: number
+        defaultValue: 0
+  - opcode: coulombForce
+    blockType: reporter
+    text: "electric force between charges [CHARGE1] C and [CHARGE2] C [DISTANCE] m apart"
+    arguments:
+      CHARGE1:
+        type: number
+        defaultValue: 1e-06
+      CHARGE2:
+        type: number
+        defaultValue: 1e-06
+      DISTANCE:
+        type: number
+        defaultValue: 1
+  - opcode: electricFieldOfCharge
+    blockType: reporter
+    text: "electric field of [CHARGE] C at [DISTANCE] m"
+    arguments:
+      CHARGE:
+        type: number
+        defaultValue: 1e-06
+      DISTANCE:
+        type: number
+        defaultValue: 1
+  - opcode: electricPotentialOfCharge
+    blockType: reporter
+    text: "electric potential of [CHARGE] C at [DISTANCE] m"
+    arguments:
+      CHARGE:
+        type: number
+        defaultValue: 1e-06
+      DISTANCE:
+        type: number
+        defaultValue: 1
+  - opcode: electricPotentialEnergy
+    blockType: reporter
+    text: "electric potential energy of charges [CHARGE1] C and [CHARGE2] C [DISTANCE] m apart"
+    arguments:
+      CHARGE1:
+        type: number
+        defaultValue: 1e-06
+      CHARGE2:
+        type: number
+        defaultValue: 1e-06
+      DISTANCE:
+        type: number
+        defaultValue: 1
+  - opcode: currentFromPower
+    blockType: reporter
+    text: "current drawing [POWER] W from [VOLTAGE] V"
+    arguments:
+      POWER:
+        type: number
+        defaultValue: 1000
+      VOLTAGE:
+        type: number
+        defaultValue: 230
+  - opcode: voltageFromCurrent
+    blockType: reporter
+    text: "voltage across [RESISTANCE] Ω carrying [CURRENT] A"
+    arguments:
+      CURRENT:
+        type: number
+        defaultValue: 2
+      RESISTANCE:
+        type: number
+        defaultValue: 230
+  - opcode: resistanceFromOhm
+    blockType: reporter
+    text: "resistance of [VOLTAGE] V carrying [CURRENT] A"
+    arguments:
+      VOLTAGE:
+        type: number
+        defaultValue: 230
+      CURRENT:
+        type: number
+        defaultValue: 2
+  - opcode: electricalPower
+    blockType: reporter
+    text: "electrical power of [VOLTAGE] V at [CURRENT] A"
+    arguments:
+      VOLTAGE:
+        type: number
+        defaultValue: 230
+      CURRENT:
+        type: number
+        defaultValue: 2
+  - opcode: resistanceFromGeometry
+    blockType: reporter
+    text: "resistance of wire with resistivity [RESISTIVITY], length [LENGTH] m and area [AREA] m²"
+    arguments:
+      RESISTIVITY:
+        type: number
+        defaultValue: 1.68e-08
+      LENGTH:
+        type: number
+        defaultValue: 10
+      AREA:
+        type: number
+        defaultValue: 1e-06
+  - opcode: capacitanceFromEnergy
+    blockType: reporter
+    text: "capacitance storing [ENERGY] J at [VOLTAGE] V"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 0.5
+      VOLTAGE:
+        type: number
+        defaultValue: 10
+  - opcode: capacitorEnergy
+    blockType: reporter
+    text: "energy of [CAPACITANCE] F at [VOLTAGE] V"
+    arguments:
+      CAPACITANCE:
+        type: number
+        defaultValue: 1e-06
+      VOLTAGE:
+        type: number
+        defaultValue: 10
+  - opcode: magneticForce
+    blockType: reporter
+    text: "magnetic force on [CHARGE] C at [VELOCITY] m/s in [FIELD] T at [ANGLE] degrees"
+    arguments:
+      CHARGE:
+        type: number
+        defaultValue: 1e-06
+      VELOCITY:
+        type: number
+        defaultValue: 100
+      FIELD:
+        type: number
+        defaultValue: 0.5
+      ANGLE:
+        type: number
+        defaultValue: 90
+  - opcode: cyclotronFrequency
+    blockType: reporter
+    text: "cyclotron frequency of [MASS] kg with charge [CHARGE] C in [FIELD] T"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 9.1093837015e-31
+      CHARGE:
+        type: number
+        defaultValue: 1.602176634e-19
+      FIELD:
+        type: number
+        defaultValue: 1
+  - opcode: thermalEnergyChange
+    blockType: reporter
+    text: "energy to heat [MASS] kg by [TEMPERATURE_CHANGE] K with specific heat [SPECIFIC_HEAT]"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1
+      SPECIFIC_HEAT:
+        type: number
+        defaultValue: 4184
+      TEMPERATURE_CHANGE:
+        type: number
+        defaultValue: 10
+  - opcode: heatTransferred
+    blockType: reporter
+    text: "heat moved by [POWER] W over [TIME] s"
+    arguments:
+      POWER:
+        type: number
+        defaultValue: 1000
+      TIME:
+        type: number
+        defaultValue: 60
+  - opcode: specificHeatFromEnergy
+    blockType: reporter
+    text: "specific heat of [MASS] kg heated [TEMPERATURE_CHANGE] K by [ENERGY] J"
+    arguments:
+      ENERGY:
+        type: number
+        defaultValue: 41840
+      MASS:
+        type: number
+        defaultValue: 1
+      TEMPERATURE_CHANGE:
+        type: number
+        defaultValue: 10
+  - opcode: idealGasPressure
+    blockType: reporter
+    text: "pressure of [AMOUNT] mol at [TEMPERATURE] K in [VOLUME] m³"
+    arguments:
+      AMOUNT:
+        type: number
+        defaultValue: 1
+      TEMPERATURE:
+        type: number
+        defaultValue: 300
+      VOLUME:
+        type: number
+        defaultValue: 0.0246
+  - opcode: idealGasVolume
+    blockType: reporter
+    text: "volume of [AMOUNT] mol at [TEMPERATURE] K and [PRESSURE] Pa"
+    arguments:
+      AMOUNT:
+        type: number
+        defaultValue: 1
+      TEMPERATURE:
+        type: number
+        defaultValue: 300
+      PRESSURE:
+        type: number
+        defaultValue: 101325
+      VOLUME:
+        type: number
+        defaultValue: 0.0246
+  - opcode: idealGasTemperature
+    blockType: reporter
+    text: "temperature of [AMOUNT] mol at [PRESSURE] Pa in [VOLUME] m³"
+    arguments:
+      AMOUNT:
+        type: number
+        defaultValue: 1
+      PRESSURE:
+        type: number
+        defaultValue: 101325
+      VOLUME:
+        type: number
+        defaultValue: 0.0246
+  - opcode: vanDerWaalsPressure
+    blockType: reporter
+    text: "van der Waals pressure of [AMOUNT] mol at [TEMPERATURE] K in [VOLUME] m³ (a = [A], b = [B])"
+    arguments:
+      AMOUNT:
+        type: number
+        defaultValue: 1
+      TEMPERATURE:
+        type: number
+        defaultValue: 300
+      VOLUME:
+        type: number
+        defaultValue: 0.0246
+      A:
+        type: number
+        defaultValue: 0.137
+      B:
+        type: number
+        defaultValue: 3.19e-05
+  - opcode: thermalEfficiency
+    blockType: reporter
+    text: "efficiency of [WORK_OUTPUT] J from [HEAT_INPUT] J"
+    arguments:
+      WORK_OUTPUT:
+        type: number
+        defaultValue: 300
+      HEAT_INPUT:
+        type: number
+        defaultValue: 1000
+  - opcode: carnotEfficiency
+    blockType: reporter
+    text: "Carnot efficiency between [HOT_TEMPERATURE] K and [COLD_TEMPERATURE] K"
+    arguments:
+      HOT_TEMPERATURE:
+        type: number
+        defaultValue: 500
+      COLD_TEMPERATURE:
+        type: number
+        defaultValue: 300
+  - opcode: heatEngineWork
+    blockType: reporter
+    text: "work from [HEAT_INPUT] J input and [HEAT_OUTPUT] J output"
+    arguments:
+      HEAT_INPUT:
+        type: number
+        defaultValue: 1000
+      HEAT_OUTPUT:
+        type: number
+        defaultValue: 700
+  - opcode: stefanBoltzmannFlux
+    blockType: reporter
+    text: "radiated flux of a black body at [TEMPERATURE] K"
+    arguments:
+      TEMPERATURE:
+        type: number
+        defaultValue: 5778
+  - opcode: peakWavelength
+    blockType: reporter
+    text: "peak wavelength of a black body at [TEMPERATURE] K"
+    arguments:
+      TEMPERATURE:
+        type: number
+        defaultValue: 5778
+  - opcode: photonFluxOfPower
+    blockType: reporter
+    text: "photon flow of [POWER] W at [FREQUENCY] Hz"
+    arguments:
+      POWER:
+        type: number
+        defaultValue: 1000
+      FREQUENCY:
+        type: number
+        defaultValue: 500000000000000.0
+  - opcode: halfLifeRemaining
+    blockType: reporter
+    text: "fraction left after [ELAPSED] of a half-life of [HALF_LIFE]"
+    arguments:
+      HALF_LIFE:
+        type: number
+        defaultValue: 5730
+      ELAPSED:
+        type: number
+        defaultValue: 5730
+  - opcode: activityFromDecay
+    blockType: reporter
+    text: "activity of [ATOMS] atoms with half-life [HALF_LIFE]"
+    arguments:
+      ATOMS:
+        type: number
+        defaultValue: 1000000000000.0
+      HALF_LIFE:
+        type: number
+        defaultValue: 5730
+  - blockType: label
+    text: "Astronomy"
+  - opcode: orbitalPeriod
+    blockType: reporter
+    text: "orbital period at radius [RADIUS] m around mass [CENTRAL_MASS] kg"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 149597870700.0
+      CENTRAL_MASS:
+        type: number
+        defaultValue: 1.98847e+30
+  - opcode: orbitalRadius
+    blockType: reporter
+    text: "orbital radius for period [PERIOD] s around mass [CENTRAL_MASS] kg"
+    arguments:
+      PERIOD:
+        type: number
+        defaultValue: 31560000.0
+      CENTRAL_MASS:
+        type: number
+        defaultValue: 1.98847e+30
+  - opcode: orbitalSpeed
+    blockType: reporter
+    text: "orbital speed at radius [RADIUS] m around mass [CENTRAL_MASS] kg"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 149597870700.0
+      CENTRAL_MASS:
+        type: number
+        defaultValue: 1.98847e+30
+  - opcode: circularOrbitSpeed
+    blockType: reporter
+    text: "orbit speed at radius [RADIUS] m with period [PERIOD] s"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 149597870700.0
+      PERIOD:
+        type: number
+        defaultValue: 31560000.0
+  - opcode: meanMotion
+    blockType: reporter
+    text: "mean motion for period [PERIOD] s"
+    arguments:
+      PERIOD:
+        type: number
+        defaultValue: 31560000.0
+  - opcode: synodicPeriod
+    blockType: reporter
+    text: "synodic period of orbits with periods [PERIOD1] s and [PERIOD2] s"
+    arguments:
+      PERIOD1:
+        type: number
+        defaultValue: 31560000.0
+      PERIOD2:
+        type: number
+        defaultValue: 10080000.0
+  - opcode: escapeVelocity
+    blockType: reporter
+    text: "escape velocity at radius [RADIUS] m from mass [MASS] kg"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 6371000.0
+      MASS:
+        type: number
+        defaultValue: 5.9722e+24
+  - opcode: orbitalEscapeEnergy
+    blockType: reporter
+    text: "escape energy per kg at radius [RADIUS] m from mass [MASS] kg"
+    arguments:
+      RADIUS:
+        type: number
+        defaultValue: 6371000.0
+      MASS:
+        type: number
+        defaultValue: 5.9722e+24
+  - opcode: schwarzschildRadius
+    blockType: reporter
+    text: "Schwarzschild radius of mass [MASS] kg"
+    arguments:
+      MASS:
+        type: number
+        defaultValue: 1.98847e+30
+  - opcode: orbitalEccentricity
+    blockType: reporter
+    text: "eccentricity of orbit with periapsis [PERIAPSIS] m and apoapsis [APOAPSIS] m"
+    arguments:
+      PERIAPSIS:
+        type: number
+        defaultValue: 10000000000.0
+      APOAPSIS:
+        type: number
+        defaultValue: 20000000000.0
+  - opcode: semiMajorAxis
+    blockType: reporter
+    text: "semi-major axis for periapsis [PERIAPSIS] m and apoapsis [APOAPSIS] m"
+    arguments:
+      PERIAPSIS:
+        type: number
+        defaultValue: 10000000000.0
+      APOAPSIS:
+        type: number
+        defaultValue: 20000000000.0
+  - opcode: hillRadius
+    blockType: reporter
+    text: "Hill radius for [BODY_MASS] kg at semi-major axis [SEMI_MAJOR_AXIS] m, eccentricity [ECCENTRICITY] around [CENTRAL_MASS] kg"
+    arguments:
+      SEMI_MAJOR_AXIS:
+        type: number
+        defaultValue: 149600000000.0
+      ECCENTRICITY:
+        type: number
+        defaultValue: 0.01
+      BODY_MASS:
+        type: number
+        defaultValue: 5.9722e+24
+      CENTRAL_MASS:
+        type: number
+        defaultValue: 1.98847e+30
+  - opcode: rocheLimit
+    blockType: reporter
+    text: "Roche limit of body radius [BODY_RADIUS] m and density [BODY_DENSITY] for satellite density [SATELLITE_DENSITY]"
+    arguments:
+      BODY_RADIUS:
+        type: number
+        defaultValue: 6371000.0
+      BODY_DENSITY:
+        type: number
+        defaultValue: 5514
+      SATELLITE_DENSITY:
+        type: number
+        defaultValue: 3344
+  - opcode: lightTravelSeconds
+    blockType: reporter
+    text: "light travel time of [DISTANCE] m in seconds"
+    arguments:
+      DISTANCE:
+        type: number
+        defaultValue: 299800000.0
+  - opcode: distanceFromLightTime
+    blockType: reporter
+    text: "distance light travels in [SECONDS] s"
+    arguments:
+      SECONDS:
+        type: number
+        defaultValue: 1
+  - opcode: lightTravelYears
+    blockType: reporter
+    text: "[LIGHT_YEARS] light-years in years"
+    arguments:
+      LIGHT_YEARS:
+        type: number
+        defaultValue: 1
+  - opcode: lightTimeFromDistance
+    blockType: reporter
+    text: "light time in years for [DISTANCE] m"
+    arguments:
+      DISTANCE:
+        type: number
+        defaultValue: 9460730472580800.0
+  - opcode: distanceFromParallax
+    blockType: reporter
+    text: "distance in parsecs for parallax [PARALLAX] arcseconds"
+    arguments:
+      PARALLAX:
+        type: number
+        defaultValue: 0.1
+  - opcode: parallaxFromDistance
+    blockType: reporter
+    text: "parallax in arcseconds at [DISTANCE] parsecs"
+    arguments:
+      DISTANCE:
+        type: number
+        defaultValue: 10
+  - opcode: brightnessToMagnitude
+    blockType: reporter
+    text: "apparent magnitude of relative brightness [BRIGHTNESS]"
+    arguments:
+      BRIGHTNESS:
+        type: number
+        defaultValue: 1
+  - opcode: brightnessFromMagnitude
+    blockType: reporter
+    text: "relative brightness of magnitude [MAGNITUDE]"
+    arguments:
+      MAGNITUDE:
+        type: number
+        defaultValue: 5
+  - opcode: magnitudeDifference
+    blockType: reporter
+    text: "magnitude difference of brightness [BRIGHTNESS1] and [BRIGHTNESS2]"
+    arguments:
+      BRIGHTNESS1:
+        type: number
+        defaultValue: 1
+      BRIGHTNESS2:
+        type: number
+        defaultValue: 0.25
+  - opcode: absoluteMagnitude
+    blockType: reporter
+    text: "absolute magnitude of apparent [APPARENT] at [DISTANCE] parsecs"
+    arguments:
+      APPARENT:
+        type: number
+        defaultValue: 5
+      DISTANCE:
+        type: number
+        defaultValue: 10
+  - opcode: distanceFromAbsoluteMagnitude
+    blockType: reporter
+    text: "distance in parsecs for apparent [APPARENT] and absolute [ABSOLUTE] magnitude"
+    arguments:
+      APPARENT:
+        type: number
+        defaultValue: 5
+      ABSOLUTE:
+        type: number
+        defaultValue: 5
+  - opcode: angularDiameterDegrees
+    blockType: reporter
+    text: "angular diameter in degrees of [DIAMETER] m at [DISTANCE] m"
+    arguments:
+      DIAMETER:
+        type: number
+        defaultValue: 10000000.0
+      DISTANCE:
+        type: number
+        defaultValue: 149600000000.0
+  - opcode: angularDiameterArcseconds
+    blockType: reporter
+    text: "angular diameter in arcseconds of [DIAMETER] m at [DISTANCE] m"
+    arguments:
+      DIAMETER:
+        type: number
+        defaultValue: 10000000.0
+      DISTANCE:
+        type: number
+        defaultValue: 149600000000.0
+  - opcode: distanceFromAngularSize
+    blockType: reporter
+    text: "distance of object [DIAMETER] m seen at [ANGLE] degrees"
+    arguments:
+      DIAMETER:
+        type: number
+        defaultValue: 10000000.0
+      ANGLE:
+        type: number
+        defaultValue: 0.5
+  - opcode: solarConstant
+    blockType: reporter
+    text: "solar constant at [DISTANCE] m in W/m²"
+    arguments:
+      DISTANCE:
+        type: number
+        defaultValue: 149597870700.0
+  - opcode: starLuminosity
+    blockType: reporter
+    text: "luminosity in watts of a star [STAR_LUMINOSITY] times the Sun"
+    arguments:
+      STAR_LUMINOSITY:
+        type: number
+        defaultValue: 1
+  - opcode: habitableZoneInner
+    blockType: reporter
+    text: "inner habitable zone of a star [STAR_LUMINOSITY] times the Sun"
+    arguments:
+      STAR_LUMINOSITY:
+        type: number
+        defaultValue: 1
+  - opcode: habitableZoneOuter
+    blockType: reporter
+    text: "outer habitable zone of a star [STAR_LUMINOSITY] times the Sun"
+    arguments:
+      STAR_LUMINOSITY:
+        type: number
+        defaultValue: 1
+  - opcode: planckRadiance
+    blockType: reporter
+    text: "planck radiance at wavelength [WAVELENGTH] m and temperature [TEMPERATURE] K"
+    arguments:
+      WAVELENGTH:
+        type: number
+        defaultValue: 5e-07
+      TEMPERATURE:
+        type: number
+        defaultValue: 5778
+  - opcode: redshiftToVelocity
+    blockType: reporter
+    text: "velocity for redshift [REDSHIFT]"
+    arguments:
+      REDSHIFT:
+        type: number
+        defaultValue: 0.1
+  - opcode: velocityToRedshift
+    blockType: reporter
+    text: "redshift for velocity [VELOCITY] m/s"
+    arguments:
+      VELOCITY:
+        type: number
+        defaultValue: 29980000.0
+  - blockType: label
+    text: "Discrete Maths"
+  - opcode: modularReduceOf
+    blockType: reporter
+    text: "remainder of [VALUE] modulo [MODULUS]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 17
+      MODULUS:
+        type: number
+        defaultValue: 5
+  - opcode: modularAddOf
+    blockType: reporter
+    text: "[A] plus [B] modulo [MODULUS]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 17
+      B:
+        type: number
+        defaultValue: 5
+      MODULUS:
+        type: number
+        defaultValue: 7
+  - opcode: modularMultiplyOf
+    blockType: reporter
+    text: "[A] times [B] modulo [MODULUS]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 3
+      B:
+        type: number
+        defaultValue: 4
+      MODULUS:
+        type: number
+        defaultValue: 10
+  - opcode: modularPowerOf
+    blockType: reporter
+    text: "[BASE] to the power [EXPONENT] modulo [MODULUS]"
+    arguments:
+      BASE:
+        type: number
+        defaultValue: 2
+      EXPONENT:
+        type: number
+        defaultValue: 10
+      MODULUS:
+        type: number
+        defaultValue: 1000
+  - opcode: modularInverse
+    blockType: reporter
+    text: "inverse of [VALUE] modulo [MODULUS]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 3
+      MODULUS:
+        type: number
+        defaultValue: 11
+  - opcode: chineseRemainder
+    blockType: reporter
+    text: "number with remainder [REMAINDER1] mod [MODULUS1] and [REMAINDER2] mod [MODULUS2]"
+    arguments:
+      REMAINDER1:
+        type: number
+        defaultValue: 2
+      MODULUS1:
+        type: number
+        defaultValue: 3
+      REMAINDER2:
+        type: number
+        defaultValue: 3
+      MODULUS2:
+        type: number
+        defaultValue: 5
+  - opcode: arithmeticSequenceList
+    blockType: reporter
+    text: "[TERMS] terms of the arithmetic sequence from [FIRST] step [DIFFERENCE]"
+    arguments:
+      TERMS:
+        type: number
+        defaultValue: 6
+      FIRST:
+        type: number
+        defaultValue: 1
+      DIFFERENCE:
+        type: number
+        defaultValue: 2
+  - opcode: geometricSequenceList
+    blockType: reporter
+    text: "[TERMS] terms of the geometric sequence from [FIRST] ratio [RATIO]"
+    arguments:
+      TERMS:
+        type: number
+        defaultValue: 6
+      FIRST:
+        type: number
+        defaultValue: 1
+      RATIO:
+        type: number
+        defaultValue: 2
+  - opcode: fibonacciSequenceList
+    blockType: reporter
+    text: "[TERMS] terms of the Fibonacci sequence"
+    arguments:
+      TERMS:
+        type: number
+        defaultValue: 8
+  - opcode: tribonacciSequenceList
+    blockType: reporter
+    text: "[TERMS] terms of the Tribonacci sequence"
+    arguments:
+      TERMS:
+        type: number
+        defaultValue: 8
+  - opcode: firstDifferencesList
+    blockType: reporter
+    text: "first differences of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: secondDifferencesList
+    blockType: reporter
+    text: "second differences of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: runningProductList
+    blockType: reporter
+    text: "running product of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: alternatingSumValue
+    blockType: reporter
+    text: "alternating sum of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: cumulativeMeanList
+    blockType: reporter
+    text: "cumulative mean of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: continuedFractionList
+    blockType: reporter
+    text: "continued fraction of [VALUE] with [TERMS] terms"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 3.14159
+      TERMS:
+        type: number
+        defaultValue: 6
+  - opcode: rationalApproximationList
+    blockType: reporter
+    text: "rational approximation of [VALUE] with denominator at most [MAX_DENOMINATOR]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 3.14159
+      MAX_DENOMINATOR:
+        type: number
+        defaultValue: 100
+  - opcode: numberInWords
+    blockType: reporter
+    text: "[VALUE] written in words"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 1234
+  - opcode: ordinalSuffix
+    blockType: reporter
+    text: "ordinal suffix of [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 3
+  - opcode: isHappyNumber
+    blockType: reporter
+    text: "is [VALUE] a happy number?"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 19
+  - opcode: happyNumberSequence
+    blockType: reporter
+    text: "[TERMS] steps of the happy number sequence from [VALUE]"
+    arguments:
+      VALUE:
+        type: number
+        defaultValue: 19
+      TERMS:
+        type: number
+        defaultValue: 6
+  - opcode: hammingDistance
+    blockType: reporter
+    text: "Hamming distance between [A] and [B]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1011
+      B:
+        type: number
+        defaultValue: 1001
+  - blockType: label
+    text: "Data & Fitting"
+  - opcode: rootMeanSquareOfList
+    blockType: reporter
+    text: "root mean square of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listSkewness
+    blockType: reporter
+    text: "skewness of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: listKurtosis
+    blockType: reporter
+    text: "excess kurtosis of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: movingAverageOfList
+    blockType: reporter
+    text: "moving average of list [LIST] over [WINDOW] steps"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      WINDOW:
+        type: number
+        defaultValue: 3
+  - opcode: exponentialSmoothingList
+    blockType: reporter
+    text: "exponential smoothing of list [LIST] with [ALPHA]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      ALPHA:
+        type: number
+        defaultValue: 0.5
+  - opcode: histogramCountsList
+    blockType: reporter
+    text: "[BINS] histogram bin counts of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      BINS:
+        type: number
+        defaultValue: 4
+  - opcode: confidenceIntervalList
+    blockType: reporter
+    text: "confidence interval of list [LIST] at level [LEVEL]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      LEVEL:
+        type: number
+        defaultValue: 0.95
+  - opcode: polynomialFitList
+    blockType: reporter
+    text: "least squares fit of list [YS] against [XS] to degree [DEGREE]"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+      DEGREE:
+        type: number
+        defaultValue: 2
+  - opcode: linearInterpolateList
+    blockType: reporter
+    text: "interpolate list [YS] at [X] over list [XS]"
+    arguments:
+      XS:
+        type: string
+        menu: list
+      YS:
+        type: string
+        menu: list
+      X:
+        type: number
+        defaultValue: 1.5
+  - opcode: normalisedList
+    blockType: reporter
+    text: "z-scores of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: outlierCount
+    blockType: reporter
+    text: "outliers in list [LIST] beyond [MULTIPLIER] interquartile ranges"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+      MULTIPLIER:
+        type: number
+        defaultValue: 1.5
+  - opcode: listEntropyBits
+    blockType: reporter
+    text: "entropy in bits of counts in list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list
+  - opcode: sampleSizeForMargin
+    blockType: reporter
+    text: "sample size for deviation [SIGMA], margin [MARGIN] and level [LEVEL]"
+    arguments:
+      SIGMA:
+        type: number
+        defaultValue: 10
+      MARGIN:
+        type: number
+        defaultValue: 2
+      LEVEL:
+        type: number
+        defaultValue: 0.95
+  - opcode: listSummary
+    blockType: reporter
+    text: "summary of list [LIST]"
+    arguments:
+      LIST:
+        type: string
+        menu: list

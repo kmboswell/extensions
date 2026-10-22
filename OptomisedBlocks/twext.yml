@@ -1,0 +1,106 @@
+name: "optomised-blocks"
+version: "0.1.0"
+description: "Compiled functions, all at once, and end-of-frame blocks"
+author: ""
+license: "MIT"
+
+entryPoint: "src/index.js"
+outputPath: "dist/extension.js"
+
+extension:
+  id: "optomisedblocks"
+  name: "Optomised Blocks"
+  className: "OptomisedBlocksExtension"
+  color1: "#10B981"
+  color2: "#059669"
+  color3: "#047857"
+  menus:
+    fns:
+      acceptReporters: true
+      items:
+        - "names"
+
+blocks:
+  - blockType: button
+    text: "Make a Function"
+    func: make
+  - "---"
+  - blockType: label
+    text: "Run order"
+  - opcode: allAtOnce
+    blockType: cblock
+    branchCount: 1
+    text: "all at once"
+  - opcode: atEnd
+    blockType: cblock
+    branchCount: 1
+    text: "at end of frame"
+  - "---"
+  - blockType: label
+    text: "Functions"
+  - opcode: add
+    blockType: cblock
+    branchCount: 1
+    text: "add blocks to function [F]"
+    arguments:
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"
+  - opcode: rm
+    blockType: command
+    text: "remove block [N] of [F]"
+    arguments:
+      N:
+        type: number
+        defaultValue: 1
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"
+  - opcode: rmRange
+    blockType: command
+    text: "remove blocks [A] to [B] of [F]"
+    arguments:
+      A:
+        type: number
+        defaultValue: 1
+      B:
+        type: number
+        defaultValue: 3
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"
+  - opcode: clear
+    blockType: command
+    text: "clear function [F]"
+    arguments:
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"
+  - opcode: count
+    blockType: reporter
+    text: "block count in [F]"
+    arguments:
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"
+  - opcode: run
+    blockType: command
+    text: "run function [F]"
+    arguments:
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"
+  - opcode: queueFn
+    blockType: command
+    text: "run function [F] at end of frame"
+    arguments:
+      F:
+        type: string
+        menu: fns
+        defaultValue: "f"

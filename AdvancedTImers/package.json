@@ -1,0 +1,13 @@
+{
+  "name": "advancedtimers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "High resolution timers based on performance.now()",
+  "scripts": {
+    "validate": "twext validate",
+    "build": "twext build",
+    "dev": "twext dev",
+    "release": "twext publish"
+  }
+}

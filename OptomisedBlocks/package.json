@@ -1,0 +1,13 @@
+{
+  "name": "optomisedblocks",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Compiled functions, all at once, and end-of-frame blocks",
+  "scripts": {
+    "validate": "twext validate",
+    "build": "twext build",
+    "dev": "twext dev",
+    "release": "twext publish"
+  }
+}

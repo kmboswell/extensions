@@ -6,9 +6,16 @@
   "author": "mc20000-01",
   "type": "module",
   "devDependencies": {
-    "@twext/twext": "^1.1.0"
+    "@twext/twext": "^1.1.0",
+    "scratch-vm": "^5.0.300"
   },
   "scripts": {
-    "build:comments": "twext build --config comments/twext.yml"
+    "build:comments": "twext build --config comments/twext.yml",
+    "build:moremaths": "twext build --config moremaths/twext.yml",
+    "test:moremaths": "node moremaths/test/run.mjs audit.mjs",
+    "test:moremaths:fuzz": "node moremaths/test/fuzz.mjs",
+    "test:moremaths:timing": "node moremaths/test/timing.mjs",
+    "test:moremaths:vm": "node moremaths/test/vm-load.mjs",
+    "test:moremaths:all": "npm run build:moremaths && npm run test:moremaths && npm run test:moremaths:vm && npm run test:moremaths:fuzz && npm run test:moremaths:timing"
   }
 }

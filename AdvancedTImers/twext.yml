@@ -1,0 +1,64 @@
+name: "advanced-timers"
+version: "0.1.0"
+description: "High resolution timers based on performance.now()"
+author: ""
+license: "MIT"
+
+entryPoint: "src/index.js"
+outputPath: "dist/extension.js"
+
+extension:
+  id: "advancedtimers"
+  name: "Advanced Timers"
+  className: "AdvancedTimersExtension"
+  color1: "#3B82F6"
+  color2: "#2563EB"
+  color3: "#1D4ED8"
+  menus:
+    units:
+      acceptReporters: true
+      items:
+        - "s"
+        - "ms"
+        - "µs"
+        - "ns"
+
+blocks:
+  - opcode: start
+    blockType: command
+    text: "start timer [NAME]"
+    arguments:
+      NAME:
+        type: string
+        defaultValue: "a"
+  - opcode: elapsed
+    blockType: reporter
+    text: "timer [NAME] in [UNIT]"
+    arguments:
+      NAME:
+        type: string
+        defaultValue: "a"
+      UNIT:
+        type: string
+        menu: units
+        defaultValue: "µs"
+  - "---"
+  - opcode: timeThis
+    blockType: cblock
+    branchCount: 1
+    text: "time this as [NAME]"
+    arguments:
+      NAME:
+        type: string
+        defaultValue: "a"
+  - opcode: last
+    blockType: reporter
+    text: "last time of [NAME] in [UNIT]"
+    arguments:
+      NAME:
+        type: string
+        defaultValue: "a"
+      UNIT:
+        type: string
+        menu: units
+        defaultValue: "µs"

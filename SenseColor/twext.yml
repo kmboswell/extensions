@@ -1,0 +1,28 @@
+name: "sense-color"
+version: "0.1.0"
+description: "Reports the average color under a sprite, with a cached backdrop"
+author: ""
+license: "MIT"
+
+entryPoint: "src/index.js"
+outputPath: "dist/extension.js"
+
+extension:
+  id: "sensecolor"
+  name: "Sense Color"
+  className: "SenseColorExtension"
+  color1: "#E8590C"
+  color2: "#D9480F"
+  color3: "#C2410C"
+
+blocks:
+  - opcode: colorUnder
+    blockType: reporter
+    text: "color under me"
+  - "---"
+  - opcode: coverage
+    blockType: reporter
+    text: "cache coverage %"
+  - opcode: clear
+    blockType: command
+    text: "clear color cache"

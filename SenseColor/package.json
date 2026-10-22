@@ -1,0 +1,13 @@
+{
+  "name": "sensecolor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reports the average color under a sprite, with a cached backdrop",
+  "scripts": {
+    "validate": "twext validate",
+    "build": "twext build",
+    "dev": "twext dev",
+    "release": "twext publish"
+  }
+}
