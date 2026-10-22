@@ -14,6 +14,7 @@ extension:
   color1: "#0aa2c0"
   color2: "#0886a0"
   color3: "#076a7e"
+  isUnsandboxed: true
   menus:
     constant:
       acceptReporters: true

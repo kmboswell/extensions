@@ -43,7 +43,8 @@ const code = fs.readFileSync(bundle, "utf8");
 const registered = [];
 const sandbox = {
   Scratch: {
-    extensions: {register: (extension) => registered.push(extension)},
+    // moremaths is declared unsandboxed, so it refuses to load in a sandbox.
+    extensions: {unsandboxed: true, register: (extension) => registered.push(extension)},
     Cast,
     BlockType,
     ArgumentType,

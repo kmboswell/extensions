@@ -14,6 +14,7 @@ extension:
   color1: "#E8590C"
   color2: "#D9480F"
   color3: "#C2410C"
+  isUnsandboxed: true
 
 blocks:
   - opcode: colorUnder

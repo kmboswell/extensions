@@ -32,6 +32,9 @@ const Scratch = {
   },
   vm: null,
   extensions: {
+    // The harness stands in for an unsandboxed extension: it hands the
+    // blocks a util object and a vm, which only exist outside the sandbox.
+    unsandboxed: true,
     register(instance) {
       registered = instance;
     },
