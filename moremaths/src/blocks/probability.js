@@ -16,7 +16,8 @@ export function rollDiceSum(args) {
   if (!Number.isFinite(count) || count < 1 || count > 100000) return 0;
   if (!Number.isFinite(sides) || sides < 1 || sides > 1000000) return 0;
   let total = 0;
-  for (let i = 0; i < count; i++) total += Math.floor(Math.random() * sides) + 1;
+  for (let i = 0; i < count; i++)
+    total += Math.floor(Math.random() * sides) + 1;
   return total;
 }
 

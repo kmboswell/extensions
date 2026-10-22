@@ -236,7 +236,12 @@ export function setup() {
     shake: ["time", 1e-8, "shake", "shake"],
 
     metrePerSecond: ["speed", 1, "m/s", "metre per second"],
-    kilometrePerHour: ["speed", 0.2777777777777778, "km/h", "kilometre per hour"],
+    kilometrePerHour: [
+      "speed",
+      0.2777777777777778,
+      "km/h",
+      "kilometre per hour",
+    ],
     milePerHour: ["speed", 0.44704, "mph", "mile per hour"],
     footPerSecond: ["speed", 0.3048, "ft/s", "foot per second"],
     kilometrePerSecond: ["speed", 1000, "km/s", "kilometre per second"],
@@ -245,14 +250,30 @@ export function setup() {
     mach: ["speed", 340.29, "Mach", "Mach (at sea level)"],
     speedOfLight: ["speed", 299792458, "c", "speed of light"],
 
-    metrePerSecondSquared: ["acceleration", 1, "m/s²", "metre per second squared"],
+    metrePerSecondSquared: [
+      "acceleration",
+      1,
+      "m/s²",
+      "metre per second squared",
+    ],
     standardGravity: ["acceleration", 9.80665, "g₀", "standard gravity"],
     galileo: ["acceleration", 0.01, "Gal", "gal"],
-    footPerSecondSquared: ["acceleration", 0.3048, "ft/s²", "foot per second squared"],
+    footPerSecondSquared: [
+      "acceleration",
+      0.3048,
+      "ft/s²",
+      "foot per second squared",
+    ],
 
     kelvin: ["temperature", 1, "K", "kelvin", 0],
     celsius: ["temperature", 1, "°C", "degree Celsius", 273.15],
-    fahrenheit: ["temperature", 0.5555555555555556, "°F", "degree Fahrenheit", 459.67],
+    fahrenheit: [
+      "temperature",
+      0.5555555555555556,
+      "°F",
+      "degree Fahrenheit",
+      459.67,
+    ],
     rankine: ["temperature", 0.5555555555555556, "°R", "degree Rankine", 0],
 
     pascal: ["pressure", 1, "Pa", "pascal"],
@@ -263,11 +284,26 @@ export function setup() {
     millibar: ["pressure", 100, "mbar", "millibar"],
     atmosphere: ["pressure", 101325, "atm", "atmosphere"],
     torr: ["pressure", 133.32236842105263, "Torr", "torr"],
-    millimetreOfMercury: ["pressure", 133.322387415, "mmHg", "millimetre of mercury"],
+    millimetreOfMercury: [
+      "pressure",
+      133.322387415,
+      "mmHg",
+      "millimetre of mercury",
+    ],
     inchOfMercury: ["pressure", 3386.388640341, "inHg", "inch of mercury"],
     psi: ["pressure", 6894.757293168361, "psi", "pound per square inch"],
-    kilopoundPerSquareInch: ["pressure", 6894757.293168361, "ksi", "kilopound per square inch"],
-    dynePerSquareCentimetre: ["pressure", 0.1, "dyn/cm²", "dyne per square centimetre"],
+    kilopoundPerSquareInch: [
+      "pressure",
+      6894757.293168361,
+      "ksi",
+      "kilopound per square inch",
+    ],
+    dynePerSquareCentimetre: [
+      "pressure",
+      0.1,
+      "dyn/cm²",
+      "dyne per square centimetre",
+    ],
 
     joule: ["energy", 1, "J", "joule"],
     kilojoule: ["energy", 1000, "kJ", "kilojoule"],
@@ -294,7 +330,12 @@ export function setup() {
     horsepower: ["power", 745.6998715822702, "hp", "mechanical horsepower"],
     metricHorsepower: ["power", 735.49875, "PS", "metric horsepower"],
     btuPerHour: ["power", 0.2930710701722222, "BTU/h", "BTU per hour"],
-    tonOfRefrigeration: ["power", 3516.8528420667006, "TR", "ton of refrigeration"],
+    tonOfRefrigeration: [
+      "power",
+      3516.8528420667006,
+      "TR",
+      "ton of refrigeration",
+    ],
     caloriePerSecond: ["power", 4.184, "cal/s", "calorie per second"],
 
     newton: ["force", 1, "N", "newton"],
@@ -327,17 +368,47 @@ export function setup() {
     kilohertz: ["frequency", 1000, "kHz", "kilohertz"],
     megahertz: ["frequency", 1e6, "MHz", "megahertz"],
     gigahertz: ["frequency", 1e9, "GHz", "gigahertz"],
-    revolutionsPerMinute: ["frequency", 1 / 60, "rpm", "revolutions per minute"],
-    radiansPerSecond: ["frequency", 1 / (2 * Math.PI), "rad/s", "radian per second"],
+    revolutionsPerMinute: [
+      "frequency",
+      1 / 60,
+      "rpm",
+      "revolutions per minute",
+    ],
+    radiansPerSecond: [
+      "frequency",
+      1 / (2 * Math.PI),
+      "rad/s",
+      "radian per second",
+    ],
 
     kilogramPerCubicMetre: ["density", 1, "kg/m³", "kilogram per cubic metre"],
-    gramPerCubicCentimetre: ["density", 1000, "g/cm³", "gram per cubic centimetre"],
+    gramPerCubicCentimetre: [
+      "density",
+      1000,
+      "g/cm³",
+      "gram per cubic centimetre",
+    ],
     kilogramPerLitre: ["density", 1000, "kg/L", "kilogram per litre"],
     gramPerLitre: ["density", 1, "g/L", "gram per litre"],
     milligramPerLitre: ["density", 0.001, "mg/L", "milligram per litre"],
-    poundPerCubicFoot: ["density", 16.018463373960143, "lb/ft³", "pound per cubic foot"],
-    poundPerCubicInch: ["density", 27679.904710203125, "lb/in³", "pound per cubic inch"],
-    ouncePerCubicInch: ["density", 1729.9940443876953, "oz/in³", "ounce per cubic inch"],
+    poundPerCubicFoot: [
+      "density",
+      16.018463373960143,
+      "lb/ft³",
+      "pound per cubic foot",
+    ],
+    poundPerCubicInch: [
+      "density",
+      27679.904710203125,
+      "lb/in³",
+      "pound per cubic inch",
+    ],
+    ouncePerCubicInch: [
+      "density",
+      1729.9940443876953,
+      "oz/in³",
+      "ounce per cubic inch",
+    ],
 
     degrees: ["angle", 1, "°", "degree"],
     radians: ["angle", 57.29577951308232, "rad", "radian"],
@@ -347,16 +418,36 @@ export function setup() {
     arcminutes: ["angle", 1 / 60, "′", "arcminute"],
     arcseconds: ["angle", 1 / 3600, "″", "arcsecond"],
 
-    milesPerGallonUS: ["fuel", 0.4251437074976, "mpg (US)", "US miles per gallon"],
+    milesPerGallonUS: [
+      "fuel",
+      0.4251437074976,
+      "mpg (US)",
+      "US miles per gallon",
+    ],
     kilometresPerLitre: ["fuel", 1, "km/L", "kilometres per litre"],
-    litresPer100Kilometres: ["fuel", 0.01, "L/100km", "litres per 100 kilometres"],
+    litresPer100Kilometres: [
+      "fuel",
+      0.01,
+      "L/100km",
+      "litres per 100 kilometres",
+    ],
 
     cubicMetrePerSecond: ["flow", 1, "m³/s", "cubic metre per second"],
     cubicMetrePerHour: ["flow", 1 / 3600, "m³/h", "cubic metre per hour"],
     litrePerSecond: ["flow", 0.001, "L/s", "litre per second"],
     litrePerMinute: ["flow", 1 / 60000, "L/min", "litre per minute"],
-    gallonPerMinute: ["flow", 3.785411784e-3 / 60, "gal/min", "US gallon per minute"],
-    cubicFootPerMinute: ["flow", 0.028316846592 / 60, "ft³/min", "cubic foot per minute"],
+    gallonPerMinute: [
+      "flow",
+      3.785411784e-3 / 60,
+      "gal/min",
+      "US gallon per minute",
+    ],
+    cubicFootPerMinute: [
+      "flow",
+      0.028316846592 / 60,
+      "ft³/min",
+      "cubic foot per minute",
+    ],
 
     newtonMetre: ["torque", 1, "N·m", "newton metre"],
     kilonewtonMetre: ["torque", 1000, "kN·m", "kilonewton metre"],
@@ -448,7 +539,8 @@ export function setup() {
       const limit = Math.min(root, Math.floor(n / square));
       for (let i = 1; i <= limit; i++) {
         const step = i * prime;
-        large[i] -= (step <= root ? large[step] : small[Math.floor(n / step)]) - previous;
+        large[i] -=
+          (step <= root ? large[step] : small[Math.floor(n / step)]) - previous;
       }
       for (let j = root; j >= square; j--) {
         small[j] -= small[Math.floor(j / prime)] - previous;

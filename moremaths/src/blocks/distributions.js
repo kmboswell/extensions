@@ -27,7 +27,11 @@ export function negativeBinomialSample(args) {
 }
 
 export function hypergeometricSample(args) {
-  return this.randomHypergeometricSample(args.DRAWN, args.SUCCESSES, args.POPULATION);
+  return this.randomHypergeometricSample(
+    args.DRAWN,
+    args.SUCCESSES,
+    args.POPULATION,
+  );
 }
 
 export function logNormalSample(args) {
@@ -70,7 +74,9 @@ export function studentTSample(args) {
 export function shuffledList(args, util) {
   const values = this.listValuesOf(args.LIST, util);
   if (values === null) return [];
-  return this.shuffledValues(values.map((value) => Scratch.Cast.toNumber(value)));
+  return this.shuffledValues(
+    values.map((value) => Scratch.Cast.toNumber(value)),
+  );
 }
 
 export function randomSampleWithoutReplacement(args, util) {
@@ -84,7 +90,9 @@ export function normalQuantile(args) {
 }
 
 export function normalZScore(args) {
-  return (this.num(args.VALUE) - this.num(args.MEAN)) / this.num(args.DEVIATION);
+  return (
+    (this.num(args.VALUE) - this.num(args.MEAN)) / this.num(args.DEVIATION)
+  );
 }
 
 export function uniformPdf(args) {
@@ -116,7 +124,9 @@ export function logNormalCdf(args) {
 }
 
 export function logNormalQuantile(args) {
-  return Math.exp(this.normalQuantileOf(args.PROBABILITY, args.MEAN, args.DEVIATION));
+  return Math.exp(
+    this.normalQuantileOf(args.PROBABILITY, args.MEAN, args.DEVIATION),
+  );
 }
 
 export function gammaPdf(args) {
@@ -196,7 +206,11 @@ export function chiSquareCdf(args) {
 }
 
 export function fDistributionCdf(args) {
-  return this.fDistributionCdfOf(args.X, args.NUMERATOR_DEGREES, args.DENOMINATOR_DEGREES);
+  return this.fDistributionCdfOf(
+    args.X,
+    args.NUMERATOR_DEGREES,
+    args.DENOMINATOR_DEGREES,
+  );
 }
 
 export function poissonPmf(args) {
@@ -265,11 +279,21 @@ export function negativeBinomialCdf(args) {
 }
 
 export function hypergeometricPmf(args) {
-  return this.hypergeometricPmfOf(args.K, args.DRAWN, args.SUCCESSES, args.POPULATION);
+  return this.hypergeometricPmfOf(
+    args.K,
+    args.DRAWN,
+    args.SUCCESSES,
+    args.POPULATION,
+  );
 }
 
 export function hypergeometricCdf(args) {
-  return this.hypergeometricCdfOf(args.K, args.DRAWN, args.SUCCESSES, args.POPULATION);
+  return this.hypergeometricCdfOf(
+    args.K,
+    args.DRAWN,
+    args.SUCCESSES,
+    args.POPULATION,
+  );
 }
 
 export function uniformMean(args) {

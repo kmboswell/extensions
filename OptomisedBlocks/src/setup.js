@@ -47,7 +47,8 @@ export function setup() {
     for (const k in b.inputs) {
       const inp = b.inputs[k];
       if (inp.block) collect(src, inp.block, out, true);
-      if (inp.shadow && inp.shadow !== inp.block) collect(src, inp.shadow, out, true);
+      if (inp.shadow && inp.shadow !== inp.block)
+        collect(src, inp.shadow, out, true);
     }
     if (followNext && b.next) collect(src, b.next, out, true);
   };

@@ -46,7 +46,8 @@ export function nthRoot(args) {
   const index = this.num(args.INDEX);
   const value = this.num(args.NUM);
   if (index === 0) return NaN;
-  if (index % 2 === 1) return Math.sign(value) * Math.pow(Math.abs(value), 1 / index);
+  if (index % 2 === 1)
+    return Math.sign(value) * Math.pow(Math.abs(value), 1 / index);
   return value < 0 ? NaN : Math.pow(value, 1 / index);
 }
 
@@ -65,6 +66,7 @@ export function sigmoid(args) {
 
 export function logit(args) {
   const probability = this.num(args.PROBABILITY);
-  if (probability <= 0 || probability >= 1) return probability === 1 ? Infinity : -Infinity;
+  if (probability <= 0 || probability >= 1)
+    return probability === 1 ? Infinity : -Infinity;
   return Math.log(probability / (1 - probability));
 }

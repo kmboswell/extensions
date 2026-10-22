@@ -15,7 +15,10 @@ export function colorUnder(args, util) {
     ._candidatesTouching(id, r._visibleDrawList || r._drawList)
     .filter((c) => c.id !== sid);
 
-  const step = Math.max(1, Math.ceil(Math.sqrt((bounds.width * bounds.height) / SAMPLES)));
+  const step = Math.max(
+    1,
+    Math.ceil(Math.sqrt((bounds.width * bounds.height) / SAMPLES)),
+  );
   let R = 0;
   let G = 0;
   let B = 0;
@@ -78,5 +81,10 @@ export function colorUnder(args, util) {
   }
 
   if (!n) return "";
-  return "#" + hex(Math.round(R / n)) + hex(Math.round(G / n)) + hex(Math.round(B / n));
+  return (
+    "#" +
+    hex(Math.round(R / n)) +
+    hex(Math.round(G / n)) +
+    hex(Math.round(B / n))
+  );
 }

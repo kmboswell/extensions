@@ -55,7 +55,8 @@ export function setup() {
     const s = stageTarget();
     const d = stageDrawable();
     if (!s || !d) return;
-    const k = (d.skin ? d.skin.id : "") + "|" + Object.values(s.effects).join(",");
+    const k =
+      (d.skin ? d.skin.id : "") + "|" + Object.values(s.effects).join(",");
     if (k !== key) {
       key = k;
       reset();

@@ -40,9 +40,7 @@ export function arcCotangent(args) {
 }
 
 export function arcTangent2(args) {
-  return this.radiansToDegrees(
-    Math.atan2(this.num(args.Y), this.num(args.X)),
-  );
+  return this.radiansToDegrees(Math.atan2(this.num(args.Y), this.num(args.X)));
 }
 
 export function hyperbolicSine(args) {

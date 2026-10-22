@@ -2,26 +2,40 @@ export function orbitalPeriod(args) {
   const radius = this.num(args.RADIUS);
   const mass = this.num(args.CENTRAL_MASS);
   if (!(radius > 0) || !(mass > 0)) return NaN;
-  return 2 * Math.PI * Math.sqrt((radius * radius * radius) / (PHYSICS_CONSTANTS.gravitationalConstant * mass));
+  return (
+    2 *
+    Math.PI *
+    Math.sqrt(
+      (radius * radius * radius) /
+        (PHYSICS_CONSTANTS.gravitationalConstant * mass),
+    )
+  );
 }
 
 export function orbitalRadius(args) {
   const period = this.num(args.PERIOD);
   const mass = this.num(args.CENTRAL_MASS);
   if (!(period > 0) || !(mass > 0)) return NaN;
-  const inner = (PHYSICS_CONSTANTS.gravitationalConstant * mass) / ((2 * Math.PI / period) ** 2);
+  const inner =
+    (PHYSICS_CONSTANTS.gravitationalConstant * mass) /
+    ((2 * Math.PI) / period) ** 2;
   return inner ** (1 / 3);
 }
 
 export function orbitalSpeed(args) {
   const radius = Math.abs(this.num(args.RADIUS));
   if (!(radius > 0)) return NaN;
-  return Math.sqrt((PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.CENTRAL_MASS)) / radius);
+  return Math.sqrt(
+    (PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.CENTRAL_MASS)) /
+      radius,
+  );
 }
 
 export function circularOrbitSpeed(args) {
   const period = this.num(args.PERIOD);
-  return period === 0 ? NaN : (2 * Math.PI * Math.abs(this.num(args.RADIUS))) / period;
+  return period === 0
+    ? NaN
+    : (2 * Math.PI * Math.abs(this.num(args.RADIUS))) / period;
 }
 
 export function meanMotion(args) {
@@ -39,7 +53,10 @@ export function synodicPeriod(args) {
 export function escapeVelocity(args) {
   const radius = Math.abs(this.num(args.RADIUS));
   if (!(radius > 0)) return NaN;
-  return Math.sqrt((2 * PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.MASS)) / radius);
+  return Math.sqrt(
+    (2 * PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.MASS)) /
+      radius,
+  );
 }
 
 export function orbitalEscapeEnergy(args) {
@@ -50,17 +67,27 @@ export function orbitalEscapeEnergy(args) {
 }
 
 export function schwarzschildRadius(args) {
-  return (2 * PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.MASS)) / PHYSICS_CONSTANTS.speedOfLight ** 2;
+  return (
+    (2 * PHYSICS_CONSTANTS.gravitationalConstant * this.num(args.MASS)) /
+    PHYSICS_CONSTANTS.speedOfLight ** 2
+  );
 }
 
 export function orbitalEccentricity(args) {
-  const total = Math.abs(this.num(args.PERIAPSIS)) + Math.abs(this.num(args.APOAPSIS));
+  const total =
+    Math.abs(this.num(args.PERIAPSIS)) + Math.abs(this.num(args.APOAPSIS));
   if (total === 0) return 0;
-  return Math.abs(Math.abs(this.num(args.APOAPSIS)) - Math.abs(this.num(args.PERIAPSIS))) / total;
+  return (
+    Math.abs(
+      Math.abs(this.num(args.APOAPSIS)) - Math.abs(this.num(args.PERIAPSIS)),
+    ) / total
+  );
 }
 
 export function semiMajorAxis(args) {
-  return (Math.abs(this.num(args.PERIAPSIS)) + Math.abs(this.num(args.APOAPSIS))) / 2;
+  return (
+    (Math.abs(this.num(args.PERIAPSIS)) + Math.abs(this.num(args.APOAPSIS))) / 2
+  );
 }
 
 export function hillRadius(args) {
@@ -68,7 +95,10 @@ export function hillRadius(args) {
   const body = this.num(args.BODY_MASS);
   const central = this.num(args.CENTRAL_MASS);
   if (!(axis > 0) || !(body > 0) || !(central > 0)) return NaN;
-  const eccentricity = Math.min(Math.max(this.num(args.ECCENTRICITY), 0), 0.999);
+  const eccentricity = Math.min(
+    Math.max(this.num(args.ECCENTRICITY), 0),
+    0.999,
+  );
   return axis * (1 - eccentricity) * (body / (3 * central)) ** (1 / 3);
 }
 
@@ -76,7 +106,9 @@ export function rocheLimit(args) {
   const radius = Math.abs(this.num(args.BODY_RADIUS));
   const satelliteDensity = this.num(args.SATELLITE_DENSITY);
   if (!(radius > 0) || !(satelliteDensity > 0)) return NaN;
-  return 2.44 * radius * (this.num(args.BODY_DENSITY) / satelliteDensity) ** (1 / 3);
+  return (
+    2.44 * radius * (this.num(args.BODY_DENSITY) / satelliteDensity) ** (1 / 3)
+  );
 }
 
 export function lightTravelSeconds(args) {
@@ -92,7 +124,9 @@ export function lightTravelYears(args) {
 }
 
 export function lightTimeFromDistance(args) {
-  return this.num(args.DISTANCE) / PHYSICS_CONSTANTS.speedOfLight / 86400 / 365.25;
+  return (
+    this.num(args.DISTANCE) / PHYSICS_CONSTANTS.speedOfLight / 86400 / 365.25
+  );
 }
 
 export function distanceFromParallax(args) {
@@ -152,7 +186,9 @@ export function distanceFromAngularSize(args) {
 export function solarConstant(args) {
   const distance = Math.abs(this.num(args.DISTANCE));
   if (!(distance > 0)) return NaN;
-  return PHYSICS_CONSTANTS.solarLuminosity / (4 * Math.PI * distance * distance);
+  return (
+    PHYSICS_CONSTANTS.solarLuminosity / (4 * Math.PI * distance * distance)
+  );
 }
 
 export function starLuminosity(args) {

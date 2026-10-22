@@ -1,5 +1,3 @@
-
-
 export function convertUnit(args) {
   return this.convertBetween(args.VALUE, args.FROM, args.TO);
 }
@@ -165,7 +163,7 @@ export function kelvinToCelsius(args) {
 }
 
 export function fahrenheitToKelvin(args) {
-  return (this.num(args.F) + 459.67) * 5 / 9;
+  return ((this.num(args.F) + 459.67) * 5) / 9;
 }
 
 export function kilometresToMetres(args) {
@@ -234,7 +232,11 @@ export function unitDetail(args) {
     return `${name} (${symbol}) measures fuel economy`;
   }
   const base = this.baseSymbolFor(dimension);
-  const converted = this.convertBetween(1, args.UNIT, this.baseUnitKeyFor(dimension));
+  const converted = this.convertBetween(
+    1,
+    args.UNIT,
+    this.baseUnitKeyFor(dimension),
+  );
   if (!Number.isFinite(converted)) {
     return `${name} (${symbol}) is a ${dimension}`;
   }

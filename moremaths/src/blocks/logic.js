@@ -7,9 +7,7 @@ export function booleanOr(args) {
 }
 
 export function booleanXor(args) {
-  return (
-    Scratch.Cast.toBoolean(args.A) !== Scratch.Cast.toBoolean(args.B)
-  );
+  return Scratch.Cast.toBoolean(args.A) !== Scratch.Cast.toBoolean(args.B);
 }
 
 export function booleanNand(args) {

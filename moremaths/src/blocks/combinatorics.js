@@ -38,11 +38,7 @@ export function combinationsWithRepetition(args) {
 
 export function multinomial(args) {
   const n = this.whole(args.N);
-  const parts = [
-    this.whole(args.A),
-    this.whole(args.B),
-    this.whole(args.C),
-  ];
+  const parts = [this.whole(args.A), this.whole(args.B), this.whole(args.C)];
   if (!Number.isFinite(n) || parts.some((part) => !Number.isFinite(part))) {
     return NaN;
   }

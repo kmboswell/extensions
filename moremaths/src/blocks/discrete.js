@@ -23,7 +23,10 @@ export function modularPowerOf(args) {
   const modulus = Math.abs(this.whole(args.MODULUS));
   const exponent = this.whole(args.EXPONENT);
   if (modulus < 1 || exponent < 0) return NaN;
-  return this.positiveRemainder(this.powerMod(this.num(args.BASE), exponent, modulus), modulus);
+  return this.positiveRemainder(
+    this.powerMod(this.num(args.BASE), exponent, modulus),
+    modulus,
+  );
 }
 
 export function modularInverse(args) {
@@ -31,7 +34,12 @@ export function modularInverse(args) {
 }
 
 export function chineseRemainder(args) {
-  return this.chineseRemainderOf(args.REMAINDER1, args.MODULUS1, args.REMAINDER2, args.MODULUS2);
+  return this.chineseRemainderOf(
+    args.REMAINDER1,
+    args.MODULUS1,
+    args.REMAINDER2,
+    args.MODULUS2,
+  );
 }
 
 export function arithmeticSequenceList(args) {
@@ -149,7 +157,8 @@ export function hammingDistance(args) {
   const length = Math.min(first.length, second.length);
   let different = Math.abs(first.length - second.length);
   for (let i = 0; i < length; i++) {
-    if (first[first.length - 1 - i] !== second[second.length - 1 - i]) different += 1;
+    if (first[first.length - 1 - i] !== second[second.length - 1 - i])
+      different += 1;
   }
   return different;
 }

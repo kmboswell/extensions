@@ -1,4 +1,11 @@
-import { blockSpecs, defaultArgs, registered, menuItems, util, isSane } from "./harness.mjs";
+import {
+  blockSpecs,
+  defaultArgs,
+  registered,
+  menuItems,
+  util,
+  isSane,
+} from "./harness.mjs";
 
 const specs = blockSpecs();
 console.log(`fuzzing ${specs.length} blocks`);
@@ -21,19 +28,27 @@ for (const entry of specs) {
     for (const name of names) {
       const def = defs[name];
       if (def.menu === "list") {
-        if (variant === "empty") overrides[name] = { type: "list", id: "none", name: "none", value: [] };
+        if (variant === "empty")
+          overrides[name] = {
+            type: "list",
+            id: "none",
+            name: "none",
+            value: [],
+          };
         else if (variant === "adversarial") overrides[name] = "testList";
         else if (variant === "text") overrides[name] = "missingList";
         continue;
       }
       if (def.menu) {
         const items = menuItems[def.menu] || [];
-        if (variant === "adversarial" && items.length > 3) overrides[name] = items[items.length - 1];
+        if (variant === "adversarial" && items.length > 3)
+          overrides[name] = items[items.length - 1];
         else if (variant === "text") overrides[name] = "nonsense";
         continue;
       }
       if (def.type === "number") {
-        if (variant === "adversarial") overrides[name] = [1e9, 1e18, -1e18, 1e-9, 7][calls % 5];
+        if (variant === "adversarial")
+          overrides[name] = [1e9, 1e18, -1e18, 1e-9, 7][calls % 5];
         else if (variant === "text") overrides[name] = "12.5";
         else if (variant === "empty") overrides[name] = "";
         continue;
@@ -55,9 +70,11 @@ for (const entry of specs) {
       continue;
     }
     const elapsed = Date.now() - started;
-    if (elapsed > 200) problems.push(`${opcode} [${variant}]: slow ${elapsed}ms`);
+    if (elapsed > 200)
+      problems.push(`${opcode} [${variant}]: slow ${elapsed}ms`);
     const sane = isSane(result);
-    if (sane === "undefined") problems.push(`${opcode} [${variant}]: returned undefined`);
+    if (sane === "undefined")
+      problems.push(`${opcode} [${variant}]: returned undefined`);
     if (sane === "NaN") {
       nanResults.push(`${opcode} [${variant}]`);
     }
